@@ -7,15 +7,20 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  hardware.bluetooth.enable=true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.kernelPackages = pkgs.linuxPackages;
+  hardware.bluetooth.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -38,13 +43,63 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+   # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+  };
+  hardware.opengl.driSupport32Bit = true;
+
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    version = "555.58.02";
+    sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
+    sha256_aarch64 = "sha256-wb20isMrRg8PeQBU96lWJzBMkjfySAUaqt4EgZnhyF8=";
+    openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
+    settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+    persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
+};
+  hardware.nvidia = {
+
+    # Modesetting is required.
+    modesetting.enable = true;
+
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+    # of just the bare essentials.
+    powerManagement.enable = true;
+
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
+    # Only available from driver 515.43.04+
+    # Currently alpha-quality/buggy, so false is currently the recommended setting.
+    open = false;
+
+    # Enable the Nvidia settings menu,
+	# accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+
+  };
+
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  #services.displayManager.defaultSession="plasmax11";
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -72,7 +127,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.howard = {
@@ -94,36 +149,60 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  hardware.enableAllFirmware = true;
 
-
-
+  #fix windows time
+  time.hardwareClockInLocalTime = true;
 
 
   #packages go here bitch
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.gnome.gnome-software
   pkgs.vesktop
-  pkgs.git
-  pkgs.lazygit
-  pkgs.vscode
-
-
+  pkgs.wine
+  pkgs.steam-run
+  pkgs.lutris
+  pkgs.steam
+  pkgs.heroic
+  pkgs.gogdl
+  pkgs.protonup-qt
+  pkgs.distrobox
+  pkgs.boxbuddy
+  pkgs.vscode-fhs
+  pkgs.linux-firmware
+  pkgs.ranger
+  pkgs.google-drive-ocamlfuse
+  pkgs.legendary-gl
+  pkgs.python312Packages.dbus-python
+  pkgs.usbmuxd
+  pkgs.rclone
+  pkgs.rclone-browser
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
 
+
+  #programs.steam.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
   # List services that you want to enable:
 
   #begind howard shit
 
 
+  #finger for lappy
+  services.fprintd.enable = true;
 
 
   #flatpak setup
@@ -135,8 +214,12 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
+
   #
 
+
+  # Enable the user service
+  systemd.user.services.google-drive-fuse.enable = true;
 
   #end howard
 
