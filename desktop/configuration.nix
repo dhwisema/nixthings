@@ -43,6 +43,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+
+
+
+
    # Enable OpenGL
   hardware.opengl = {
     enable = true;
@@ -97,9 +101,11 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  #services.displayManager.defaultSession="plasmax11";
+  services.displayManager.defaultSession="plasma";
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -141,8 +147,8 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "howard";
+  #services.displayManager.autoLogin.enable = true;
+  #services.displayManager.autoLogin.user = "howard";
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -170,22 +176,21 @@
   pkgs.heroic
   pkgs.gogdl
   pkgs.protonup-qt
-  pkgs.distrobox
-  pkgs.boxbuddy
   pkgs.vscode-fhs
   pkgs.linux-firmware
   pkgs.ranger
-  pkgs.google-drive-ocamlfuse
   pkgs.legendary-gl
   pkgs.python312Packages.dbus-python
   pkgs.usbmuxd
   pkgs.rclone
   pkgs.rclone-browser
+  pkgs.lazygit
+  pkgs.git
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
 
-
+  programs.nix-ld.enable = true;
   #programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
