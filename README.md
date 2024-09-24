@@ -1,0 +1,2 @@
+# nixthings
+My nix configs
