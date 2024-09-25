@@ -135,8 +135,11 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-  #
-
+  #device optimization
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.enableRedistributableFirmware = lib.mkDefault true;
+  hardware.trackpoint.device = lib.mkDefault "TPPS/2 Elan TrackPoint";
+  services.fprintd.enable = lib.mkDefault true;
 
   #end howard
 
