@@ -114,7 +114,7 @@
   pkgs.rclone
   pkgs.rclone-browser
   pkgs.keepassxc
-  pkgs.ipeth-utils
+
   pkgs.libimobiledevice-device
   pkgs.libimobiledevice-utils
 
