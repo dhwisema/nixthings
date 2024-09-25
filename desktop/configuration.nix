@@ -206,9 +206,11 @@
 
   #begind howard shit
 
+    #device optimization
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.enableRedistributableFirmware = lib.mkDefault true;
 
-  #finger for lappy
-  services.fprintd.enable = true;
+
 
 
   #flatpak setup
