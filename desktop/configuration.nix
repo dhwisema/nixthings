@@ -186,6 +186,9 @@
   pkgs.rclone-browser
   pkgs.lazygit
   pkgs.git
+  pkgs.ipeth-utils
+  pkgs.libimobiledevice-device
+  pkgs.libimobiledevice-utils
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
