@@ -114,20 +114,24 @@
   pkgs.rclone
   pkgs.rclone-browser
   pkgs.keepassxc
-
+  pkgs.libreoffice-fresh
   pkgs.libimobiledevice
+  pkgs.boxbuddy
+  pkgs.docker
 
 
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
 
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
 
-  # List services that you want to enable:
-
+  # List srvices that you want to enable:
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "howard" ];
   #begind howard shit
   #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

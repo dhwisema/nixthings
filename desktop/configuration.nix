@@ -191,6 +191,8 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
+  virtualisation.docker.enable = true;
+    users.extraGroups.docker.members = [ "howard" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.nix-ld.enable = true;
