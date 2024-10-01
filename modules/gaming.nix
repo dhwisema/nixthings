@@ -16,7 +16,7 @@
       pkgs.steam
       pkgs.gamemode
       pkgs.heroic
-      pkgs.protnup-qt
+      pkgs.protonup-qt
       pkgs.legendary-gl
       pkgs.wine
       pkgs.steam-run

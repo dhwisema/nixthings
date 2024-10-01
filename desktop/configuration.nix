@@ -6,7 +6,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../modules/base_.nix  # Import base software packages
+      ./../modules/base_packages.nix  # Import base software packages
       ./../modules/gaming.nix         # Import gaming configuration
     ];
 
