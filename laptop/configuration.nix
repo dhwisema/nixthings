@@ -6,6 +6,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../modules/base_.nix  # Import base software packages
+      ./../modules/gaming.nix         # Import gaming configuration
     ];
   hardware.bluetooth.enable=true;
 
@@ -99,31 +101,10 @@
 
 
 
-  #packages go here bitch
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  pkgs.gnome.gnome-software
-  pkgs.vesktop
-  pkgs.git
-  pkgs.lazygit
-  pkgs.vscode
-  pkgs.usbmuxd
-  pkgs.ranger
-  pkgs.rclone
-  pkgs.rclone-browser
-  pkgs.keepassxc
-  pkgs.libreoffice-fresh
-  pkgs.libimobiledevice
-  pkgs.boxbuddy
-  pkgs.distrobox
-  pkgs.xterm
-  pkgs.filezilla
-
-
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+#laptop specific packages
   ];
 
 
@@ -134,7 +115,7 @@
   # List srvices that you want to enable:
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "howard" ];
-  #begind howard shit
+
   #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -156,14 +137,6 @@
 
   #end howard
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
