@@ -8,23 +8,17 @@
       ./hardware-configuration.nix
       ./../modules/base_packages.nix  # Import base software packages
       ./../modules/gaming.nix         # Import gaming configuration
+      ./../modules/autooptimize.nix
+      ./../modules/kernel.nix
+      ./../modules/gl.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages;
+
+
+ #enable bluetooth
   hardware.bluetooth.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -47,26 +41,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
-
-
-
-   # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-  };
-  hardware.opengl.driSupport32Bit = true;
-
-  # Load nvidia driver for Xorg and Wayland
+  #enable nvidia
+ # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "560.35.03";
-    sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
-    sha256_aarch64 = "sha256-s8ZAVKvRNXpjxRYqM3E5oss5FdqW+tv1qQC2pDjfG+s=";
-    openSha256 = "sha256-/32Zf0dKrofTmPZ3Ratw4vDM7B+OgpC4p7s+RHUjCrg=";
-    settingsSha256 = "sha256-kQsvDgnxis9ANFmwIwB7HX5MkIAcpEEAHc8IBOLdXvk=";
-    persistencedSha256 = "sha256-E2J2wYYyRu7Kc3MMZz/8ZIemcZg68rkzvqEwFAL3fFs=";
-};
   hardware.nvidia = {
 
     # Modesetting is required.
@@ -98,7 +75,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
 
   };
-
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -159,7 +135,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  hardware.enableAllFirmware = true;
+
 
   #fix windows time
   time.hardwareClockInLocalTime = true;
