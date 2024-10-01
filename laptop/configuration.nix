@@ -9,6 +9,8 @@
       ./../modules/base_.nix  # Import base software packages
       ./../modules/gaming.nix         # Import gaming configuration
     ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   hardware.bluetooth.enable=true;
 
   # Bootloader.
