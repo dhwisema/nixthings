@@ -2,7 +2,7 @@
 
 # Generate SSH key
 echo "Generating SSH key..."
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "dhwisema@ncsu.edu"
 
 # Start the SSH agent
 echo "Starting SSH agent..."
