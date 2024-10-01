@@ -163,13 +163,10 @@
   time.hardwareClockInLocalTime = true;
 
 
-  #packages go here bitch
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
+		#packages not in base
   ];
   virtualisation.docker.enable = true;
     users.extraGroups.docker.members = [ "howard" ];
@@ -179,8 +176,9 @@
 
   # List services that you want to enable:
 
-  #begind howard shit
-
+  #begin howard shit
+  #enable gaming packages
+  gaming.enable = true;
     #device optimization
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.enableRedistributableFirmware = lib.mkDefault true;

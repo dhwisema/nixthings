@@ -15,7 +15,11 @@
     environment.systemPackages = with pkgs; [
       pkgs.steam
       pkgs.gamemode
-      pkgs.mangohud
+      pkgs.heroic
+      pkgs.protnup-qt
+      pkgs.legendary-gl
+      pkgs.wine
+      pkgs.steam-run
       pkgs.vulkan-tools
       pkgs.lutris
     ];
