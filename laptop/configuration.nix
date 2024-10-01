@@ -10,8 +10,13 @@
       ./../modules/gaming.nix         # Import gaming configuration
       ./../modules/autooptimize.nix
       ./../modules/kernel.nix
-      ./../modules/gl.nix
     ];
+
+
+  hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+};
 
 
   hardware.bluetooth.enable=true;
