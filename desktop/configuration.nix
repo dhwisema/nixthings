@@ -41,6 +41,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+#nvidia and open gl
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
+
   #enable nvidia
  # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
