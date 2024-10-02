@@ -16,6 +16,7 @@
     pkgs.distrobox
     pkgs.xterm
     pkgs.filezilla
+    pkgs.nixd
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
