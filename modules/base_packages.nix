@@ -17,6 +17,7 @@
     xterm
     filezilla
     nixd
+    bitwarden
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
