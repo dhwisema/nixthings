@@ -26,7 +26,7 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-z
           (import ./laptop/configuration.nix
            flake-overlays)
-           guh guh guh
+      
         ];
       };
     };
