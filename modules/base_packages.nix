@@ -15,8 +15,7 @@
     filezilla
     nixd
     bitwarden
-    neovim
-    vimPlugins.LazyVim
+    google-chrome
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
