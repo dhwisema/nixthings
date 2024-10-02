@@ -19,18 +19,17 @@
           ];
         };
       };
-
-    let
-      flake-overlays = [
-        nix-xilinx.overlay
-      ];
-    in
-        nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            (import ./laptop/configuration.nix { inherit flake-overlays; })
-            ./laptop/hardware-configuration.nix
+     laptop = let
+        flake-overlays = [
+          nix-xilinx.overlay
+        ];
+      in nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (import ./laptop/configuration.nix {
+            inherit flake-overlays;
+          })
+          ./laptop/hardware-configuration.nix
           ];
         };
       };
