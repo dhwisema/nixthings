@@ -12,12 +12,10 @@
       ./../modules/kernel.nix
     ];
 
-
-  hardware.opengl = {
+hardware.graphics = {
   enable = true;
-  driSupport = true;
-  driSupport32Bit = true;
-  };
+  enable32Bit = true;
+};
 
 
 
@@ -53,9 +51,9 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-
+  services.displayManager.defaultsession = "plasma"
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -82,7 +80,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.howard = {
