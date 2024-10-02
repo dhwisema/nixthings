@@ -1,13 +1,9 @@
-{ config, pkgs, lib, ... }:
-{ nix.settings.auto-optimise-store = true;
-
-
+{ ... }:
+{
+  nix.settings.auto-optimise-store = true;
   nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 7d";
-    };
-
-
-
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 5 generations";
+  };
 }
