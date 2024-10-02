@@ -7,9 +7,6 @@
     vscode
     usbmuxd
     ranger
-    rclone
-    rclone-browser
-    keepassxc
     libreoffice-fresh
     libimobiledevice
     boxbuddy
