@@ -1,6 +1,55 @@
 {
   "nodes": {
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "nix-xilinx": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1727773319,
+        "narHash": "sha256-rt4H3hOnJUf19DTI+NYfYavkiJr3F6rjLR/PTPyEcPY=",
+        "owner": "doronbehar",
+        "repo": "nix-xilinx",
+        "rev": "f78e9804dee0ba994c2388778a18c701a3ea646d",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "doronbehar",
+        "repo": "nix-xilinx",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1727716680,
+        "narHash": "sha256-uMVkVHL4r3QmlZ1JM+UoJwxqa46cgHnIfqGzVlw5ca4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b5b22b42c0d10c7d2463e90a546c394711e3a724",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1727634051,
         "narHash": "sha256-S5kVU7U82LfpEukbn/ihcyNt2+EvG7Z5unsKW9H/yFA=",
@@ -18,7 +67,8 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nix-xilinx": "nix-xilinx",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
