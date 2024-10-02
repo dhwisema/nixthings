@@ -10,7 +10,6 @@
       ./../modules/gaming.nix         # Import gaming configuration
       ./../modules/autooptimize.nix
       ./../modules/kernel.nix
-      ./../modules/gl.nix
     ];
 
 
