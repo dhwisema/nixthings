@@ -1,6 +1,6 @@
 { pkgs,... }: {
   environment.systemPackages = with pkgs; [
-    pkgs.gnome.gnome-software
+    pkgs.gnome-software
     pkgs.vesktop
     pkgs.git
     pkgs.lazygit
