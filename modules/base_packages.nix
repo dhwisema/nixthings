@@ -4,7 +4,6 @@
     vesktop
     git
     lazygit
-    vscode
     usbmuxd
     ranger
     libreoffice-fresh
@@ -14,6 +13,7 @@
     xterm
     filezilla
     nixd
+    vscode
     bitwarden
     google-chrome
   ];
