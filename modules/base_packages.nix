@@ -16,11 +16,12 @@
     vscode
     bitwarden
     google-chrome
+   
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
- 
+ xdg.portal.enable = true;
  #flatpak setup
   services.flatpak.enable=true;
     systemd.services.flatpak-repo = {
