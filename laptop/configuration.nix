@@ -23,7 +23,9 @@ flake-overlays:
     )
   ] ++ flake-overlays;
 
+#non free
 
+  nixpkgs.config.allowUnfreePredicate = _: true;
   #display manager
 
  # kde.enable = true;

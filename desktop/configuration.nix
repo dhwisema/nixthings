@@ -16,10 +16,12 @@
     ];
 
 
+  #non free
+  nixpkgs.config.allowUnfreePredicate = _: true;
   #enable gaming pkgs
-
+  gaming.enable=true;
   #enable nvidia
-
+  nvidia.enable = true;
   #choose your display manager
 
 
