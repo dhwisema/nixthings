@@ -12,8 +12,13 @@
     gnome-tour
     gnome-maps
     epiphany # web browser
-    gnome.geary # email reader. Up to 24.05. Starting from 24.11 the package name is just geary.
+    geary # email reader. Up to 24.05. Starting from 24.11 the package name is just geary.
     evince # document viewer
+    gnome-music
+    totem
+
+
+
   ];
 
 	
