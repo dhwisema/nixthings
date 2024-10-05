@@ -21,14 +21,16 @@ flake-overlays:
     )
   ] ++ flake-overlays;
 
+  kde.enable = true;
+
+
+
 
 
 hardware.graphics = {
   enable = true;
   enable32Bit = true;
 };
-
-
 
 
   hardware.bluetooth.enable=true;
@@ -62,10 +64,7 @@ hardware.graphics = {
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -100,58 +99,18 @@ hardware.graphics = {
     description = "Howard";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     #  thunderbird
     ];
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "howard";
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-
-
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-#laptop specific packages
-  ];
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
 
 
   # List srvices that you want to enable:
-  virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "howard" ];
+
 
   #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
-  #flatpak setup
-  services.flatpak.enable=true;
-    systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-  #device optimization
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.enableRedistributableFirmware = lib.mkDefault true;
-  hardware.trackpoint.device = lib.mkDefault "TPPS/2 Elan TrackPoint";
-  services.fprintd.enable = lib.mkDefault true;
 
   #end howard
 
