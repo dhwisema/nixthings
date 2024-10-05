@@ -6,12 +6,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../modules/base_packages.nix  # Import base software packages
-      ./../modules/gaming.nix         # Import gaming configuration
       ./../modules/autooptimize.nix
+      ./../modules/base_packages.nix
+      ./../modules/gaming.nix
+      ./../modules/nvidia.nix       
       ./../modules/kernel.nix
+      ./../../../gnome.nix
+      ./../../../kde.nix   
     ];
 
+
+  #enable gaming pkgs
+
+  #enable nvidia
+
+  #choose your display manager
 
 
 
@@ -40,54 +49,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-#nvidia and open gl
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
 
-  #enable nvidia
- # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-    # of just the bare essentials.
-    powerManagement.enable = true;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of
-    # supported GPUs is at:
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = true;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-
-  };
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession="plasma";
 
 
   # Configure keymap in X11
@@ -124,22 +90,13 @@
     description = "Howard";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
+
     ];
   };
 
-  # Enable automatic login for the user.
-  #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = "howard";
+ 
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-
+ 
   #fix windows time
   time.hardwareClockInLocalTime = true;
 
@@ -149,46 +106,15 @@
   environment.systemPackages = with pkgs; [
 		#packages not in base
   ];
-  virtualisation.docker.enable = true;
-    users.extraGroups.docker.members = [ "howard" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-  # List services that you want to enable:
 
-  #begin howard shit
-  #enable gaming packages
-  gaming.enable = true;
-    #device optimization
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.enableRedistributableFirmware = lib.mkDefault true;
 
 
-
-
-  #flatpak setup
-  services.flatpak.enable=true;
-    systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-
-
-  #end howard
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -7,10 +7,13 @@ flake-overlays:
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../modules/base_packages.nix  # Import base software packages
-      ./../modules/gaming.nix         # Import gaming configuration
       ./../modules/autooptimize.nix
+      ./../modules/base_packages.nix
+      ./../modules/gaming.nix
+      ./../modules/nvidia.nix       
       ./../modules/kernel.nix
+      ./../../../gnome.nix
+      ./../../../kde.nix   
     ];
 
     nixpkgs.overlays = [
@@ -21,16 +24,13 @@ flake-overlays:
     )
   ] ++ flake-overlays;
 
-  kde.enable = true;
 
+  #display manager
 
-
-
-
-hardware.graphics = {
-  enable = true;
-  enable32Bit = true;
-};
+ # kde.enable = true;
+  gnome.enable = true;
+ #gaming?
+  gaming.enable = false;
 
 
   hardware.bluetooth.enable=true;
@@ -98,21 +98,12 @@ hardware.graphics = {
     isNormalUser = true;
     description = "Howard";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
-
-
-
-  # List srvices that you want to enable:
 
 
   #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
-  #end howard
 
 
 
