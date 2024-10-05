@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-xilinx = {
     # Recommended if you also override the default nixpkgs flake, common among
     # nixos-unstable users:
@@ -15,7 +13,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nix-xilinx, nixos-hardware, home-manager, ...}:
+  outputs = { self, nixpkgs, nix-xilinx, nixos-hardware, ...}:
   let
     flake-overlays = [
         nix-xilinx.overlay
@@ -29,16 +27,7 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-z
           (import ./laptop/configuration.nix
            flake-overlays)
-          home-manager.nixosModules.home-manager 
-           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard = import ./laptop/home.nix;
 
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
       
         ];
       };
@@ -49,17 +38,8 @@
         system = "x86_64-linux";
         modules = [
           nixos-hardware.nixosModules.common-cpu-amd
-          home-manager.nixosModules.home-manager
           ./desktop/configuration.nix
-                     {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard= import ./home.nix;
-
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
+          
         ];
       };
     };
