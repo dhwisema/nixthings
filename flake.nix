@@ -32,6 +32,7 @@
            {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.users.howard = import ./laptop/home.nix;
 
 
             # Optionally, use home-manager.extraSpecialArgs to pass
@@ -51,6 +52,7 @@
                      {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.users.howard= import ./home.nix;
 
 
             # Optionally, use home-manager.extraSpecialArgs to pass
