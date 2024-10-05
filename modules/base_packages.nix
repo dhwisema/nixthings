@@ -10,7 +10,7 @@
     libimobiledevice
     boxbuddy
     distrobox
-    
+    kitty
     filezilla
     nixd
     vscodium
