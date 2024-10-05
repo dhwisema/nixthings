@@ -47,6 +47,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          nixos-hardware.nixosModules.common-cpu-amd
           home-manager.nixosModules.home-manager
           ./desktop/configuration.nix
                      {

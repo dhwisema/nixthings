@@ -11,8 +11,8 @@
       ./../modules/gaming.nix
       ./../modules/nvidia.nix       
       ./../modules/kernel.nix
-      ./../../../gnome.nix
-      ./../../../kde.nix   
+      ./../modules/display_managers/gnome.nix
+      ./../modules/display_managers/kde.nix   
     ];
 
 

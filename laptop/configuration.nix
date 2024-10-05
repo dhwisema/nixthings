@@ -9,11 +9,10 @@ flake-overlays:
       ./hardware-configuration.nix
       ./../modules/autooptimize.nix
       ./../modules/base_packages.nix
-      ./../modules/gaming.nix
-      ./../modules/nvidia.nix       
+      ./../modules/gaming.nix       
       ./../modules/kernel.nix
-      ./../../../gnome.nix
-      ./../../../kde.nix   
+      ./../modules/display_managers/gnome.nix
+      ./../modules/display_managers/kde.nix   
     ];
 
     nixpkgs.overlays = [
