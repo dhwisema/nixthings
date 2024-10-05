@@ -19,7 +19,7 @@
   ];
   environment.systemPackages = with pkgs; [
 		adwaita-icon-theme-legacy
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     gnome-tweaks
 
   ];
