@@ -21,7 +21,9 @@
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
- xdg.portal.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
  #flatpak setup
   services.flatpak.enable=true;
     systemd.services.flatpak-repo = {
@@ -32,10 +34,12 @@
     '';
   };
 
+
+
+
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "howard" ];
 
   
 
 }
-
