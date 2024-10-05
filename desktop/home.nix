@@ -1,16 +1,17 @@
-{ lib, pkgs, ... }:
+{config, lib, pkgs, ... }:
 {
-  home = {
-    packages = with pkgs; [
-      hello
-    ];
+  home.packages = with pkgs; [
+    
+  ];
+
 
     # This needs to actually be set to your username
-    username = "howard";
-    homeDirectory = "/home/howard";
+    home.username = "howard";
+    home.homeDirectory = "/home/howard";
 
     # You do not need to change this if you're reading this in the future.
     # Don't ever change this after the first build.  Don't ask questions.
-    stateVersion = "24.05";
-  };
+    home.stateVersion = "24.05";
+    programs.home-manager.enable = true;
+  
 }
