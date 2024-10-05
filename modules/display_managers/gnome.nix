@@ -6,11 +6,11 @@
       description = "enable gnome";
     };
   };
+  config = lib.mkIf config.gnome.enable {
 
 
-
-  services.xserver.enable = true;
-  services.xserver.gdm.enable = true;
-  services.xserver.gnome.enable = true;
-
+    services.xserver.enable = true;
+    services.xserver.gdm.enable = true;
+    services.xserver.gnome.enable = true;
+  };
 }
