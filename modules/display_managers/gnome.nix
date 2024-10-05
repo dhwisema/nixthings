@@ -16,11 +16,13 @@
     evince # document viewer
     gnome-music
     totem
-
-
+  ];
+  environment.systemPackages = with pkgs; [
+		adwaita-icon-theme-legacy
+    gnome.adwaita-icon-theme
+    
 
   ];
-
 	
 
     services.xserver.displayManager.gdm.enable = true;
