@@ -17,14 +17,15 @@
 
 
   #non free
-  nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.config.allowUnfree = true;
   #enable gaming pkgs
-  gaming.enable=true;
+  gaming.enable= true;
   #enable nvidia
   nvidia.enable = true;
   #choose your display manager
+  gnome.enable = true;
 
-
+	
 
  #enable bluetooth
   hardware.bluetooth.enable = true;

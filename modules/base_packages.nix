@@ -10,10 +10,10 @@
     libimobiledevice
     boxbuddy
     distrobox
-    xterm
+    
     filezilla
     nixd
-    vscode
+    vscodium
     bitwarden
     google-chrome
    
@@ -22,9 +22,7 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
- #flatpak setup
+  #flatpak setup
   services.flatpak.enable=true;
     systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
