@@ -24,7 +24,7 @@ flake-overlays:
   ] ++ flake-overlays;
 
 #non free
-
+  #nixpkgs.config = allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
   #display manager
 

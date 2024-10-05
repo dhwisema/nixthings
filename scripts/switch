@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-    dconf reset /org/gnome/desktop/interface/cursor-theme
+    rm -rf ~/.config/dconf
