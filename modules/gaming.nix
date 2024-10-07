@@ -16,7 +16,6 @@
       steam
       gamemode
       heroic
-      protonup-qt
       legendary-gl
       wine
       steam-run
