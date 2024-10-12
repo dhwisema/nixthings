@@ -4,16 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
-    nix-xilinx = {
-    # Recommended if you also override the default nixpkgs flake, common among
-    # nixos-unstable users:
-    #inputs.nixpkgs.follows = "nixpkgs";
-    url = "gitlab:doronbehar/nix-xilinx";
-    };
+
 
   };
 
-  outputs = { self, nixpkgs, nix-xilinx, nixos-hardware, ...}:
+  outputs = { self, nixpkgs, nixos-hardware, ...}:
   
 {
     nixosConfigurations = {
