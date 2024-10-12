@@ -13,6 +13,11 @@
       ./../modules/kernel.nix
       ./../modules/display_managers/gnome.nix
       ./../modules/display_managers/kde.nix   
+      ./../nixos-hardware/common/cpu/amd/default.nix
+      ./../nixos-hardware/common/cpu/amd/pstate.nix
+      ./../nixos-hardware/common/cpu/amd/zenpower.nix
+      ./../nixos-hardware/common/pc/ssd/default.nix
+
     ];
 
 

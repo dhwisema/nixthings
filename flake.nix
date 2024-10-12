@@ -23,8 +23,6 @@
           
           nixos-hardware.nixosModules.lenovo-thinkpad-z
           ./laptop/configuration.nix
-           
-
       
         ];
       };
