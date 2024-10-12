@@ -14,19 +14,16 @@
   };
 
   outputs = { self, nixpkgs, nix-xilinx, nixos-hardware, ...}:
-  let
-    flake-overlays = [
-        nix-xilinx.overlay
-    ];
-  in {
+  
+{
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           
           nixos-hardware.nixosModules.lenovo-thinkpad-z
-          (import ./laptop/configuration.nix
-           flake-overlays)
+          ./laptop/configuration.nix
+           
 
       
         ];
