@@ -48,12 +48,6 @@
     cachix
   ];
 
-
-  services = {
-    auto-cpufreq.enable = true;
-    thermald.enable = true;
-  };
-
   programs.nh = {
     enable = true;
     clean.enable = true;

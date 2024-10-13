@@ -18,6 +18,7 @@
           
           nixos-hardware.nixosModules.lenovo-thinkpad-z
           ./Hosts/laptop/configuration.nix
+          ./Hosts/laptop/hardware-configuration.nix
       
         ];
       };
@@ -30,6 +31,7 @@
           nixos-hardware.nixosModules.common-cpu-amd
           ./Hosts/desktop/configuration.nix
           ./nixos-hardware/common/pc/ssd/default.nix
+          ./Hosts/desktop/hardware-configuration.nix
 
           
         ];
