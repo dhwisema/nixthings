@@ -5,12 +5,11 @@
   imports =
     [
       ./../modules/nvidia.nix  
-      ./hardware-configuration.nix
-      ./../modules/autooptimize.nix
       ./../modules/base_packages.nix
       ./../modules/gaming.nix
       ./../modules/kernel.nix
       ./../modules/display_managers/gnome.nix
+      ./../hardware-configuration.nix
     ];
 
   hardware.bluetooth.enable = true;
