@@ -2,39 +2,37 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+
 { config, pkgs, lib, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../modules/autooptimize.nix
       ./../modules/base_packages.nix
-      ./../modules/gaming.nix
-      ./../modules/nvidia.nix       
+      ./../modules/gaming.nix       
       ./../modules/kernel.nix
       ./../modules/display_managers/gnome.nix
       ./../modules/display_managers/kde.nix   
-      ./../nixos-hardware/common/cpu/amd/default.nix
-      ./../nixos-hardware/common/cpu/amd/pstate.nix
-      ./../nixos-hardware/common/cpu/amd/zenpower.nix
-      ./../nixos-hardware/common/pc/ssd/default.nix
-
     ];
 
 
-  #non free
-  nixpkgs.config.allowUnfree = true;
-  #enable gaming pkgs
-  gaming.enable= true;
-  #enable nvidia
-  nvidia.enable = true;
-  #choose your display manager
+
+#non free
+  #nixpkgs.config = allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+  #display manager
+
+ # kde.enable = true;
   gnome.enable = true;
+ #gaming?
+  gaming.enable = false;
 
-	
 
- #enable bluetooth
-  hardware.bluetooth.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  hardware.bluetooth.enable=true;
+
+  networking.hostName = "laptop"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -56,8 +54,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -90,37 +86,19 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.howard = {
     isNormalUser = true;
     description = "Howard";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-
-    ];
   };
 
- 
 
- 
-  #fix windows time
-  time.hardwareClockInLocalTime = true;
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-		#packages not in base
-  ];
-
+  #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
-
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.enableRedistributableFirmware = lib.mkDefault true;
 
 
 
