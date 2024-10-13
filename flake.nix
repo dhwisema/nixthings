@@ -17,7 +17,7 @@
         modules = [
           
           nixos-hardware.nixosModules.lenovo-thinkpad-z
-          ./laptop/configuration.nix
+          ./Hosts/laptop/configuration.nix
       
         ];
       };
@@ -28,7 +28,9 @@
         system = "x86_64-linux";
         modules = [
           nixos-hardware.nixosModules.common-cpu-amd
-          ./desktop/configuration.nix
+          ./Hosts/desktop/configuration.nix
+          ./nixos-hardware/common/pc/ssd/default.nix
+
           
         ];
       };
