@@ -5,3 +5,5 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generati
 
 
 also also nix run 'gitlab:ncsulug/eduroam-script'
+
+if chrome has an issue after hostname change delete a lock file in .config
