@@ -9,10 +9,10 @@
       ./../modules/gaming.nix
       ./../modules/kernel.nix
       ./../modules/display_managers/gnome.nix
-      ./../hardware-configuration.nix
+
     ];
 
-  hardware.bluetooth.enable = true;
+
   networking.networkmanager.enable = true;
 
   networking.hostName = lib.mkDefault "default-hostname";
@@ -96,14 +96,7 @@
 
 
   services.printing.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+
 
 
 
