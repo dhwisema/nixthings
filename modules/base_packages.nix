@@ -1,21 +1,10 @@
 { pkgs,... }: {
   environment.systemPackages = with pkgs; [
     gnome-software
-    vesktop
-    git
-    lazygit
     usbmuxd
-    ranger
+ 
     libreoffice-fresh
     libimobiledevice
-    boxbuddy
-    distrobox
-    kitty
-    filezilla
-    nixd
-    vscodium
-    bitwarden
-    google-chrome
    
   ];
   #enable and make fish defaultUserShell
@@ -31,13 +20,5 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-
-
-
-  virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "howard" ];
-
-  
 
 }
