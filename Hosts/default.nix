@@ -43,8 +43,6 @@
 
   environment.systemPackages = with pkgs; [
     nix
-    thermald
-    auto-cpufreq
     cachix
   ];
 
@@ -79,11 +77,11 @@
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
     };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 5d";
-    };
+   # gc = {
+   #   automatic = true;
+   #   dates = "weekly";
+   #   options = "--delete-older-than 5d";
+   # };
   };
 
 
