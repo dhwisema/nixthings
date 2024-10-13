@@ -13,6 +13,7 @@
     ];
 
 
+  gnome.enable = true;
   networking.networkmanager.enable = true;
 
   networking.hostName = lib.mkDefault "default-hostname";
