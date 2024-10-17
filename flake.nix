@@ -8,7 +8,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ...}:
+  outputs = { self, nixpkgs, nixos-hardware}:
   
 {
     nixosConfigurations = {
@@ -31,7 +31,7 @@
           nixos-hardware.nixosModules.common-pc-ssd
           
           ./Hosts/desktop/configuration.nix
-          ./nixos-hardware/common/pc/ssd/default.nix
+          
           
         ];
       };

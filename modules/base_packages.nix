@@ -2,7 +2,8 @@
   environment.systemPackages = with pkgs; [
     gnome-software
     usbmuxd
- 
+    git
+    lazygit
     libreoffice-fresh
     libimobiledevice
    
