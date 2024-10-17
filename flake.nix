@@ -11,8 +11,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    #catpuccin
-    catppuccin.url = "github:catppuccin/nix";
+    #stylix
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -20,12 +20,14 @@
     nixpkgs,
     nixos-hardware,
     home-manager,
-    catppuccin,
+    stylix,
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-hardware.nixosModules.lenovo-thinkpad-z
+
+        stylix.nixosModules.stylix
 
         ./Hosts/laptop/configuration.nix
 
@@ -37,8 +39,7 @@
 
           home-manager.users.howard = {
             imports = [
-              ./Hosts/desktop/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              ./Hosts/home.nix
             ];
           };
 
@@ -51,6 +52,8 @@
     nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        stylix.nixosModules.stylix
+
         nixos-hardware.nixosModules.common-cpu-amd
         nixos-hardware.nixosModules.common-pc-ssd
 
@@ -63,8 +66,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.howard = {
             imports = [
-              ./Hosts/desktop/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              ./Hosts/home.nix
             ];
           };
 

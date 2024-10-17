@@ -8,7 +8,6 @@
     libimobiledevice
     kitty
     kitty-themes
-    tmux
   ];
 
   fonts.packages = with pkgs; [nerdfonts];
