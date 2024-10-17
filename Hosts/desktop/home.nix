@@ -24,6 +24,7 @@
     pkgs.vesktop
     pkgs.alejandra
     pkgs.yazi
+    pkgs.google-chrome
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
