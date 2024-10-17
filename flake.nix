@@ -73,5 +73,10 @@
         }
       ];
     };
+    ## more configs
+    #  nixosConfigurations = {
+    #  newdevice = nixpkgs.lib.nixosSystem {
+    #modules = [];
+    #};
   };
 }
