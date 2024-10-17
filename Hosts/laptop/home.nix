@@ -7,6 +7,7 @@
   # manage.
   home.username = "howard";
   home.homeDirectory = "/home/howard";
+  stylix.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -20,12 +21,13 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.google-chrome
     pkgs.vscodium
     pkgs.nixd
     pkgs.vesktop
     pkgs.alejandra
     pkgs.xplr
+    pkgs.google-chrome
+    pkgs.nerdfonts
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
