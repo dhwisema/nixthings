@@ -25,14 +25,17 @@
     pkgs.nixd
     pkgs.vesktop
     pkgs.alejandra
-    pkgs.xplr
+    pkgs.yazi
     pkgs.google-chrome
     pkgs.nerdfonts
   ];
-
   #stylix
-  stylix.enable = true;
-  stylix.image = ./../wallpaper/wallpaper.jpg;
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    image = ../wallpaper/wallpaper.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  };
   # file: home.nix
   # Kitty terminalllll
   programs.kitty = {
@@ -42,7 +45,7 @@
       size = 10;
     };
     shellIntegration.enableFishIntegration = true;
-    theme = "Catppuccin-Macchiato";
+    #themeFile = "Catppuccin-Macchiato";
     #Also available: Catppuccin-Frappe Catppuccin-Latte Catppuccin-Macchiato Catppuccin-Mocha
     # See all available kitty themes at: https://github.com/kovidgoyal/kitty-themes/blob/46d9dfe230f315a6a0c62f4687f6b3da20fd05e4/themes.json
   };
