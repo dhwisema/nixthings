@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "howard";
@@ -24,8 +26,7 @@
     pkgs.vesktop
     pkgs.alejandra
     pkgs.yazi
-
-
+    pkgs.nerdfonts
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
