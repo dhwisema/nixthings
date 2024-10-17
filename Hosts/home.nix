@@ -31,11 +31,7 @@
 
   #stylix
   stylix.enable = true;
-  stylix.image = pkgs.fetchurl {
-    url = "https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?cs=srgb&dl=pexels-iriser-1366957.jpg&fm=jpg";
-    sha256 = "";
-  };
-
+  stylix.image = ./wallpaper/wallpaper.jpg;
   # file: home.nix
   # Kitty terminalllll
   programs.kitty = {
