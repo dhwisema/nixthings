@@ -27,8 +27,6 @@
       modules = [
         nixos-hardware.nixosModules.lenovo-thinkpad-z
 
-        stylix.nixosModules.stylix
-
         ./Hosts/laptop/configuration.nix
 
         home-manager.nixosModules.home-manager
@@ -53,8 +51,6 @@
     nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        stylix.nixosModules.stylix
-
         nixos-hardware.nixosModules.common-cpu-amd
         nixos-hardware.nixosModules.common-pc-ssd
 

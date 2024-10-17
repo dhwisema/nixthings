@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
@@ -31,12 +32,12 @@
 
   #stylix
   stylix.enable = true;
-  stylix.image = ./wallpaper/wallpaper.jpg;
+  stylix.image = ./../wallpaper/wallpaper.jpg;
   # file: home.nix
   # Kitty terminalllll
   programs.kitty = {
     enable = true;
-    font = {
+    font = lib.mkForce {
       name = "JetBrainsMono Nerd Font";
       size = 10;
     };
