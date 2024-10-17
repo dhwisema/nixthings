@@ -40,6 +40,7 @@
           home-manager.users.howard = {
             imports = [
               ./Hosts/home.nix
+              stylix.homeManagerModules.stylix
             ];
           };
 
@@ -67,6 +68,7 @@
           home-manager.users.howard = {
             imports = [
               ./Hosts/home.nix
+              stylix.homeManagerModules.stylix
             ];
           };
 
