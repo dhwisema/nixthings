@@ -6,7 +6,8 @@
     lazygit
     libreoffice-fresh
     libimobiledevice
-    wezterm
+    xterm
+    kitty
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
