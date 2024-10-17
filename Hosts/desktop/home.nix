@@ -26,7 +26,6 @@
     pkgs.alejandra
     pkgs.yazi
     pkgs.google-chrome
-    pkgs.nerdfonts
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -41,6 +40,20 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  # file: home.nix
+  # Kitty terminalllll
+  programs.kitty = {
+    enable = true;
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 10;
+    };
+    shellIntegration.enableFishIntegration = true;
+    theme = "Catppuccin-Macchiato";
+    #Also available: Catppuccin-Frappe Catppuccin-Latte Catppuccin-Macchiato Catppuccin-Mocha
+    # See all available kitty themes at: https://github.com/kovidgoyal/kitty-themes/blob/46d9dfe230f315a6a0c62f4687f6b3da20fd05e4/themes.json
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

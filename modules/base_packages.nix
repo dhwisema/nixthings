@@ -6,9 +6,12 @@
     lazygit
     libreoffice-fresh
     libimobiledevice
-    xterm
     kitty
+    kitty-themes
+    tmux
   ];
+
+  fonts.packages = with pkgs; [nerdfonts];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
