@@ -9,6 +9,14 @@
     ./../default.nix
   ];
 
+  boot.kernelParams = ["amd_pstate=guided"];
+  powerManagement.enable = true;
+  powerManagement.cpuFreqGovernor = "schedutil";
+
+  boot.blacklistedKernelModules = ["k10temp"];
+  boot.extraModulePackages = [config.boot.kernelPackages.zenpower];
+  boot.kernelModules = ["zenpower"];
+
   gaming.enable = true;
   nvidia.enable = true;
   networking.hostName = "deskbox";
