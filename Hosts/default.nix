@@ -1,23 +1,26 @@
-
-{ config, pkgs, lib, ... }: 
-
 {
-  imports =
-    [
-      ./../modules/nvidia.nix  
-      ./../modules/base_packages.nix
-      ./../modules/gaming.nix
-      ./../modules/kernel.nix
-      ./../modules/display_managers/gnome.nix
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ./../modules/nvidia.nix
+    ./../modules/base_packages.nix
+    ./../modules/gaming.nix
+    ./../modules/kernel.nix
+    ./../modules/display_managers/gnome.nix
+  ];
 
-    ];
+  #kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-
+  #optional modules
   gnome.enable = true;
   networking.networkmanager.enable = true;
 
+  #everything else
   networking.hostName = lib.mkDefault "default-hostname";
-
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -32,8 +35,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-
 
   services.xserver.enable = true;
   services.xserver.xkb = {
@@ -51,7 +52,6 @@
     clean.enable = true;
     clean.extraArgs = "--keep 5 --keep-since 3d";
   };
-
 
   nix = {
     settings = {
@@ -74,32 +74,24 @@
 
       auto-optimise-store = true; # Optimise syslinks
       allow-import-from-derivation = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "@wheel" ];
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["root" "@wheel"];
     };
-   # gc = {
-   #   automatic = true;
-   #   dates = "weekly";
-   #   options = "--delete-older-than 5d";
-   # };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 5d";
+    # };
   };
 
-
-
-
-
   services.printing.enable = true;
-
-
-
-
 
   users.users.howard = {
     isNormalUser = true;
     description = "Howard";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
- 
+
   nixpkgs.config.allowUnfree = true;
 
   services.libinput.enable = true;
