@@ -12,9 +12,6 @@
     ./../modules/display_managers/gnome.nix
   ];
 
-  #kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   #optional modules
   gnome.enable = true;
   networking.networkmanager.enable = true;
