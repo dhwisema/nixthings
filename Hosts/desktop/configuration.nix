@@ -15,7 +15,7 @@
 
   boot.blacklistedKernelModules = ["k10temp"];
   boot.extraModulePackages = [config.boot.kernelPackages.zenpower];
-  boot.kernelModules = ["zenpower"];
+  boot.kernelModules = ["zenpower" "amd-pmc"];
 
   gaming.enable = true;
   nvidia.enable = true;
