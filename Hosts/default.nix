@@ -17,7 +17,7 @@
   networking.networkmanager.enable = true;
 
   networking.hostName = lib.mkDefault "default-hostname";
-
+  
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -41,9 +41,17 @@
     variant = "";
   };
 
+
+  services.usbmuxd = {
+  enable = true;
+  package = pkgs.usbmuxd2;
+};
+
   environment.systemPackages = with pkgs; [
     nix
     cachix
+    libimobiledevice
+    ifuse
   ];
 
   programs.nh = {
