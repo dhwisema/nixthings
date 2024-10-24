@@ -11,6 +11,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+
+    #waveforms
+    waveforms.url = "github:liff/waveforms-flake";
+
     #stylix
     stylix.url = "github:danth/stylix";
   };
@@ -21,12 +25,14 @@
     nixos-hardware,
     home-manager,
     stylix,
+    waveforms
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-hardware.nixosModules.lenovo-thinkpad-z
-
+        waveforms.nixosModule
+        ({users.users.howard.extraGroups = ["plugdev"];})
         ./Hosts/laptop/configuration.nix
 
         home-manager.nixosModules.home-manager
