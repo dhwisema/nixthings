@@ -16,6 +16,11 @@
   gnome.enable = true;
   networking.networkmanager.enable = true;
 
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
+
   #everything else
   networking.hostName = lib.mkDefault "default-hostname";
 
@@ -42,6 +47,8 @@
   environment.systemPackages = with pkgs; [
     nix
     cachix
+    libimobiledevice
+    ifuse
   ];
 
   programs.nh = {
