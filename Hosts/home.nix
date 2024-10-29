@@ -29,6 +29,7 @@
     pkgs.google-chrome
     pkgs.nerdfonts
     pkgs.verible
+    pkgs.verilator
   ];
   #stylix
   stylix = {
