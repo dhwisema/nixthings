@@ -28,6 +28,7 @@
     pkgs.yazi
     pkgs.google-chrome
     pkgs.nerdfonts
+    pkgs.verible
   ];
   #stylix
   stylix = {
