@@ -27,7 +27,6 @@
     pkgs.alejandra
     pkgs.yazi
     pkgs.google-chrome
-    pkgs.nerdfonts
     pkgs.verible
     pkgs.verilator
   ];

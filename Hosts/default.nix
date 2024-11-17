@@ -13,6 +13,10 @@
     ./../modules/display_managers/kde.nix
   ];
 
+  fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
+];
+
   #optional modules
   kde.enable = true;
   networking.networkmanager.enable = true;
