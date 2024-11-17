@@ -10,10 +10,11 @@
     ./../modules/gaming.nix
     ./../modules/kernel.nix
     ./../modules/display_managers/gnome.nix
+    ./../modules/display_managers/kde.nix
   ];
 
   #optional modules
-  gnome.enable = true;
+  kde.enable = true;
   networking.networkmanager.enable = true;
 
   services.usbmuxd = {
