@@ -32,12 +32,12 @@
     pkgs.verilator
   ];
   #stylix
-  stylix = {
-    enable = true;
-    polarity = "dark";
-    image = ../wallpaper/wallpaper.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  };
+  # stylix = {
+  #   enable = true;
+  #   polarity = "dark";
+  #   image = ../wallpaper/wallpaper.jpg;
+  #   base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  # };
   # file: home.nix
   # Kitty terminalllll
   programs.kitty = {
