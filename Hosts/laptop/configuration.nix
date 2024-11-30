@@ -9,7 +9,7 @@
     ./../default.nix
   ];
 
-  gaming.enable = false;
+  gaming.enable = true;
   networking.hostName = "laptop";
 
   hardware.bluetooth.enable = true;
