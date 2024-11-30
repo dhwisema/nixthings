@@ -26,7 +26,7 @@
       modules = [
         nixos-hardware.nixosModules.lenovo-thinkpad-z
         
-         nix-flatpak.nixosModules.nix-flatpak
+        nix-flatpak.nixosModules.nix-flatpak
 
         waveforms.nixosModule
         ({users.users.howard.extraGroups = ["plugdev"];})
@@ -40,7 +40,7 @@
         nixos-hardware.nixosModules.common-cpu-amd
         nixos-hardware.nixosModules.common-pc-ssd
 
-         nix-flatpak.nixosModules.nix-flatpak
+        nix-flatpak.nixosModules.nix-flatpak
 
         ./Hosts/desktop/configuration.nix
 
