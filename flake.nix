@@ -15,6 +15,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
