@@ -24,6 +24,7 @@
     "com.google.Chrome"
     "camp.nook.nookdesktop"
     "io.github.equicord.equibop"
+    "com.usebottles.bottles"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
