@@ -9,6 +9,7 @@
     kitty
     kitty-themes
 
+    vscodium
     yazi
     alejandra
     nil

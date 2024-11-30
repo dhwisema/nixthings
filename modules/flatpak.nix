@@ -25,7 +25,6 @@
   "com.google.Chrome"
   "camp.nook.nookdesktop"
   "io.github.equicord.equibop"
-  "com.vscodium.codium"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
