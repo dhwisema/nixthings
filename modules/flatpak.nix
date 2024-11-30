@@ -19,7 +19,7 @@
   # ];
 
 
-  services.flatpak.package = [
+  services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
    
   "com.google.Chrome"
