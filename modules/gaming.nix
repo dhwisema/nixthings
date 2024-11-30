@@ -15,7 +15,6 @@
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
       protonup-qt
-      proton-ge-bin
       gamemode
       wine
       steam-run

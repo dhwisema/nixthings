@@ -8,6 +8,9 @@
     libimobiledevice
     kitty
     kitty-themes
+
+
+    alejandra
   ];
 
   fonts.packages = with pkgs; [nerdfonts];
