@@ -12,15 +12,14 @@
 
   # Conditionally apply gaming packages and services if enabled
   config = lib.mkIf config.gaming.enable {
+    programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
-      steam
+      protonup-qt
+      proton-ge-bin
       gamemode
-      heroic
-      legendary-gl
       wine
       steam-run
       vulkan-tools
-      lutris
     ];
 
   };
