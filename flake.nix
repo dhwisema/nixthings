@@ -24,7 +24,7 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        nixos-hardware.nixosModules.lenovo-thinkpad-
+        nixos-hardware.nixosModules.lenovo-thinkpad-z
         
          nix-flatpak.nixosModules.nix-flatpak
 
