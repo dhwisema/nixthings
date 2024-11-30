@@ -21,9 +21,9 @@
 
   services.flatpak.package = [
     #{appId = ""; origin = "flathub";}
-   # {appId = "io.github.equicord.equibop"; origin = "flathub";}
-    {appId = "com.google.Chrome"; origin = "flathub";}
-    {appId = "camp.nook.nookdesktop"; origin = "flathub";}
+   
+  "com.google.Chrome"
+  "camp.nook.nookdesktop"
     
   ];
 
