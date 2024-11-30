@@ -11,6 +11,7 @@
 
 
     alejandra
+    nil
   ];
 
   fonts.packages = with pkgs; [nerdfonts];
