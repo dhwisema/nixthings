@@ -1,5 +1,7 @@
-{pkgs, nix-flatpak, ...}: {
-
+{
+  pkgs,
+  ...
+}: {
   #flatpak setup
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
@@ -10,30 +12,26 @@
     '';
   };
 
-
-
   # services.flatpak.packages = [
   #   { appId = "com.brave.Browser"; origin = "flathub";  }
   #   "com.obsproject.Studio"
   #   "im.riot.Riot"
   # ];
 
-
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
-   
-  "com.google.Chrome"
-  "camp.nook.nookdesktop"
-  "io.github.equicord.equibop"
+
+    "com.google.Chrome"
+    "camp.nook.nookdesktop"
+    "io.github.equicord.equibop"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
 
   services.flatpak.update.auto = {
-  enable = true;
-  onCalendar = "daily"; # Default value
+    enable = true;
+    onCalendar = "daily"; # Default value
   };
 
   services.flatpak.update.onActivation = true;
-  
 }

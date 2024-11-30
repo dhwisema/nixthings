@@ -19,5 +19,4 @@
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  
 }

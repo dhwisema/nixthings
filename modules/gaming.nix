@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Add an option to enable or disable gaming-related configurations
   options = {
     gaming.enable = lib.mkOption {
@@ -20,7 +23,5 @@
       steam-run
       vulkan-tools
     ];
-
   };
 }
-

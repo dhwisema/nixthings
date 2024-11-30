@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -12,12 +11,11 @@
     ./../modules/display_managers/gnome.nix
     ./../modules/display_managers/kde.nix
     ./../modules/flatpak.nix
-    
   ];
 
   fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
-];
+    (nerdfonts.override {fonts = ["FiraCode" "Hack"];})
+  ];
 
   #optional modules
   kde.enable = true;

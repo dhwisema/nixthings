@@ -1,5 +1,7 @@
-{ config, pkgs, lib, ... }: {
-    hardware.graphics = {
+{
+  ...
+}: {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };

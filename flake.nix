@@ -15,7 +15,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
@@ -39,7 +38,7 @@
       modules = [
         nixos-hardware.nixosModules.common-cpu-amd
         nixos-hardware.nixosModules.common-pc-ssd
-
+        
         nix-flatpak.nixosModules.nix-flatpak
 
         ./Hosts/desktop/configuration.nix
