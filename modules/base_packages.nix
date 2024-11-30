@@ -9,7 +9,7 @@
     kitty
     kitty-themes
 
-
+    yazi
     alejandra
     nil
   ];
