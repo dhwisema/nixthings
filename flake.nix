@@ -7,24 +7,17 @@
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
-    #home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
 
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
 
-    #stylix
-    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     self,
     nixpkgs,
     nixos-hardware,
-    home-manager,
-    stylix,
     waveforms
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
@@ -34,23 +27,6 @@
         waveforms.nixosModule
         ({users.users.howard.extraGroups = ["plugdev"];})
         ./Hosts/laptop/configuration.nix
-
-        home-manager.nixosModules.home-manager
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-
-          home-manager.users.howard = {
-            imports = [
-              ./Hosts/home.nix
-              stylix.homeManagerModules.stylix
-            ];
-          };
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
       ];
     };
 
@@ -61,22 +37,7 @@
         nixos-hardware.nixosModules.common-pc-ssd
 
         ./Hosts/desktop/configuration.nix
-
-        home-manager.nixosModules.home-manager
-
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.howard = {
-            imports = [
-              ./Hosts/home.nix
-              stylix.homeManagerModules.stylix
-            ];
-          };
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
+        
       ];
     };
     ## more configs
