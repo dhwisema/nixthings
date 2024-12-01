@@ -8,7 +8,6 @@
     libimobiledevice
     kitty
     kitty-themes
-    winetricks
 
     vscodium
     yazi

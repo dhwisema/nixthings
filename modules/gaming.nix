@@ -17,6 +17,7 @@
   config = lib.mkIf config.gaming.enable {
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
+      winetricks
       protonup-qt
       gamemode
       wine
