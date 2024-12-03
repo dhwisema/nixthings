@@ -23,6 +23,7 @@
       wine
       steam-run
       vulkan-tools
+      steam
     ];
   };
 }
