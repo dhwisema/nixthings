@@ -16,7 +16,6 @@
     #nvidia and open gl
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
-    hardware.graphics.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     #enable nvidia
     # Load nvidia driver for Xorg and Wayland
@@ -24,6 +23,7 @@
     hardware.nvidia = {
       # Modesetting is required.
       modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
 
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
       # Enable this if you have graphical corruption issues or application crashes after waking
