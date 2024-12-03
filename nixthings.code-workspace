@@ -3,5 +3,9 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"nix.enableLanguageServer": true,
+		"nix.formatterPath": ""
+	}
 }

@@ -25,5 +25,11 @@
       vulkan-tools
       steam
     ];
+    programs.nix-ld = {
+      enable = true;
+      libraries =
+        (pkgs.steam.args.multiPkgs pkgs)
+        ++ (with pkgs; [xorg.libxcb libxkbcommon wayland]);
+    };
   };
 }
