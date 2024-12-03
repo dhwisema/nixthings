@@ -15,7 +15,10 @@
     nil
   ];
 
-  fonts.packages = with pkgs; [nerd-fonts.hack];
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    nerd-fonts.FiraCode
+  ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
