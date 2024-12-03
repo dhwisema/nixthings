@@ -16,6 +16,7 @@
     #nvidia and open gl
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
+    hardware.graphics.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     #enable nvidia
     # Load nvidia driver for Xorg and Wayland
