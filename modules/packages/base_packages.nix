@@ -5,7 +5,7 @@
     git
     lazygit
     libreoffice-fresh
-    libimobiledevice
+
     kitty
     kitty-themes
 

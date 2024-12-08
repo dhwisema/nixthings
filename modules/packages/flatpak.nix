@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   #flatpak setup
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
@@ -11,12 +8,6 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  # services.flatpak.packages = [
-  #   { appId = "com.brave.Browser"; origin = "flathub";  }
-  #   "com.obsproject.Studio"
-  #   "im.riot.Riot"
-  # ];
 
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
