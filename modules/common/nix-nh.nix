@@ -1,8 +1,14 @@
-{pkgs}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     nix
     cachix
   ];
+  nixpkgs.config.allowUnfree = true;
 
   programs.nh = {
     enable = true;
