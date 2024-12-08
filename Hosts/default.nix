@@ -7,17 +7,15 @@
     ./../modules/display_managers/gnome.nix
     ./../modules/display_managers/kde.nix
     ./../modules/packages/flatpak.nix
-    ./../modules/common/sound.nix
     ./../modules/common/time.nix
     ./../modules/common/nix-nh.nix
   ];
 
   #optional modules
   hardware.bluetooth.enable = true;
-  sound.enable = true;
   kde.enable = true;
 
-  #everything else
+  #networking
   networking.hostName = lib.mkDefault "default-hostname";
   networking.networkmanager.enable = true;
 
@@ -35,9 +33,18 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   services.libinput.enable = true;
 
+  #sound
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  #state dont change unless ness
   system.stateVersion = "24.05";
 }
