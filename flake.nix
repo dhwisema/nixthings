@@ -48,7 +48,7 @@
 
         #lix 
         lix-module.nixosModules.default
-        
+
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
         #ssd trim
@@ -64,4 +64,5 @@
     #modules = [];
     #};
   };
+};
 }
