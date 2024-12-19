@@ -12,8 +12,8 @@
   ];
 
   #optional modules
-  hardware.bluetooth.enable = true;
-  kde.enable = true;
+  #bluetooth device specific
+  #de is device specific
 
   #networking
   networking.hostName = lib.mkDefault "default-hostname";
