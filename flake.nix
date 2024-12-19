@@ -8,7 +8,7 @@
     #flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.5.0"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     #waveforms
-    waveforms.url = "github:liff/waveforms-flake";
+    #waveforms.url = "github:liff/waveforms-flake";
 
     #lix. 
     lix-module = {
@@ -22,7 +22,7 @@
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
-    waveforms,
+    #waveforms,
     lix-module
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
@@ -36,8 +36,8 @@
 
         nix-flatpak.nixosModules.nix-flatpak
 
-        waveforms.nixosModule
-        {users.users.howard.extraGroups = ["plugdev"];}
+        #waveforms.nixosModule
+        #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
       ];
     };
