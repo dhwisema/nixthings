@@ -1,4 +1,4 @@
-{
+
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
@@ -64,5 +64,5 @@
     #modules = [];
     #};
   };
-};
 }
+
