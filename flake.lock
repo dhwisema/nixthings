@@ -116,25 +116,12 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-AKU6qqskl0yf2+JdRdD0cfxX4b9x3KKV5RqA6wijmPM=",
-        "path": "/nix/store/22r7q7s9552gn1vpjigkbhfgcvhsrz68-source",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
     "root": {
       "inputs": {
         "lix-module": "lix-module",
         "nix-flatpak": "nix-flatpak",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
-        "waveforms": "waveforms"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {
@@ -149,24 +136,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "waveforms": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1728376004,
-        "narHash": "sha256-mTib24PapKexOaTUNsGiTtZFaXR2LYaQazVBGzlnAig=",
-        "owner": "liff",
-        "repo": "waveforms-flake",
-        "rev": "1d58c63da1ce63a2896d13a3d66238ff9aca89e4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "liff",
-        "repo": "waveforms-flake",
         "type": "github"
       }
     }
