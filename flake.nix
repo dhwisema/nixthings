@@ -1,4 +1,4 @@
-
+{
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
@@ -48,7 +48,7 @@
 
         #lix 
         lix-module.nixosModules.default
-
+        
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
         #ssd trim
@@ -58,11 +58,5 @@
         ./Hosts/desktop/configuration.nix
       ];
     };
-    ## more configs
-    #  nixosConfigurations = {
-    #  newdevice = nixpkgs.lib.nixosSystem {
-    #modules = [];
-    #};
   };
 }
-
