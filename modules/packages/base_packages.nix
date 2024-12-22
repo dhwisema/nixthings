@@ -16,8 +16,9 @@
   ];
 
   fonts.packages = with pkgs; [
-    nerd-fonts.hack
-    nerd-fonts.fira-code
+    #nerd-fonts.hack
+    #nerd-fonts.fira-code
+    fira-code-nerdfont
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
