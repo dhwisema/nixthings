@@ -1,4 +1,4 @@
-{pkgs,...}: {
+{pkgs,lib,...}: {
   imports = [
     ./hardware-configuration.nix
     ./../default.nix
@@ -8,12 +8,8 @@
   hardware.bluetooth.enable = true;
   networking.hostName = "laptop";
 
+  #iso use only networking.networkmanager.enable = lib.mkForce false;
+  
 
-  hardware.graphics.extraPackages = with pkgs; [
-  amdvlk
-  ];
-  # For 32 bit applications 
-  hardware.graphics.extraPackages32 = with pkgs; [
-  driversi686Linux.amdvlk
-  ];
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
 }
