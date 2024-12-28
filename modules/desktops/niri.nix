@@ -23,6 +23,7 @@
         swaynotificationcenter
         swaybg
         gnome-keyring
+        fuzzel
 
     ];
 
