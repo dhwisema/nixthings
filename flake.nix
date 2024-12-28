@@ -8,66 +8,74 @@
     #flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
 
+
+    ghostty.url = "github:ghostty-org/ghostty";
+  
+
     #home-manager till i decide to nuke it again
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    stylix.url = "github:danth/stylix";
+
+    niri = {url = "github:sodiboo/niri-flake";};
+
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
-
-    #lix. 
-    # lix-module = {
-    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs = {
     self,
+    ghostty,
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
     home-manager,
+    niri,
+    ...
     #waveforms,
-    #lix-module
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        #lix
-        #lix-module.nixosModules.default
-        
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
 
+        {
+          environment.systemPackages = [
+            ghostty.packages.x86_64-linux.default
+          ];
+        }
         nix-flatpak.nixosModules.nix-flatpak
 
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
 
+        {
+          nixpkgs.overlays = [niri.overlays.niri];
+          environment.systemPackages = [niri.packages.${nixpkgs.system}.xwayland-satellite-unstable];
+        }
+
 
 
         home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard = import ./Hosts/laptop/home.nix;
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.howard = import ./Hosts/laptop/home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
-
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
       ];
     };
 
     nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-
-        #lix 
+        #lix
         #lix-module.nixosModules.default
-        
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
         #ssd trim
@@ -76,16 +84,21 @@
 
         ./Hosts/desktop/configuration.nix
 
+        {
+          environment.systemPackages = [
+            ghostty.packages.x86_64-linux.default
+          ];
+        }
 
         home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard = import ./Hosts/desktop/home.nix;
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.howard = import ./Hosts/desktop/home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
       ];
     };
   };
