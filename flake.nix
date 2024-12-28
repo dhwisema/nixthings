@@ -32,6 +32,7 @@
     nixos-hardware,
     home-manager,
     niri,
+    stylix,
     ...
     #waveforms,
   }: {
@@ -40,8 +41,7 @@
       modules = [
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
-
-
+        stylix.nixosModules.stylix
         niri.nixosModules.niri
 
         {
@@ -66,7 +66,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard = import ./Hosts/laptop/home.nix;
+          home-manager.users.howard = import ./Hosts/desktop/home.nix {inherit niri;};
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix

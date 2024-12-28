@@ -1,6 +1,13 @@
-{ self, lib, user, config, pkgs, ... }:
-
 {
+  self,
+  lib,
+  user,
+  config,
+  pkgs,
+  ...
+}: {
+ 
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "howard";
@@ -15,23 +22,23 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
+  #stylix.enable = true;
 
-  stylix.enable = true;
-  
-  programs.niri = { 
-    enable = true;
-    settings = {
+  # niri = {
+  #   enable = true;
+  # };
 
-    };  
-  
-   };
   stylix.targets.niri.enable = true;
 
-
-    home.packages = [
-        pkgs.fuzzel
+  home.packages = with pkgs; [
+    goofcord
+    easyeffects
+    wl-clipboard-rs
+    satty
+    xwayland-satellite
+    brillo
+    playerctl
   ];
-  
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
