@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
+{ self, lib, user, config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "howard";
   home.homeDirectory = "/home/howard";
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -15,6 +14,24 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "24.11";
+
+
+  stylix.enable = true;
+  
+  programs.niri = { 
+    enable = true;
+    settings = {
+
+    };  
+  
+   };
+  stylix.targets.niri.enable = true;
+
+
+    home.packages = [
+        pkgs.fuzzel
+  ];
+  
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

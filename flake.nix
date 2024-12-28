@@ -50,10 +50,7 @@
           ];
         }
         nix-flatpak.nixosModules.nix-flatpak
-                {
-          programs.niri.enable = true;
-          
-        }
+
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
