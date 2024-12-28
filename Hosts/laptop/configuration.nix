@@ -9,7 +9,6 @@
   networking.hostName = "laptop";
 
   #iso use only networking.networkmanager.enable = lib.mkForce false;
-  
 
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
 }

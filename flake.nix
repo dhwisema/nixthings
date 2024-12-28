@@ -6,7 +6,7 @@
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.5.0"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
 
