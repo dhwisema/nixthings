@@ -16,10 +16,10 @@
     #waveforms.url = "github:liff/waveforms-flake";
 
     #lix. 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix-module = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
@@ -29,13 +29,13 @@
     nixos-hardware,
     home-manager,
     #waveforms,
-    lix-module
+    #lix-module
   }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         #lix
-        lix-module.nixosModules.default
+        #lix-module.nixosModules.default
         
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
@@ -66,7 +66,7 @@
       modules = [
 
         #lix 
-        lix-module.nixosModules.default
+        #lix-module.nixosModules.default
         
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
