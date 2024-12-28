@@ -2,11 +2,16 @@
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
+
+    #home-manager till i decide to nuke it again
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
 
@@ -22,6 +27,7 @@
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
+    home-manager,
     #waveforms,
     lix-module
   }: {
@@ -39,6 +45,19 @@
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
+
+
+
+        home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jdoe = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+
       ];
     };
 
@@ -56,6 +75,17 @@
         nix-flatpak.nixosModules.nix-flatpak
 
         ./Hosts/desktop/configuration.nix
+
+
+        home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jdoe = import ./../home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
       ];
     };
   };
