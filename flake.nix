@@ -41,21 +41,27 @@
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
 
+
+        niri.nixosModules.niri
+
         {
           environment.systemPackages = [
             ghostty.packages.x86_64-linux.default
           ];
         }
         nix-flatpak.nixosModules.nix-flatpak
-
+                {
+          programs.niri.enable = true;
+          
+        }
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
 
-        {
-          nixpkgs.overlays = [niri.overlays.niri];
-          environment.systemPackages = [niri.packages.${nixpkgs.system}.xwayland-satellite-unstable];
-        }
+        # {
+        #   nixpkgs.overlays = [niri.overlays.niri];
+        #   environment.systemPackages = [niri.packages.nixpkgs.xwayland-satellite-unstable];
+        # }
 
 
 
