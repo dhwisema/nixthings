@@ -6,9 +6,6 @@
     lazygit
     libreoffice-fresh
 
-    kitty
-    kitty-themes
-
     vscodium
     yazi
     alejandra
