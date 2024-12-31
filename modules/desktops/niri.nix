@@ -26,6 +26,8 @@
         swaybg
         gnome-keyring
         fuzzel
+        mako
+        waybar
 
     ];
 #   systemd = {
