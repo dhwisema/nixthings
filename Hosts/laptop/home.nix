@@ -17,7 +17,7 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
-  niri.enable = true;
+ 
 
 
   home.packages = with pkgs; [

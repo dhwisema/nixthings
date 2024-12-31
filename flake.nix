@@ -8,9 +8,7 @@
     #flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
 
-
     ghostty.url = "github:ghostty-org/ghostty";
-  
 
     #home-manager till i decide to nuke it again
     home-manager.url = "github:nix-community/home-manager";
@@ -18,7 +16,7 @@
 
     stylix.url = "github:danth/stylix";
 
-    niri = {url = "github:sodiboo/niri-flake";};
+    niri.url = "github:sodiboo/niri-flake";
 
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
@@ -54,13 +52,21 @@
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
-
-        # {
-        #   nixpkgs.overlays = [niri.overlays.niri];
-        #   environment.systemPackages = [niri.packages.nixpkgs.xwayland-satellite-unstable];
-        # }
-
-
+        
+        niri.nixosModules.niri
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [niri.overlays.niri];
+          #programs.niri.package = pkgs.niri-unstable;
+           programs.niri.package = pkgs.niri-stable;
+          # programs.niri.package = pkgs.niri-unstable.override {src = niri-working-tree;};
+          environment.variables.NIXOS_OZONE_WL = "1";
+          # environment.systemPackages = with pkgs; [
+          #   wl-clipboard
+          #   wayland-utils
+          #   libsecret
+          #   cage
+          # ];
+        })
 
         home-manager.nixosModules.home-manager
         {
@@ -97,8 +103,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard =  {pkgs, ... }: {imports = [./Hosts/desktop/home.nix
-          niri.homeModules.niri]; }; 
+          home-manager.users.howard = {pkgs, ...}: {
+            imports = [
+              ./Hosts/desktop/home.nix
+              niri.homeModules.niri
+            ];
+          };
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
