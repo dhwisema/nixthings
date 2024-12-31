@@ -1,7 +1,6 @@
 {
   pkgs,config,lib,...
 }: {
- 
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -16,15 +15,6 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "24.11";
-
-  home.packages = with pkgs; [
-    wl-clipboard-rs
-    satty
-    xwayland-satellite
-    brillo
-    playerctl
-  ];
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

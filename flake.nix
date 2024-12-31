@@ -16,8 +16,6 @@
 
     stylix.url = "github:danth/stylix";
 
-    niri.url = "github:sodiboo/niri-flake";
-
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
   };
@@ -29,7 +27,6 @@
     nix-flatpak,
     nixos-hardware,
     home-manager,
-    niri,
     stylix,
     ...
     #waveforms,
@@ -40,7 +37,6 @@
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
         stylix.nixosModules.stylix
-        niri.nixosModules.niri
 
         {
           environment.systemPackages = [
@@ -52,8 +48,6 @@
         #waveforms.nixosModule
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
-        
-
 
         home-manager.nixosModules.home-manager
         {
@@ -62,7 +56,6 @@
           home-manager.users.howard = {pkgs, ...}: {
             imports = [
               ./Hosts/laptop/home.nix
-              #niri.homeModules.niri
             ];
           };
 
@@ -95,7 +88,6 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
