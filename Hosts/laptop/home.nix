@@ -17,9 +17,6 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
- 
-  
-
   home.packages = with pkgs; [
     wl-clipboard-rs
     satty
@@ -27,6 +24,7 @@
     brillo
     playerctl
   ];
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
