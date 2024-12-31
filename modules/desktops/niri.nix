@@ -13,6 +13,8 @@
   };
   config = lib.mkIf config.niri-s.enable {
 
+    programs.niri.enable = true;
+    environment.variables.NIXOS_OZONE_WL = "1";
     environment.systemPackages = with pkgs; [
 
         swaylock
@@ -26,7 +28,6 @@
         fuzzel
 
     ];
-  programs.niri.enable = true;
 #   systemd = {
 #   user.services.polkit-gnome-authentication-agent-1 = {
 #     description = "polkit-gnome-authentication-agent-1";

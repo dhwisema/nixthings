@@ -53,26 +53,18 @@
         #{users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
         
-        niri.nixosModules.niri
-        ({pkgs, ...}: {
-          nixpkgs.overlays = [niri.overlays.niri];
-          #programs.niri.package = pkgs.niri-unstable;
-           programs.niri.package = pkgs.niri-stable;
-          # programs.niri.package = pkgs.niri-unstable.override {src = niri-working-tree;};
-          environment.variables.NIXOS_OZONE_WL = "1";
-          # environment.systemPackages = with pkgs; [
-          #   wl-clipboard
-          #   wayland-utils
-          #   libsecret
-          #   cage
-          # ];
-        })
+
 
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard = import ./Hosts/laptop/home.nix;
+          home-manager.users.howard = {pkgs, ...}: {
+            imports = [
+              ./Hosts/laptop/home.nix
+              #niri.homeModules.niri
+            ];
+          };
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
@@ -103,12 +95,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard = {pkgs, ...}: {
-            imports = [
-              ./Hosts/desktop/home.nix
-              niri.homeModules.niri
-            ];
-          };
+          
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
