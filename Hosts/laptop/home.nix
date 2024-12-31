@@ -1,9 +1,5 @@
 {
-  self,
-  lib,
-  user,
-  config,
-  pkgs
+  pkgs,config,lib,...
 }: {
  
 
@@ -21,17 +17,10 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
-  #stylix.enable = true;
 
-  niri = {
-    enable = true;
-  };
 
-  stylix.targets.niri.enable = true;
 
   home.packages = with pkgs; [
-    goofcord
-    easyeffects
     wl-clipboard-rs
     satty
     xwayland-satellite

@@ -66,7 +66,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard = import ./Hosts/desktop/home.nix {inherit niri;};
+          home-manager.users.howard = import ./Hosts/laptop/home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
@@ -97,7 +97,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.howard = import ./Hosts/desktop/home.nix;
+          home-manager.users.howard =  {pkgs, ... }: {imports = [./Hosts/desktop/home.nix
+          niri.homeModules.niri]; }; 
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
