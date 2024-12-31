@@ -3,8 +3,7 @@
   lib,
   user,
   config,
-  pkgs,
-  ...
+  pkgs
 }: {
  
 
@@ -24,9 +23,9 @@
 
   #stylix.enable = true;
 
-  # niri = {
-  #   enable = true;
-  # };
+  niri = {
+    enable = true;
+  };
 
   stylix.targets.niri.enable = true;
 
