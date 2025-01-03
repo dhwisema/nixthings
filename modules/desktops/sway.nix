@@ -23,7 +23,7 @@
       waybar # bar
       kanshi #displau
       rofi-wayland # launcher as well???abort
-      sunset # white temp control
+      wlsunset # white temp control
       imv #image view
     ];
 

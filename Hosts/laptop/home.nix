@@ -1,5 +1,5 @@
 {
-  pkgs,config,lib, options
+  pkgs,config,lib,options,... #idfk something with the ... makes it work whne otherwise no
 }: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
