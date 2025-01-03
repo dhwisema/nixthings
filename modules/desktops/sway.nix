@@ -19,7 +19,6 @@
       mako # notification system developed by swaywm maintainer
       sway-contrib.grimshot # screenshot functions
       swww #wallpapers and shi
-      wl-clipboard-history #clipboard history
       fuzzel #launcher
       waybar # bar
       kanshi #displau
