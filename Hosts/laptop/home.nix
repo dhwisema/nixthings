@@ -1,5 +1,5 @@
 {
-  pkgs,config,lib
+  pkgs,config,lib, options
 }: {
 
   # Home Manager needs a bit of information about you and the
