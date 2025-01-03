@@ -14,7 +14,7 @@
 
   config = lib.mkIf config.sway.enable {
     environment.systemPackages = with pkgs; [
-      brightnessctl
+      brightnessctl #brightness control may be redundant
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
       mako # notification system developed by swaywm maintainer
       grimshot # screenshot functions
@@ -24,7 +24,6 @@
       waybar # bar
       kanshi #displau
       rofi-wayland # launcher as well???abort
-      wl
       sunset # white temp control
       imv #image view
     ];
