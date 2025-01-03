@@ -9,7 +9,7 @@
     ./../modules/packages/flatpak.nix
     ./../modules/common/time.nix
     ./../modules/common/nix-nh.nix
-    ./../modules/desktops/sway.nix
+    ./../modules/desktops/sway/sway.nix
   ];
 
   #optional modules

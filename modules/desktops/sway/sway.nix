@@ -13,6 +13,9 @@
   };
 
   config = lib.mkIf config.sway.enable {
+
+    security.polkit.enable = true; #AUTH STUFF
+
     environment.systemPackages = with pkgs; [
       brightnessctl #brightness control may be redundant
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
