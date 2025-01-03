@@ -6,7 +6,6 @@
     ./../modules/packages/kernel.nix
     ./../modules/desktops/gnome.nix
     ./../modules/desktops/kde.nix
-    ./../modules/desktops/niri.nix
     ./../modules/packages/flatpak.nix
     ./../modules/common/time.nix
     ./../modules/common/nix-nh.nix
