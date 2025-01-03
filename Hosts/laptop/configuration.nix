@@ -6,6 +6,7 @@
   gnome.enable = true;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
+  sway.enable = true;
   networking.hostName = "laptop";
 
 
