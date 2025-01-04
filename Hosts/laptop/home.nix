@@ -1,7 +1,9 @@
 {
-  pkgs,config,lib,...
+  pkgs,config,lib,options,... #idfk something with the ... makes it work whne otherwise no
 }: {
-
+  imports = [
+    ./../../modules/desktops/sway/sway-hm.nix
+  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "howard";
@@ -18,4 +20,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  wayland.windowManager.sway.enable = true;
 }
