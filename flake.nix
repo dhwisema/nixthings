@@ -16,6 +16,10 @@
 
     stylix.url = "github:danth/stylix";
 
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
+  
+
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
   };
@@ -28,9 +32,14 @@
     nixos-hardware,
     home-manager,
     stylix,
+    nixpkgs-wayland,
     ...
     #waveforms,
-  }: {
+  }: 
+  let
+  overlays.nixpkgs = [nixpkgs-wayland];
+  in
+  {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
