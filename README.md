@@ -8,4 +8,8 @@ also also nix run 'gitlab:ncsulug/eduroam-script'
 
 if chrome has an issue after hostname change delete a lock file in .config
 
+fix flatpak issues
+
+flatpak list --columns=application | xargs -I %s -- flatpak run --command=fc-cache %s -f -v
+
 testing 

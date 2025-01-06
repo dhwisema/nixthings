@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   programs.swaylock.enable = true;
   programs.swaylock.settings = {
     color = "808080";
@@ -15,15 +14,15 @@
     show-failed-attempts = true;
   };
 
-  
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
     config = rec {
-      keybindings = {
-    "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
-    "${modifier}+b" = "flatpak run com.google.Chrome";
-    "${modifier}+c" = "exec ${pkgs.vscodium}/bin/vscodium";
+      keybindings = lib.mkoptionDefault {
+        #can pass multiple options via ''
+        "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
+        "${modifier}+b" = "flatpak run com.google.Chrome '--ozone-platform-hint=auto'";
+        "${modifier}+c" = "exec ${pkgs.vscodium}/bin/vscodium '--ozone-platform-hint=auto'";
       };
       modifier = "Mod4";
       terminal = "ghostty";
