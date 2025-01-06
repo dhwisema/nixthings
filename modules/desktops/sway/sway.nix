@@ -28,6 +28,7 @@
       wldash
       #wofi
       fuzzel
+      perl540Packages.Apppapersway
 
     ];
 
