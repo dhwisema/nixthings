@@ -11,6 +11,8 @@
  
 
     "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
+    "${modifier}+b" = "flatpak run com.google.Chrome";
+    "${modifier}+c" = "exec ${pkgs.codium}/bin/codium";
   }
 {
   programs.swaylock.enable = true;
