@@ -9,7 +9,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep 3";
-    flake = "home/howard/nix-things";
+    flake = "home/howard/nix_things";
   };
 
   nix = {
