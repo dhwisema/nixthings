@@ -17,17 +17,17 @@
     security.polkit.enable = true; #AUTH STUFF
 
     environment.systemPackages = with pkgs; [
-      brightnessctl #brightness control may be redundant
-      wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-      mako # notification system developed by swaywm maintainer
-      sway-contrib.grimshot # screenshot functions
-      swww #wallpapers and shi
-      fuzzel #launcher
-      waybar # bar
-      kanshi #displau
-      rofi-wayland # launcher as well???abort
-      wlsunset # white temp control
-      imv #image view
+      mako #notif
+      alacritty #default term will change later
+      gebaar-libinput # touchpad gesture daemon
+      i3status-rust # i3status
+      imv # image viewer
+      kanshi # display config
+      swww #wakkoaoer
+      waybar
+      wldash
+      wofi
+
     ];
 
     # Enable the gnome-keyring secrets vault.
