@@ -4,16 +4,6 @@
   config,
   ...
 }:
-
-    let
-    modifier = config.wayland.windowManager.sway.config.modifier;
-    in lib.mkOptionDefault {
- 
-
-    "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
-    "${modifier}+b" = "flatpak run com.google.Chrome";
-    "${modifier}+c" = "exec ${pkgs.codium}/bin/codium";
-  }
 {
   programs.swaylock.enable = true;
   programs.swaylock.settings = {
@@ -30,6 +20,11 @@
     enable = true;
     wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
     config = rec {
+      keybindings = {
+    "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
+    "${modifier}+b" = "flatpak run com.google.Chrome";
+    "${modifier}+c" = "exec ${pkgs.codium}/bin/codium";
+      };
       modifier = "Mod4";
       terminal = "ghostty";
       startup = [
