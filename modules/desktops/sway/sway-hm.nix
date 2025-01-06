@@ -20,7 +20,7 @@
     config = rec {
       keybindings = lib.mkOptionDefault {
         #can pass multiple options via ''
-        "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
+        "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu'";
         "${modifier}+b" = "flatpak run com.google.Chrome '--ozone-platform-hint=auto'";
         "${modifier}+c" = "exec ${pkgs.vscodium}/bin/vscodium '--ozone-platform-hint=auto'";
       };
