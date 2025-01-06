@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nix
     cachix
@@ -9,7 +9,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep 3";
-    flake = "home/howard/nix_things";
+    flake = "/home/howard/nix_things";
   };
 
   nix = {
