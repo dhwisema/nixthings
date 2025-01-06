@@ -23,7 +23,7 @@
       keybindings = {
     "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel '--dmenu' '--prompt=select window: '";
     "${modifier}+b" = "flatpak run com.google.Chrome";
-    "${modifier}+c" = "exec ${pkgs.codium}/bin/codium";
+    "${modifier}+c" = "exec ${pkgs.vscodium}/bin/vscodium";
       };
       modifier = "Mod4";
       terminal = "ghostty";
