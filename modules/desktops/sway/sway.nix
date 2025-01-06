@@ -26,7 +26,8 @@
       swww #wakkoaoer
       waybar
       wldash
-      wofi
+      #wofi
+      fuzzel
 
     ];
 
