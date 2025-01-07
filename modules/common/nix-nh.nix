@@ -12,8 +12,9 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
+    clean.dates = "weekly";
     clean.extraArgs = "--keep 3";
-    flake = "/home/howard/nix_things/";
+    flake = /home/howard/nix_things;
   };
 
   nix = {
