@@ -13,7 +13,7 @@
   ];
 
   #optional modules
-
+  stylix.enable = true;
   #networking
   networking.hostName = lib.mkDefault "default-hostname";
   networking.networkmanager.enable = true;
