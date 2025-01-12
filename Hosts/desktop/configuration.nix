@@ -4,7 +4,7 @@
     ./../../modules/default.nix
   ];
   kde.enable = true;
-
+  niri.enable = true;
   gaming.enable = true;
   nvidia.enable = true;
 
