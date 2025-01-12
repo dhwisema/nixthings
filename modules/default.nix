@@ -1,15 +1,15 @@
 {lib, ...}: {
   imports = [
-    ./modules/graphics/nvidia.nix
-    ./modules/packages/base_packages.nix
-    ./modules/packages/gaming.nix
-    ./modules/packages/kernel.nix
-    ./modules/desktops/gnome.nix
-    ./modules/desktops/kde.nix
-    ./modules/packages/flatpak.nix
-    ./modules/common/time.nix
-    ./modules/common/nix-nh.nix
-    ./modules/desktops/niri/niri.nix
+    ./graphics/nvidia.nix
+    .packages/base_packages.nix
+    ./packages/gaming.nix
+    ./packages/kernel.nix
+    ./desktops/gnome.nix
+    ./desktops/kde.nix
+    ./packages/flatpak.nix
+    ./common/time.nix
+    ./common/nix-nh.nix
+    ./desktops/niri/niri.nix
   ];
 
   #optional modules
