@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ./../../modules/default.nix
   ];
-  kde.enable = true;
+  gnome.enable = true;
   niri.enable = true;
   gaming.enable = true;
   nvidia.enable = true;
