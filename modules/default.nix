@@ -1,7 +1,7 @@
 {lib, ...}: {
   imports = [
     ./graphics/nvidia.nix
-    .packages/base_packages.nix
+    ./packages/base_packages.nix
     ./packages/gaming.nix
     ./packages/kernel.nix
     ./desktops/gnome.nix
