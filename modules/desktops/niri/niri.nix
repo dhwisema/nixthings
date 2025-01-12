@@ -3,6 +3,7 @@
   config,
   pkgs,
   lib,
+  niri,
   ...
 }: {
   options = {
@@ -22,5 +23,8 @@
       swaylock
       sway-contrib.grimshot
     ];
+    programs.niri.enable = true;
+    nixpkgs.overlays = [niri.overlays.niri];
+    programs.niri.pkgs = pkgs.niri-stable;
   };
 }
