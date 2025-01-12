@@ -6,7 +6,7 @@
   ... #idfk something with the ... makes it work whne otherwise no
 }: {
   imports = [
-    ./../../modules/desktops/sway/sway-hm.nix
+    ./../../modules/common/default-hm.nix
     ./../../modules/stylix/stylix.nix
   ];
   # Home Manager needs a bit of information about you and the
