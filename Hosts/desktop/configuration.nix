@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/common/default.nix
+    ./../../modules/default.nix
   ];
   kde.enable = true;
   sway.enable = true;

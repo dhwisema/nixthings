@@ -1,14 +1,17 @@
-{pkgs,lib,...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
-    ./../default.nix
+    ./../../modules/default.nix
   ];
   gnome.enable = true;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
   sway.enable = true;
   networking.hostName = "laptop";
-
 
   #iso use only networking.networkmanager.enable = lib.mkForce false;
 
