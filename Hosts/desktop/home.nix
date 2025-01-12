@@ -7,8 +7,7 @@
   home.username = "howard";
   home.homeDirectory = "/home/howard";
   imports = [
-    ./../../modules/common/default-hm.nix
-    ./../../modules/stylix/stylix.nix
+    ./../../modules/default-hm.nix
   ];
 
   # This value determines the Home Manager release that your

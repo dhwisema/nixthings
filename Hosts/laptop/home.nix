@@ -7,7 +7,6 @@
 }: {
   imports = [
     ./../../modules/common/default-hm.nix
-    ./../../modules/stylix/stylix.nix
   ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
