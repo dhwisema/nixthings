@@ -1,10 +1,15 @@
-{ config, pkgs }:
-
 {
+  config,
+  pkgs,
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "howard";
   home.homeDirectory = "/home/howard";
+  imports = [
+    ./../../modules/desktops/sway/sway-hm.ni
+    ./../../modules/stylix/stylix.nix
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

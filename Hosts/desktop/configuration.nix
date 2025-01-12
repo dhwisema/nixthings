@@ -7,7 +7,6 @@
   gaming.enable = true;
   nvidia.enable = true;
 
-
   hardware.bluetooth.enable = true;
 
   networking.hostName = "deskbox";
