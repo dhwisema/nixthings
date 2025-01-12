@@ -21,6 +21,5 @@
       sway-contrib.grimshot
     ];
     programs.niri.enable = true;
-    programs.niri.package = pkgs.niri-stable;
   };
 }
