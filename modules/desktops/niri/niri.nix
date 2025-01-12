@@ -3,7 +3,6 @@
   config,
   pkgs,
   lib,
-  niri,
   ...
 }: {
   options = {
@@ -14,7 +13,6 @@
     };
   };
   config = lib.mkIf config.niri.enable {
-    universal.modules = [niri.nixosModules.niri];
     environment.systemPackages = with pkgs; [
       fuzzel
       mako
@@ -23,7 +21,6 @@
       sway-contrib.grimshot
     ];
     programs.niri.enable = true;
-    nixpkgs.overlays = [niri.overlays.niri];
-    programs.niri.pkgs = pkgs.niri-stable;
+    programs.niri.package = pkgs.niri-stable;
   };
 }

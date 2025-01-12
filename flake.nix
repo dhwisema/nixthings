@@ -31,9 +31,12 @@
     home-manager,
     stylix,
     niri,
+    lib,
     ...
     #waveforms,
-  }: {
+  }: let
+    nixpkgs.overlays = [niri.overlays.niri];
+  in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
