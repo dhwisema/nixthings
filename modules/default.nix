@@ -10,6 +10,7 @@
     ./common/time.nix
     ./common/nix-nh.nix
     ./desktops/niri/niri.nix
+    ./stylix/stylix.nix
   ];
 
   #optional modules
