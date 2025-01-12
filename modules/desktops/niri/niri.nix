@@ -14,8 +14,7 @@
     };
   };
   config = lib.mkIf config.niri.enable {
-    environment.gnome.excludePackages = with pkgs; [
-    ];
+    universal.modules = [niri.nixosModules.niri];
     environment.systemPackages = with pkgs; [
       fuzzel
       mako
