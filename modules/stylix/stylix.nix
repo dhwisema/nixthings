@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  stylix,
   ...
 }: {
   stylix.enable = true;

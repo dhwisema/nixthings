@@ -77,6 +77,8 @@
         # niri
         niri.nixosModules.niri
 
+        stylix.nixosModules.stylix
+
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
         #ssd trim
