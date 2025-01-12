@@ -30,7 +30,6 @@
     nixos-hardware,
     home-manager,
     stylix,
-    nixpkgs-wayland,
     niri,
     ...
     #waveforms,
