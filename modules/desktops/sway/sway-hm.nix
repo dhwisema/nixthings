@@ -18,7 +18,7 @@
     enable = true;
     wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
     config = rec {
-      keybindings = lib./mkOptionDefault {
+      keybindings = lib.mkOptionDefault {
         #can pass multiple options via ''
         "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
         "${modifier}+b" = "flatpak run com.google.Chrome '--ozone-platform-hint=auto'";
