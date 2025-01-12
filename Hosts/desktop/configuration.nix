@@ -4,7 +4,7 @@
     ./../../modules/default.nix
   ];
   kde.enable = true;
-  sway.enable = true;
+
   gaming.enable = true;
   nvidia.enable = true;
 
