@@ -16,7 +16,7 @@
 
     stylix.url = "github:danth/stylix";
 
-    niri = "github:sodiboo/niri-flake";
+    niri.url = "github:sodiboo/niri-flake";
 
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
