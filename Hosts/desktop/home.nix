@@ -7,7 +7,7 @@
   home.username = "howard";
   home.homeDirectory = "/home/howard";
   imports = [
-    ./../../modules/desktops/sway/sway-hm.ni
+    ./../../modules/desktops/sway/sway-hm.nix
     ./../../modules/stylix/stylix.nix
   ];
 
