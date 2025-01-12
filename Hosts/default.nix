@@ -1,5 +1,6 @@
 {lib, ...}: {
   imports = [
+    ./../modules/stylix/stylix.nix
     ./../modules/graphics/nvidia.nix
     ./../modules/packages/base_packages.nix
     ./../modules/packages/gaming.nix
@@ -13,8 +14,6 @@
   ];
 
   #optional modules
-
-
 
   #networking
   networking.hostName = lib.mkDefault "default-hostname";
