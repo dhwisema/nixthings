@@ -14,3 +14,6 @@ flatpak list --columns=application | xargs -I %s -- flatpak run --command=fc-cac
 testing 
 
 wallpapers throguh::https://github.com/NotAShelf/wallpkgs 
+
+if hm breaks run
+journalctl -xe --unit home-manager-howard
