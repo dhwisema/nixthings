@@ -9,6 +9,7 @@
     ./../modules/packages/flatpak.nix
     ./../modules/common/time.nix
     ./../modules/common/nix-nh.nix
+    ./../modules/desktops/niri.nix
   ];
 
   #optional modules

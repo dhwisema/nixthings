@@ -16,9 +16,7 @@
 
     stylix.url = "github:danth/stylix";
 
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-    nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
-  
+    niri = "github:sodiboo/niri-flake";
 
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
@@ -33,16 +31,16 @@
     home-manager,
     stylix,
     nixpkgs-wayland,
+    niri,
     ...
     #waveforms,
-  }: 
-  let
-  overlays.nixpkgs = [nixpkgs-wayland];
-  in
-  {
+  }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        #niri
+        niri.nixosModules.niri
+
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
         stylix.nixosModules.stylix
@@ -77,8 +75,9 @@
     nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        #lix
-        #lix-module.nixosModules.default
+        # niri
+        niri.nixosModules.niri
+
         #sets scheduling things for kernel
         nixos-hardware.nixosModules.common-cpu-amd
         #ssd trim
