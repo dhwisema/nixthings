@@ -5,7 +5,7 @@
   ...
 }: {
   programs.niri.settings.spawn-at-startup = [
-    {command = ["waybar" "mako"];}
+    {command = ["xfce4-panel" "mako" "xwayland-satellite"];}
   ];
 
   programs.niri.settings.binds = {
