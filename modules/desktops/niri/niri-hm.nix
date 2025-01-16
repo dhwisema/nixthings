@@ -5,13 +5,15 @@
   ...
 }: {
   programs.niri.settings.spawn-at-startup = [
-    {command = ["waybar" "mako" "xwayland-satellite"];}
+    {command = ["waybar"];}
+    {command = ["mako"];}
+    {command = ["xwayland-satellite"];}
   ];
 
   programs.niri.settings.prefer-no-csd = true;
   programs.niri.settings.environment = {
         QT_QPA_PLATFORM = "wayland";
-        DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display confic
+        DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display config
         NIXOS_OZONE_WL = "1";
       };
 
