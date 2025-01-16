@@ -4,20 +4,9 @@
   lib,
   ...
 }: {
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
+  programs.niri.settings.spawn-at-startup = [
+    {command = ["waybar" "mako"];}
+  ];
 
   programs.niri.settings.binds = {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
