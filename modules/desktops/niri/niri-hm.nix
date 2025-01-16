@@ -8,7 +8,7 @@
     {command = ["waybar" "mako" "xwayland-satellite"];}
   ];
 
-  programs.niri.prefer-no-csd = true;
+  programs.niri.settings.prefer-no-csd = true;
   programs.niri.settings.environment = {
         QT_QPA_PLATFORM = "wayland";
         DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display confic
