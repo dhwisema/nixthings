@@ -29,6 +29,8 @@
       swaylock
       sway-contrib.grimshot
       xwayland-satellite
+      xfce.xfce4-panel
+
     ];
     programs.niri.enable = true;
   };
