@@ -5,8 +5,15 @@
   ...
 }: {
   programs.niri.settings.spawn-at-startup = [
-    {command = ["xfce4-panel" "mako" "xwayland-satellite"];}
+    {command = ["waybar" "mako" "xwayland-satellite"];}
   ];
+
+  programs.niri.prefer-no-csd = true;
+  programs.niri.settings.environment = {
+        QT_QPA_PLATFORM = "wayland";
+        DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display confic
+        NIXOS_OZONE_WL = "1";
+      };
 
   programs.niri.settings.binds = {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
