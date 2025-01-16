@@ -30,7 +30,7 @@
   users.users.howard = {
     isNormalUser = true;
     description = "Howard";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "render"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "render" "input"];
   };
 
   services.libinput.enable = true;
