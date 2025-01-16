@@ -15,5 +15,5 @@
 
   #iso use only networking.networkmanager.enable = lib.mkForce false;
 
- # boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
 }

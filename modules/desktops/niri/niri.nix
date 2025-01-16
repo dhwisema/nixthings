@@ -13,13 +13,24 @@
     };
   };
   config = lib.mkIf config.niri.enable {
+    programs.dconf.enable = true;
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+
     environment.systemPackages = with pkgs; [
       fuzzel
       mako
       waybar
       swaylock
       sway-contrib.grimshot
+      xwayland-satellite
     ];
     programs.niri.enable = true;
+
+    
   };
 }
