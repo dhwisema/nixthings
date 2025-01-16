@@ -18,6 +18,7 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-gnome
       ];
     };
 
@@ -30,7 +31,5 @@
       xwayland-satellite
     ];
     programs.niri.enable = true;
-
-    
   };
 }
