@@ -12,10 +12,39 @@
 
   programs.niri.settings.prefer-no-csd = true;
   programs.niri.settings.environment = {
-        QT_QPA_PLATFORM = "wayland";
-        DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display config
-        NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "wayland";
+    DISPLAY = ":0"; #may need to be moved to device specific shit bcecause of the fuckery that is my desktop display config
+    NIXOS_OZONE_WL = "1";
+  };
+
+  programs.niri.settings.layout = {
+    gaps = 8;
+    always-center-single-column = true;
+    default-column-width = {proportion = 0.5;};
+
+    focus-ring = {
+      enable = true;
+      width = 4;
+      inactive.color = "rgb(88 91 112)";
+      active.color = "rgb(166 227 161)";
+    };
+    insert-hint = {
+      enable = true;
+      display.color = "rgb(166 227 161 20%)";
+    };
+  };
+
+  programs.niri.settings.window-rules = [
+    {
+      geometry-corner-radius = {
+        top-left = 12.0;
+        top-right = 12.0;
+        bottom-left = 12.0;
+        bottom-right = 12.0;
       };
+      clip-to-geometry = true;
+    }
+  ];
 
   programs.niri.settings.binds = {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -43,17 +72,22 @@
 
     # Example volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.
+    # Volume
     "XF86AudioRaiseVolume" = {
+      action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" "-l" "1.0"];
+      repeat = true;
       allow-when-locked = true;
-      action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
+      cooldown-ms = 50;
     };
     "XF86AudioLowerVolume" = {
+      action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" "-l" "1.0"];
+      repeat = true;
       allow-when-locked = true;
-      action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
+      cooldown-ms = 50;
     };
     "XF86AudioMute" = {
-      allow-when-locked = true;
       action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+      allow-when-locked = true;
     };
     "XF86AudioMicMute" = {
       allow-when-locked = true;
