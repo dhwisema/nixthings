@@ -42,7 +42,7 @@
         bottom-left = 12.0;
         bottom-right = 12.0;
       };
-      clip-to-geometry = true;
+      clip-to-geometry = false;
     }
   ];
 
