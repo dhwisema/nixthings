@@ -5,11 +5,6 @@
   ...
 }: {
 
-  programs.niri.settings.spawn-at-startup = [
-    {command = ["waybar"];}
-    {command = ["mako"];}
-    {command = ["xwayland-satellite"];}
-  ];
 
   programs.niri.settings.prefer-no-csd = true;
   programs.niri.settings.environment = {
