@@ -31,7 +31,7 @@
       xfce.xfce4-panel
       pavucontrol
       waypaper
-      wpaperd
+      swww
     ];
     programs.niri.enable = true;
     services.displayManager.sddm.enable = true;
