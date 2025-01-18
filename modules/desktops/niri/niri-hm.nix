@@ -4,6 +4,12 @@
   lib,
   ...
 }: {
+
+  programs.wpaperd.settings = {
+    path = "./nixthings/stylix/wallpapers/tokyo_night/03.png";
+  };
+
+
   programs.niri.settings.spawn-at-startup = [
     {command = ["waybar"];}
     {command = ["mako"];}

@@ -29,6 +29,9 @@
       sway-contrib.grimshot
       xwayland-satellite
       xfce.xfce4-panel
+      pavucontrol
+      waypaper
+      wpaperd
     ];
     programs.niri.enable = true;
     services.displayManager.sddm.enable = true;
