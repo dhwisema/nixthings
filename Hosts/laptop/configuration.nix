@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
     ./../../modules/default.nix
   ];
-  gnome.enable = true;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
   niri.enable = true;

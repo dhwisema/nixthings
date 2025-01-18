@@ -29,10 +29,9 @@
       sway-contrib.grimshot
       xwayland-satellite
       xfce.xfce4-panel
-
     ];
     programs.niri.enable = true;
-
-    
+    services.displayManager.sddm.enable = true;
+    services.displayManager.sddm.wayland.enable = true;
   };
 }
