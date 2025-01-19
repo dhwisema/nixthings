@@ -4,7 +4,6 @@
   lib,
   ...
 }: {
-  imports = [./rofi-wayland/rofi-wayland.nix];
   stylix.targets.niri.enable = true;
 
   programs.niri.settings.spawn-at-startup = [

@@ -23,7 +23,7 @@
 
     environment.systemPackages = with pkgs; [
       mako
-      waybar
+    #  waybar
       swaylock
       sway-contrib.grimshot
       xwayland-satellite
