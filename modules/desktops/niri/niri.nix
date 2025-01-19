@@ -32,6 +32,8 @@
       pavucontrol
       waypaper
       swww
+      adwaita-icon-theme-legacy
+      adwaita-icon-theme
       catppuccin-sddm-corners
     ];
     programs.niri.enable = true;
