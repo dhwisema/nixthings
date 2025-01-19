@@ -50,6 +50,9 @@
     }
   ];
 
+  programs.niri.switch-events = {
+    "lid-close".action.spawn = ["loginctl lock-session & systemctl suspend"]; # TODO: Swaylock
+  };
   programs.niri.settings.binds = {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
     # in the end. To find an XKB name for a particular key, you may use a program
