@@ -11,6 +11,7 @@
     {command = ["mako"];}
     {command = ["xwayland-satellite"];}
     {command = ["swww-daemon"];}
+    {command = ["swww img /home/howard/nix_things/modules/stylix/wallpapers/catppuccin/01.png"];}
   ];
 
   programs.niri.settings.prefer-no-csd = true;
