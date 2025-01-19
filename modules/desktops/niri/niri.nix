@@ -32,7 +32,7 @@
       pavucontrol
       waypaper
       swww
-      elecatppuccin-sddm-cornersgant-sddm
+      catppuccin-sddm-cornersgant-sddm
     ];
     programs.niri.enable = true;
     services.displayManager.sddm.enable = true;
