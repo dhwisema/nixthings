@@ -10,6 +10,7 @@
     {command = ["waybar"];}
     {command = ["mako"];}
     {command = ["xwayland-satellite"];}
+    {command = ["swww-daemon"];}
   ];
 
   programs.niri.settings.prefer-no-csd = true;
