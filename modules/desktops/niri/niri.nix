@@ -22,7 +22,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      fuzzel
+      rofi-wayland
       mako
       waybar
       swaylock
@@ -37,10 +37,10 @@
       catppuccin-sddm-corners
     ];
     programs.niri.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.wayland.enable = true;
 
     services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
       theme = "catpuccin-sddm-corners";
     };
   };
