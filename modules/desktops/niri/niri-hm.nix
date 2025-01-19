@@ -70,7 +70,8 @@
 
     # Suggested binds for running programs: terminal, app launcher, screen locker.
     "Mod+T".action.spawn = "ghostty";
-    "Mod+D".action.spawn = "rofi-wayland";
+    "Mod+D".action.spawn = ["rofi" "-show" "run"];
+    "Mod+Shift+D".action.spawn = ["rofi" "-show"];
     "Super+Alt+L".action.spawn = "swaylock";
 
     # You can also use a shell. Do this if you need pipes, multiple commands, etc.

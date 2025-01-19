@@ -43,9 +43,8 @@
     programs.niri.enable = true;
 
     services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "catpuccin-sddm-corners";
+      package = pkgs.kdePackages.sddm; # qt6 sddm version
+      extraPackages = with pkgs;[sddm-astronaut];
     };
   };
 }
