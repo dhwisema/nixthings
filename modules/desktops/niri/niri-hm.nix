@@ -50,7 +50,7 @@
     }
   ];
 
-  programs.niri.switch-events = {
+  programs.niri.settings.switch-events = {
     "lid-close".action.spawn = ["loginctl lock-session & systemctl suspend"]; # TODO: Swaylock
   };
   programs.niri.settings.binds = {
