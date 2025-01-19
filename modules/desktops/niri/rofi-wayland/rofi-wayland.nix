@@ -4,7 +4,9 @@
     enable = true;
     package= pkgs.rofi-wayland;
     extraConfig = {
-      modi = "window,run";
+      modi = "window,run,combi";
+
+
     };
   };
 

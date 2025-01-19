@@ -1,6 +1,7 @@
 {lib, ...}: {
   imports = [
     ./desktops/niri/niri-hm.nix
-    # ./stylix/stylix.nix
+    ./desktops/niri/rofi-wayland/rofi-wayland.nix
+    ./waybar/waybar.nix
   ];
 }
