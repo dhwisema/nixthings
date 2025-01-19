@@ -27,22 +27,22 @@
     focus-ring = {
       enable = true;
       width = 4;
-      inactive.color = "rgb(88 91 112)";
-      active.color = "rgb(166 227 161)";
+      # inactive.color = "rgb(88 91 112)";
+      # active.color = "rgb(166 227 161)";
     };
     insert-hint = {
       enable = true;
-      display.color = "rgb(166 227 161 20%)";
+      # display.color = "rgb(166 227 161 20%)";
     };
   };
 
   programs.niri.settings.window-rules = [
     {
       geometry-corner-radius = {
-        top-left = 12.0;
-        top-right = 12.0;
-        bottom-left = 12.0;
-        bottom-right = 12.0;
+        bottom-left = 12;
+        top-right = 12;
+        bottom-right = 12;
+        top-left = 12;
       };
       clip-to-geometry = true;
     }
