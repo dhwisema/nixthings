@@ -11,12 +11,12 @@
   ];
   stylix.enable = true;
 
-  programs.niri.settings.outputs.DP-4 = {
+  programs.niri.settings.outputs."DP-4" = {
     position.x = 0;
     position.y = 0;
     variable-refresh-rate = true;
   };
-  programs.niri.settings.outputs.DP-5 = {
+  programs.niri.settings.outputs."DP-5" = {
     position.x = -1080;
     position.y = 0;
   };
