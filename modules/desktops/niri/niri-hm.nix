@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-   programs.niri.settings.spawn-at-startup = [
+  programs.niri.settings.spawn-at-startup = [
     {command = ["waybar"];}
     {command = ["mako"];}
     {command = ["xwayland-satellite"];}
@@ -42,7 +42,7 @@
         bottom-left = 12.0;
         bottom-right = 12.0;
       };
-      clip-to-geometry = false;
+      clip-to-geometry = true;
     }
   ];
 

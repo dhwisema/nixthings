@@ -32,9 +32,19 @@
       pavucontrol
       waypaper
       swww
+      sddm-astronaut
     ];
     programs.niri.enable = true;
     services.displayManager.sddm.enable = true;
     services.displayManager.sddm.wayland.enable = true;
+
+    services.displayManager.sddm = {
+      theme = "sddm-astronaut-theme";
+      extraPackages = with pkgs; [
+        kdePackages.qtmultimedia
+        kdePackages.qtsvg
+        kdePackages.qtvirtualkeyboard
+      ];
+    };
   };
 }
