@@ -6,7 +6,7 @@
     lazygit
     libreoffice-fresh
     btop
-    pkill
+    pik
 
     vscodium
     yazi
