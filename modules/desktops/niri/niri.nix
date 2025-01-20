@@ -20,11 +20,11 @@
         pkgs.xdg-desktop-portal-gtk
       ];
     };
-
+    imports = [./swaylock.nix];
     environment.systemPackages = with pkgs; [
       mako
       #  waybar
-      swaylock-effects
+
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
