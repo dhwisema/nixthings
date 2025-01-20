@@ -93,7 +93,6 @@
       "7"
       "--effect-pixelate"
       "40"
-      "&"
       "systemctl"
       "suspend"
       # "--effect-vignette 0.5:0.5"
