@@ -84,7 +84,6 @@
     "Mod+Shift+D".action.spawn = ["rofi" "-show"];
     "Super+Alt+L".action.spawn = [
       "swaylock"
-      "swaylock"
       "--screenshots"
       "--clock"
       "--indicator"
