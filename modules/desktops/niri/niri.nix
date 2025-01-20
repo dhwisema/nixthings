@@ -24,7 +24,7 @@
     environment.systemPackages = with pkgs; [
       mako
       #  waybar
-      swaylock
+      swaylock-effects
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
@@ -33,6 +33,7 @@
       adwaita-icon-theme-legacy
       adwaita-icon-theme
       bluetuith
+
       #sddm specific files
     ];
     programs.niri.enable = true;
