@@ -12,6 +12,7 @@
 
       modules-center = ["clock"];
       modules-right = ["battery"];
+      modules-left = ["niri/workspaces" "niri-window"];
     };
   };
 }
