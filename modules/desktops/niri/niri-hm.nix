@@ -82,7 +82,7 @@
     "Mod+T".action.spawn = "ghostty";
     "Mod+D".action.spawn = ["rofi" "-show" "run"];
     "Mod+Shift+D".action.spawn = ["rofi" "-show"];
-    "Super+Alt+L".action.spawn = [
+    "Super+L".action.spawn = [
       "swaylock"
       "--screenshots"
       "--clock"
