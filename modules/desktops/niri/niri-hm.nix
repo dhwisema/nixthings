@@ -82,7 +82,7 @@
     "Mod+T".action.spawn = "ghostty";
     "Mod+D".action.spawn = ["rofi" "-show" "run"];
     "Mod+Shift+D".action.spawn = ["rofi" "-show"];
-    "Super+alt+L".action.spawn = [
+    "Mod+alt+L".action.spawn = [
       "swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --fade-in 0.2"
     ];
 
