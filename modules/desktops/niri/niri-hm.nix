@@ -37,7 +37,7 @@
     default-column-width = {proportion = 0.5;};
 
     focus-ring = {
-      enable = true;
+      enable = false;
       width = 4;
       # inactive.color = "rgb(88 91 112)";
       # active.color = "rgb(166 227 161)";
