@@ -32,7 +32,6 @@
       swww
       adwaita-icon-theme-legacy
       adwaita-icon-theme
-      haskellPackages.network-manager-tui
       bluetuith
       #sddm specific files
     ];
