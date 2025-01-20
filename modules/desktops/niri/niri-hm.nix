@@ -98,6 +98,25 @@
       # "--key-hl-color 880033"
       # "--fade-in 0.2"
     ];
+    "Mod+Shift+alt+L".action.spawn = [
+      "swaylock"
+      "--screenshot"
+      "--clock"
+      "--indicator"
+      "--indicator-radius"
+      "100"
+      "--indicator-thickness"
+      "7"
+      "--effect-pixelate"
+      "40"
+      # "--effect-vignette 0.5:0.5"
+      # "--ring-color bb00cc"
+      # "--key-hl-color 880033"
+      # "--fade-in 0.2"
+      "&&"
+      "systemctl"
+      "suspend"
+    ];
     #
 
     # You can also use a shell. Do this if you need pipes, multiple commands, etc.
