@@ -23,7 +23,7 @@
 
     environment.systemPackages = with pkgs; [
       mako
-    #  waybar
+      #  waybar
       swaylock
       sway-contrib.grimshot
       xwayland-satellite
@@ -32,11 +32,13 @@
       swww
       adwaita-icon-theme-legacy
       adwaita-icon-theme
+      haskellPackages.network-manager-tui
+      bluetuith
       #sddm specific files
     ];
     programs.niri.enable = true;
 
-      services.displayManager.sddm = {
+    services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
     };

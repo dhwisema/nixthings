@@ -305,6 +305,8 @@
     "Ctrl+Print".action.screenshot-screen = {};
     "Alt+Print".action.screenshot-window = {};
 
+    "Mod+Shift+s".action.screenshot = {};
+
     # The quit action will show a confirmation dialog to avoid accidental exits.
     "Mod+Shift+E".action.quit = {};
 
