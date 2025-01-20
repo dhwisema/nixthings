@@ -12,7 +12,7 @@
     variable-refresh-rate = true;
   };
   programs.niri.settings.outputs."DP-5" = {
-    position.x = -1080;
+    position.x = -1920;
     position.y = 0;
   };
 
