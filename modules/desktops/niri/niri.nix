@@ -20,7 +20,7 @@
         pkgs.xdg-desktop-portal-gtk
       ];
     };
-    imports = [./swaylock.nix];
+
     environment.systemPackages = with pkgs; [
       mako
       #  waybar
