@@ -7,7 +7,7 @@
     libreoffice-fresh
     btop
     pik
-
+    pcmanfm
     vscodium
     yazi
     alejandra

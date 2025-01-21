@@ -98,17 +98,14 @@
       # "--key-hl-color 880033"
       # "--fade-in 0.2"
     ];
-    "Mod+alt+shift+L".action.spawn = [
-      "swaylock"
-      "&"
-      "systemctl"
-      "suspend"
+    "Mod+alt+V".action = {
+      spawn = "systemctl suspend";
+
       # "--effect-vignette 0.5:0.5"
       # "--ring-color bb00cc"
       # "--key-hl-color 880033"
       # "--fade-in 0.2"
-    ];
-
+    };
     #
 
     # You can also use a shell. Do this if you need pipes, multiple commands, etc.
