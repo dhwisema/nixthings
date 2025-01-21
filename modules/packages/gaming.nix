@@ -24,6 +24,7 @@
       steam-run
       vulkan-tools
       steam
+      gamescope
     ];
     programs.nix-ld = {
       enable = true;
