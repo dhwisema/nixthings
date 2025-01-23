@@ -11,7 +11,7 @@
   hardware.bluetooth.enable = true;
   niri.enable = true;
   networking.hostName = "laptop";
-  boot.kernelParams = [ "amdgpu.dcdebugmask=0x200" ];
+  boot.kernelParams = [ "amdgpu.dcdebugmask=0x200" ]; #disable psr-su
   
 
 
