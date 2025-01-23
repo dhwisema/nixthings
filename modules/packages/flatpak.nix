@@ -14,10 +14,9 @@
     "com.calibre_ebook.calibre"
     "com.github.corna.Vivado"
     "io.github.flattool.Warehouse"
-    
+
     "com.google.Chrome"
     "camp.nook.nookdesktop"
-    "io.github.equicord.equibop"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
   ];
