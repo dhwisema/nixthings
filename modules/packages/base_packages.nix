@@ -12,6 +12,8 @@
     yazi
     alejandra
     nil
+    gvfs
+    udisks
   ];
 
   fonts.packages = with pkgs; [
