@@ -15,5 +15,6 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    darktable
   ];
 }
