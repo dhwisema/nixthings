@@ -13,7 +13,7 @@
   networking.hostName = "laptop";
   #boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   environment.systemPackages = with pkgs; [
-    python3]
+    python3];
 
 
 
