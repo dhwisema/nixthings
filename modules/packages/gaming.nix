@@ -18,7 +18,6 @@
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
       winetricks
-      protonup-qt
       gamemode
       wine
       steam-run
@@ -31,7 +30,7 @@
       enable = true;
       libraries =
         (pkgs.steam.args.multiPkgs pkgs)
-        ++ (with pkgs; [xorg.libxcb libxkbcommon wayland]);
+        ++ (with pkgs; [xorg.libxcb libxkbcommon wayland protonup-qt]);
     };
   };
 }
