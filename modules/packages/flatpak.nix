@@ -18,6 +18,7 @@
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
+    "com.jetbrains.CLion"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
