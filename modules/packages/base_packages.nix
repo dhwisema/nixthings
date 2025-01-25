@@ -14,6 +14,7 @@
     nil
     gvfs
     udisks
+    vscode
   ];
 
   fonts.packages = with pkgs; [
