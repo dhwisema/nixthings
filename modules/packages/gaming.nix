@@ -25,6 +25,7 @@
       vulkan-tools
       steam
       gamescope
+      protonup-qt
     ];
     programs.nix-ld = {
       enable = true;
