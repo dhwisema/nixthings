@@ -4,7 +4,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    nix
     cachix
   ];
   nixpkgs.config.allowUnfree = true;
