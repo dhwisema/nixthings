@@ -8,8 +8,6 @@
     #flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
 
-    ghostty.url = "github:ghostty-org/ghostty";
-
     #home-manager till i decide to nuke it again
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +22,6 @@
 
   outputs = {
     self,
-    ghostty,
     nixpkgs,
     nix-flatpak,
     nixos-hardware,
@@ -44,11 +41,6 @@
         nixos-hardware.nixosModules.lenovo-thinkpad-z
         stylix.nixosModules.stylix
 
-        {
-          environment.systemPackages = [
-            ghostty.packages.x86_64-linux.default
-          ];
-        }
         nix-flatpak.nixosModules.nix-flatpak
 
         #waveforms.nixosModule
@@ -86,12 +78,6 @@
         nix-flatpak.nixosModules.nix-flatpak
 
         ./Hosts/desktop/configuration.nix
-
-        {
-          environment.systemPackages = [
-            ghostty.packages.x86_64-linux.default
-          ];
-        }
 
         home-manager.nixosModules.home-manager
         {

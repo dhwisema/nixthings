@@ -11,6 +11,7 @@
   ];
 
   home.packages = with pkgs; [
+    ghostty
     (discord.override {
       withOpenASAR = true;
       withVencord = true;
