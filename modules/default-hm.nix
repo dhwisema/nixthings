@@ -13,7 +13,7 @@
   home.packages = with pkgs; [
     ghostty
     (discord.override {
-      withOpenASAR = true;
+      #withOpenASAR = true;
       withVencord = true;
     })
     art
