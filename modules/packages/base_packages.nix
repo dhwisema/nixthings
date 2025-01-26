@@ -15,6 +15,7 @@
     gvfs
     udisks
     vscode
+    webcord-vencord
   ];
 
   fonts.packages = with pkgs; [

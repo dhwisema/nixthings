@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -10,10 +11,12 @@
     ./desktops/niri/swaylock.nix
   ];
 
+  # Electron Application Patches
+
   home.packages = with pkgs; [
     ghostty
     (discord.override {
-      #withOpenASAR = true;
+      withOpenASAR = true;
       withVencord = true;
     })
     art
