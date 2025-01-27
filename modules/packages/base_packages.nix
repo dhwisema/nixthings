@@ -15,6 +15,7 @@
     gvfs
     udisks
     vscode
+    cmake
   ];
 
   fonts.packages = with pkgs; [
