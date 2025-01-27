@@ -12,13 +12,19 @@
   ];
 
   # Electron Application Patches
+  nixpkgs.config.firefox = {
+    enableTridactylNative = true;
+    enableFxCastBridge = true;
+    speechSynthesisSupport = true;
+  };
+  programs.firefox = {
+    enable = true;
+    nativeMessagingHosts = with pkgs; [tridactyl-native fx-cast-bridge];
+    package = pkgs.firefox-bin;
+  };
 
   home.packages = with pkgs; [
     ghostty
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
     art
   ];
 }
