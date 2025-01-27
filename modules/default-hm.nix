@@ -11,7 +11,7 @@
     ./desktops/niri/swaylock.nix
   ];
 
- stylix.enable = true;
+  stylix.enable = true;
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "howard";
@@ -31,20 +31,17 @@
 
   
 
-  # Electron Application Patches
-  nixpkgs.config.firefox = {
-    enableTridactylNative = true;
-    enableFxCastBridge = true;
-    speechSynthesisSupport = true;
-  };
+  
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = with pkgs; [tridactyl-native fx-cast-bridge];
-    package = pkgs.firefox-bin;
   };
 
   home.packages = with pkgs; [
     ghostty
     art
+    libreoffice-fresh
+    yazi
+    vscodium
+    webcord-vencord
   ];
 }
