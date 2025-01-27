@@ -12,7 +12,7 @@
   ];
 
   stylix.enable = true;
-  stylix.targets.firefox = true;
+  stylix.targets.firefox.enable = true;
   stylix.autoEnable = true;
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
