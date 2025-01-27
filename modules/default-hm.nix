@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -10,11 +11,20 @@
     ./desktops/niri/swaylock.nix
   ];
 
+  # Electron Application Patches
+  nixpkgs.config.firefox = {
+    enableTridactylNative = true;
+    enableFxCastBridge = true;
+    speechSynthesisSupport = true;
+  };
+  programs.firefox = {
+    enable = true;
+    nativeMessagingHosts = with pkgs; [tridactyl-native fx-cast-bridge];
+    package = pkgs.firefox-bin;
+  };
+
   home.packages = with pkgs; [
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    ghostty
     art
   ];
 }

@@ -99,7 +99,7 @@
       # "--fade-in 0.2"
     ];
     "Mod+alt+V".action = {
-      spawn = "systemctl suspend";
+      spawn = ["sh" "-c" "swaylock --screenshot --clock --effect-pixelate 50 & systemctl suspend"];
 
       # "--effect-vignette 0.5:0.5"
       # "--ring-color bb00cc"

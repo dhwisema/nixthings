@@ -16,6 +16,7 @@
     udisks
     vscode
     cmake
+    webcord-vencord
   ];
 
   fonts.packages = with pkgs; [
