@@ -16,11 +16,17 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
   };
 
   outputs = {
+    nur,
     self,
     nixpkgs,
     nix-flatpak,

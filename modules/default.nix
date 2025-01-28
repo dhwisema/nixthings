@@ -39,6 +39,12 @@
 
   services.libinput.enable = true;
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   #sound
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
