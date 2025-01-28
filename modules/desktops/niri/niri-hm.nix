@@ -61,7 +61,7 @@
   ];
 
   programs.niri.settings.switch-events = {
-    "lid-close".action.spawn = ["loginctl lock-session & systemctl suspend"]; # TODO: Swaylock
+    "lid-close".action.spawn = ["sh" "-c" "swaylock --screenshot --clock --effect-pixelate 50 & systemctl suspend"];
   };
   programs.niri.settings.binds = {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name

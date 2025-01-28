@@ -4,18 +4,19 @@
     usbmuxd
     git
     lazygit
-    libreoffice-fresh
+    
     btop
     pik
     pcmanfm
-    vscodium
-    yazi
+    
+    
     alejandra
     nil
     gvfs
     udisks
-    vscode
-    webcord-vencord
+    
+    cmake
+    
   ];
 
   fonts.packages = with pkgs; [
