@@ -48,7 +48,7 @@
 
           #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
               visibility: collapse !important;
-              
+
           }
         '';
         # settings = {
@@ -66,7 +66,6 @@
       };
     };
   };
-
 
   home.packages = with pkgs; [
     ghostty
