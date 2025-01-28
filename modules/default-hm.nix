@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  nur,
   ...
 }: {
   imports = [
@@ -52,7 +53,12 @@
           }
         '';
         extraConfig = "toolkit.legacyUserProfileCustomizations.stylesheets = true";
-        # extensions = with pkgs.nur.repos.rycee.firefox-addons; [];
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          tree-style-tab
+          tridactyl
+          multi-account-containers
+        ];
         # settings = {
         #   # specify profile-specific preferences here; check about:config for options
         #   "browser.newtabpage.activity-stream.feeds.section.highlights" = false;

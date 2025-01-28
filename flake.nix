@@ -42,6 +42,7 @@
       modules = [
         #niri
         niri.nixosModules.niri
+        nur.modules.nixos.default
 
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
@@ -74,7 +75,7 @@
       modules = [
         # niri
         niri.nixosModules.niri
-
+        nur.modules.nixos.default
         stylix.nixosModules.stylix
 
         #sets scheduling things for kernel
