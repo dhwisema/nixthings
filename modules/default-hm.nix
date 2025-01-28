@@ -48,6 +48,7 @@
 
           #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
               visibility: collapse !important;
+              
           }
         '';
         # settings = {
