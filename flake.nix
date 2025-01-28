@@ -61,6 +61,7 @@
           home-manager.users.howard = {pkgs, ...}: {
             imports = [
               ./Hosts/laptop/home.nix
+              nur.modules.homeManager.default
             ];
           };
 
@@ -92,6 +93,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.howard = {pkgs, ...}: {
             imports = [
+              nur.modules.homeManager.default
               ./Hosts/laptop/home.nix
             ];
           };
