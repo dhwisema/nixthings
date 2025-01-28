@@ -34,6 +34,7 @@
 
   programs.firefox = {
     enable = true;
+
     profiles = {
       profile_0 = {
         # choose a profile name; directory is /home/<user>/.mozilla/firefox/profile_0
@@ -52,12 +53,13 @@
 
           }
         '';
-        extraConfig = "toolkit.legacyUserProfileCustomizations.stylesheets = true";
+        settings = {"toolkit.legacyUserProfileCustomizations.stylesheets" = true;};
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           tree-style-tab
           tridactyl
           multi-account-containers
+          bitwarden
         ];
         # settings = {
         #   # specify profile-specific preferences here; check about:config for options
