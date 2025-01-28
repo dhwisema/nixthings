@@ -66,6 +66,7 @@
     };
   };
 
+
   home.packages = with pkgs; [
     ghostty
     art
