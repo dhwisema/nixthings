@@ -60,6 +60,7 @@
           tridactyl
           multi-account-containers
           bitwarden
+          firefox-color
         ];
         # settings = {
         #   # specify profile-specific preferences here; check about:config for options
