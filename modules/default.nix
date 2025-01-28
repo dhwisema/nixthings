@@ -45,6 +45,8 @@
     };
   };
 
+  home-manager.backupFileExtension = "backup";
+
   #sound
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
