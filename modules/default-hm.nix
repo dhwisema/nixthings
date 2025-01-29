@@ -85,5 +85,6 @@
     yazi
     vscodium
     webcord-vencord
+    kdePackages.konsole
   ];
 }

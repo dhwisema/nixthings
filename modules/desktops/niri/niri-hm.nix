@@ -137,12 +137,12 @@
     };
 
     # brightness
-    "Fn + F5" = {
+    "Mod+F5" = {
       action.spawn = ["brillo" "-U" "5"];
       repeat = true;
       cooldown-ms = 50;
     };
-    "Fn + F6" = {
+    "Mod+F6" = {
       action.spawn = ["brillo" "-A" "5"];
       repeat = true;
       cooldown-ms = 50;
