@@ -136,6 +136,18 @@
       action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
     };
 
+    # brightness
+    "XF86MonBrightnessUp" = {
+      action.spawn = ["brillo" "-U" "5"];
+      repeat = true;
+      cooldown-ms = 50;
+    };
+    "XF86MonBrightnessDown" = {
+      action.spawn = ["brillo" "-A" "5"];
+      repeat = true;
+      cooldown-ms = 50;
+    };
+
     "Mod+Q".action.close-window = {};
 
     "Mod+Left".action.focus-column-left = {};
