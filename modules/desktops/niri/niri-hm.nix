@@ -137,12 +137,12 @@
     };
 
     # brightness
-    "XF86WakeUp + F5" = {
+    "Fn + F5" = {
       action.spawn = ["brillo" "-U" "5"];
       repeat = true;
       cooldown-ms = 50;
     };
-    "XF86WakeUp + F6" = {
+    "Fn + F6" = {
       action.spawn = ["brillo" "-A" "5"];
       repeat = true;
       cooldown-ms = 50;
