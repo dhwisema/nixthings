@@ -4,19 +4,16 @@
     usbmuxd
     git
     lazygit
-    
+
     btop
     pik
-    pcmanfm
-    
-    
+
     alejandra
     nil
     gvfs
     udisks
-    
+
     cmake
-    
   ];
 
   fonts.packages = with pkgs; [
