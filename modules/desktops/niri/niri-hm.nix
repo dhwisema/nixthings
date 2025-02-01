@@ -80,6 +80,8 @@
 
     # Suggested binds for running programs: terminal, app launcher, screen locker.
     "Mod+T".action.spawn = "ghostty";
+    "Mod+B".action.spawn = "webcord";
+    "Mod+F".action.spawn = "Thunar";
     "Mod+D".action.spawn = ["rofi" "-show" "run"];
     "Mod+Shift+D".action.spawn = ["rofi" "-show"];
     "Mod+alt+L".action.spawn = [
