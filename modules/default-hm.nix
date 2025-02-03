@@ -87,7 +87,7 @@
     webcord-vencord
     kdePackages.konsole
     distrobox-tui
-    docker
+    
     distrobox
   ];
 }
