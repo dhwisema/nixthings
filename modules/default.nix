@@ -34,7 +34,7 @@
   users.users.howard = {
     isNormalUser = true;
     description = "Howard";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "render"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "render" "docker"];
   };
 
   services.libinput.enable = true;
@@ -46,6 +46,13 @@
   };
 
   home-manager.backupFileExtension = "backup";
+
+
+  virtualisation.docker.rootless = {
+  enable = true;
+  setSocketVariable = true;
+};
+  
 
   #sound
   services.pulseaudio.enable = false;

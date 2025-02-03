@@ -12,7 +12,7 @@
     nil
     gvfs
     udisks
-    docker
+    
     cmake
   ];
 
