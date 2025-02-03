@@ -86,5 +86,6 @@
     vscodium
     webcord-vencord
     kdePackages.konsole
+    distrobox-tui
   ];
 }
