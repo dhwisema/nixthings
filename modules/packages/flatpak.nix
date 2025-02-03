@@ -12,7 +12,7 @@
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
     "com.calibre_ebook.calibre"
-    "com.github.corna.Vivado"
+    #"com.github.corna.Vivado"
     "io.github.flattool.Warehouse"
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
