@@ -48,9 +48,8 @@
   home-manager.backupFileExtension = "backup";
 
 
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
   enable = true;
-  setSocketVariable = true;
 };
   
 

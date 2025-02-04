@@ -33,7 +33,6 @@
       adwaita-icon-theme-legacy
       adwaita-icon-theme
       bluetuith
-      brillo
 
       #sddm specific files
     ];

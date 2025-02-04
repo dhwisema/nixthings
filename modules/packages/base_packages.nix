@@ -7,7 +7,7 @@
 
     btop
     pik
-
+    brillo
     alejandra
     nil
     gvfs
