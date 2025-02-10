@@ -11,10 +11,8 @@
   hardware.bluetooth.enable = true;
   niri.enable = true;
   networking.hostName = "laptop";
-  boot.kernelParams = [ "amdgpu.dcdebugmask=0x200" ]; #disable psr-su
-  
-
-
+  boot.kernelParams = ["amdgpu.dcdebugmask=0x200"]; #disable psr-su
+  gnome.enable = true;
 
   #iso use only networking.networkmanager.enable = lib.mkForce false;
 

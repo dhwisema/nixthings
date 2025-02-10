@@ -33,6 +33,7 @@
       adwaita-icon-theme-legacy
       adwaita-icon-theme
       bluetuith
+      catppuccin-sddm
 
       #sddm specific files
     ];
@@ -50,6 +51,11 @@
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
+      flavor = "mocha";
+      font = "Noto Sans";
+      fontSize = "9";
+      background = ../../stylix/wallpapers/catppuccin/01.png;
+      loginBackground = true;
     };
   };
 }
