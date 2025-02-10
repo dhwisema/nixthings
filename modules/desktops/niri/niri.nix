@@ -54,8 +54,8 @@
       flavor = "mocha";
       font = "Noto Sans";
       fontSize = "9";
-      background = ../../stylix/wallpapers/catppuccin/01.png;
-      loginBackground = true;
+      # background = ../../stylix/wallpapers/catppuccin/01.png;
+      # loginBackground = true;
     };
   };
 }
