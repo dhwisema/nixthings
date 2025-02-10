@@ -12,7 +12,8 @@
     nil
     gvfs
     udisks
-    
+    labwc
+
     cmake
   ];
 
