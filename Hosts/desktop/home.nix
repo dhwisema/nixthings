@@ -10,7 +10,7 @@
     ./../../modules/default-hm.nix
   ];
 
- #defining monitors for me niri
+  #defining monitors for me niri
   programs.niri.settings.outputs."LG Electronics LG ULTRAGEAR 403MXEZ81564" = {
     position.x = 0;
     position.y = 0;
@@ -20,5 +20,5 @@
     position.x = -1080;
     position.y = 0;
   };
-
+  stylix.targets.kde.enable = false;
 }
