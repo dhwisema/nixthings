@@ -32,6 +32,8 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.fish.interactiveShellInit = "export _JAVA_AWT_WM_NONREPARENTING=1";
+
   programs.firefox = {
     enable = true;
 
@@ -57,7 +59,6 @@
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           tree-style-tab
-          tridactyl
           multi-account-containers
           bitwarden
           firefox-color
@@ -84,10 +85,9 @@
     libreoffice-fresh
     yazi
     vscodium
-    webcord-vencord
     kdePackages.konsole
     distrobox-tui
-    
+    goofcord
     distrobox
   ];
 }
