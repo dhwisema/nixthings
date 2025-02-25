@@ -32,7 +32,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.fish.ShellInit = ''set -gx _JAVA_AWT_WM_NONREPARENTING 1'';
+  #  programs.fish.ShellInit = ''set -gx _JAVA_AWT_WM_NONREPARENTING 1'';
   # home.sessionVariables = {
   #   _JAVA_AWT_WM_NONREPARENTING = "1";
   # };
