@@ -37,6 +37,8 @@
     _JAVA_AWT_WM_NONREPARENTING = "1";
   };
 
+  qt.platformTheme = "qtct";
+
   programs.firefox = {
     enable = true;
 
