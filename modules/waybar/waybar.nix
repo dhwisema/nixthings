@@ -45,7 +45,7 @@
       };
 
       network = {
-        format-wifi = "{essid} ({signalStrength}%) ";
+        format-wifi = "{essid} ({signalStrength}%)   ";
         format-ethernet = "{ipaddr}/{cidr} 󰈀";
         tooltip-format = "{ifname} via {gwaddr} 󰈀";
         format-linked = "{ifname} (No IP) 󰈀";
@@ -56,9 +56,9 @@
         format = "{volume}% {icon} {format_source}";
         format-bluetooth = "{volume}% {icon} {format_source}";
         format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source}";
-        format-source = "{volume}% ";
-        format-source-muted = "";
+        format-muted = " {format_source} ";
+        format-source = "{volume}%  ";
+        format-source-muted = " ";
         format-icons = {
           headphone = "";
           hands-free = "󰋎";
