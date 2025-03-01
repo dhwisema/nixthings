@@ -11,7 +11,7 @@
       spacing = "5";
 
       modules-center = ["clock"];
-      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "memory" "custom/spacer" "network""pulseaudio" "custom/spacer" "custom/spacer"];
+      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "network" "pulseaudio" "custom/spacer" "custom/spacer"];
       modules-left = ["niri/workspaces"];
 
       clock = {
@@ -45,7 +45,7 @@
       };
 
       network = {
-        format-wifi = "{essid} ({signalStrength}%)   ";
+        format-wifi = "{essid} ({signalStrength}%)  ";
         format-ethernet = "{ipaddr}/{cidr} 󰈀";
         tooltip-format = "{ifname} via {gwaddr} 󰈀";
         format-linked = "{ifname} (No IP) 󰈀";
@@ -54,11 +54,11 @@
       };
       pulseaudio = {
         format = "{volume}% {icon} {format_source}";
-        format-bluetooth = " {volume}% {icon} {format_source}";
-        format-bluetooth-muted = "  {icon} {format_source}";
-        format-muted = "  {format_source} ";
-        format-source = "{volume}%  ";
-        format-source-muted = " ";
+        format-bluetooth = "{volume}% {icon} {format_source}";
+        format-bluetooth-muted = " {icon} {format_source}";
+        format-muted = " {format_source} ";
+        format-source = " {volume}%  ";
+        format-source-muted = "  ";
         format-icons = {
           headphone = "";
           hands-free = "󰋎";
