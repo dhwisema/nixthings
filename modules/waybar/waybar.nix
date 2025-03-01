@@ -8,16 +8,16 @@
     mainBar = {
       layer = "top";
       position = "top";
+      spacing = "5";
 
       modules-center = ["clock"];
       modules-right = ["battery" "bluetooth" "memory" "network" "pulseaudio"];
       modules-left = ["niri/workspaces"];
 
       clock = {
-        tooltip-format = ''
-          <big>{:%I:%M %p}
-          <tt><small>{calendar}</small></tt>'';
+        format = "{:%I:%M %p}";  # AM/PM format
         format-alt = "{:%Y-%m-%d}";
+        tooltip = false;
       };
 
       battery = {
