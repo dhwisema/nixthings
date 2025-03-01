@@ -20,5 +20,4 @@
     position.x = -1080;
     position.y = 0;
   };
-  stylix.targets.kde.enable = false;
 }

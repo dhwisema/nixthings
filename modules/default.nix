@@ -47,11 +47,9 @@
 
   home-manager.backupFileExtension = "backup";
 
-
   virtualisation.docker = {
-  enable = true;
-};
-  
+    enable = true;
+  };
 
   #sound
   services.pulseaudio.enable = false;
