@@ -17,7 +17,7 @@
       clock = {
         format = "{:%I:%M %p}";  # AM/PM format
         format-alt = "{:%Y-%m-%d}";
-        "tooltip" = "false";
+        tooltip = "false";
       };
 
       battery = {
