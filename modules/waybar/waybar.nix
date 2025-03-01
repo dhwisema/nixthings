@@ -11,7 +11,7 @@
       spacing = "5";
 
       modules-center = ["clock"];
-      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "memory" "custom/spacer" "network" "custom/spacer" "pulseaudio" "custom/spacer"];
+      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "memory" "custom/spacer" "network" "custom/spacer" "custom/spacer""pulseaudio" "custom/spacer" "custom/spacer"];
       modules-left = ["niri/workspaces"];
 
       clock = {
