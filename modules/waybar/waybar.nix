@@ -11,7 +11,7 @@
       spacing = "5";
 
       modules-center = ["clock"];
-      modules-right = ["battery" "bluetooth" "memory" "network" "pulseaudio"];
+      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "memory" "custom/spacer" "network" "custom/spacer" "pulseaudio" "custom/spacer"];
       modules-left = ["niri/workspaces"];
 
       clock = {
@@ -73,6 +73,11 @@
           ];
         };
         on-click = "pavucontrol";
+      };
+      "custom/spacer" = {
+        format = " ";  # Insert a blank space
+        interval = "once";  # Only render once
+        tooltip = false;  # Disable tooltip
       };
     };
   };
