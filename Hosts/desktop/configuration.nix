@@ -16,4 +16,10 @@
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
   networking.hostName = "deskbox";
   time.hardwareClockInLocalTime = true;
+
+  systemd.services."systemd-suspend" = {
+    serviceConfig = {
+      Environment = ''"SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"'';
+    };
+  };
 }
