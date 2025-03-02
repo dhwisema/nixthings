@@ -5,6 +5,7 @@
   ...
 }: {
   services.mako = {
+    enable = true;
     layer = "overlay";
     anchor = "top-center";
     width = 300; # Notification width

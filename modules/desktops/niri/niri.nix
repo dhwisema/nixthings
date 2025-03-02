@@ -22,7 +22,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      mako
+      #mako
       #  waybar
 
       sway-contrib.grimshot
