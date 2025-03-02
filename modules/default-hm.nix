@@ -10,6 +10,7 @@
     ./desktops/niri/rofi-wayland/rofi-wayland.nix
     ./waybar/waybar.nix
     ./desktops/niri/swaylock.nix
+    ./mako.nix
   ];
 
   stylix.enable = true;
