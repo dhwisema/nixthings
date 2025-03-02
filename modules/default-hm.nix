@@ -91,7 +91,7 @@
     vscodium
     kdePackages.konsole
     distrobox-tui
-    goofcord
+    vesktop
     distrobox
   ];
 }
