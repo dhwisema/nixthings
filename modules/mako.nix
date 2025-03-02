@@ -5,7 +5,6 @@
   ...
 }: {
   services.mako = {
-    font = "Fira Code 10";
     layer = "overlay";
     anchor = "top-center";
     width = 300; # Notification width
@@ -15,10 +14,5 @@
     borderSize = 2; # Border thickness
     borderRadius = 5; # Rounded corners
     defaultTimeout = 10000; # Timeout in milliseconds (10 seconds)
-
-    extraConfig = ''
-      [mode=do-not-disturb]
-      invisible=1
-    '';
   };
 }
