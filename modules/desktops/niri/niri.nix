@@ -22,9 +22,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      #mako
-      #  waybar
-
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
@@ -33,6 +30,7 @@
       adwaita-icon-theme-legacy
       adwaita-icon-theme
       bluetuith
+      file-roller
 
       #sddm specific files
     ];

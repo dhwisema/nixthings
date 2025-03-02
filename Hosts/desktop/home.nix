@@ -16,7 +16,7 @@
   programs.niri.settings.outputs."LG Electronics LG ULTRAGEAR 403MXEZ81564" = {
     position.x = 0;
     position.y = 0;
-    variable-refresh-rate = "on-demand";
+    variable-refresh-rate = false;
     mode = "2560x1440@164.958";
   };
   programs.niri.settings.outputs."Lenovo Group Limited T24i-2L VKMR655" = {
