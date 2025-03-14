@@ -30,7 +30,7 @@
       enable = true;
       libraries =
         (pkgs.steam.args.multiPkgs pkgs)
-        ++ (with pkgs; [xorg.libxcb libxkbcommon wayland protonup-qt]);
+        ++ (with pkgs; [xorg.libxcb libxkbcommon wayland protonup-qt alsa-lib]);
     };
   };
 }
