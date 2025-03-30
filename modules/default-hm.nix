@@ -88,7 +88,7 @@
     art
     libreoffice-fresh
     yazi
-    vscodium
+    #vscodium
     kdePackages.konsole
     distrobox-tui
     vesktop
