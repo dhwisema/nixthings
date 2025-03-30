@@ -14,7 +14,7 @@
     labwc
     vscode
     cmake
-    codium
+    vscodium
   ];
 
   fonts.packages = with pkgs; [
