@@ -93,5 +93,7 @@
     distrobox-tui
     vesktop
     distrobox
+    vscode
+
   ];
 }
