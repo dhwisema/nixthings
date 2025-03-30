@@ -12,7 +12,7 @@
     ./desktops/niri/swaylock.nix
     ./mako.nix
   ];
-
+  nixpkgs.config.allowUnfree = true;
   stylix.enable = true;
   stylix.targets.firefox.enable = true;
   stylix.autoEnable = true;
