@@ -88,12 +88,11 @@
     art
     libreoffice-fresh
     yazi
-    #vscodium
     kdePackages.konsole
     distrobox-tui
     vesktop
     distrobox
-    vscode
+    
 
   ];
 }

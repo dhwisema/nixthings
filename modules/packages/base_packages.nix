@@ -4,7 +4,6 @@
     usbmuxd
     git
     lazygit
-
     btop
     pik
     brillo
@@ -13,8 +12,9 @@
     gvfs
     udisks
     labwc
-
+    vscode
     cmake
+    codium
   ];
 
   fonts.packages = with pkgs; [
