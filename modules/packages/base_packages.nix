@@ -15,6 +15,7 @@
     vscode
     cmake
     vscodium
+    gtest
   ];
 
   fonts.packages = with pkgs; [
