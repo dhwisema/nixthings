@@ -12,9 +12,7 @@
     gvfs
     udisks
     labwc
-    vscode
     cmake
-    vscodium
     gtest
   ];
 
