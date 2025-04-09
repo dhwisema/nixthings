@@ -14,6 +14,7 @@
     labwc
     cmake
     gtest
+    nautilus
   ];
 
   fonts.packages = with pkgs; [
