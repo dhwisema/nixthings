@@ -37,6 +37,7 @@
   home.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
   };
+#stylix eval issue fix here
 
   programs.firefox = {
     enable = true;
