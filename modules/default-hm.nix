@@ -82,6 +82,10 @@
       };
     };
   };
+  programs.zed-editor = {
+    enable = true;
+    extensions = ["verilog" "rose-pine-theme" ];
+  };
 
   home.packages = with pkgs; [
     ghostty
@@ -92,9 +96,5 @@
     distrobox-tui
     vesktop
     distrobox
-    
-
-
-
   ];
 }
