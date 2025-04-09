@@ -15,6 +15,9 @@
     cmake
     gtest
     nautilus
+    zed-editor
+    vscode-fhs
+        
   ];
 
   fonts.packages = with pkgs; [
