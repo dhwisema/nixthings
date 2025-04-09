@@ -82,6 +82,7 @@
         # };
       };
     };
+    stylix.targets.firefox.profileNames = ["profile_0"];
   };
   programs.zed-editor = {
     enable = true;
