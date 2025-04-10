@@ -31,6 +31,7 @@
       adwaita-icon-theme
       bluetuith
       file-roller
+      gnome-keyring
 
       #sddm specific files
     ];
