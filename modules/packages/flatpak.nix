@@ -19,8 +19,6 @@
     "com.github.tchx84.Flatseal"
     "com.jetbrains.CLion"
     "im.riot.Riot"
-    "dev.zed.Zed"
-    "com.visualstudio.code"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
