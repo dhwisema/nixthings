@@ -94,7 +94,6 @@
     yazi
     kdePackages.konsole
     distrobox-tui
-    vesktop
     distrobox
   ];
 }

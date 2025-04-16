@@ -15,8 +15,8 @@
     cmake
     gtest
     nautilus
-    zed-editor
     vscode-fhs
+    verible
         
   ];
 
