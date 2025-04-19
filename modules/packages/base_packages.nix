@@ -17,7 +17,7 @@
     nautilus
     vscode-fhs
     verible
-        
+    libsecret
   ];
 
   fonts.packages = with pkgs; [
