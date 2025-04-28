@@ -19,6 +19,7 @@
     verible
     libsecret
     seahorse
+    goofcord
   ];
 
   fonts.packages = with pkgs; [
