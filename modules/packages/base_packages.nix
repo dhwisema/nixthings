@@ -18,6 +18,7 @@
     vscode-fhs
     verible
     libsecret
+    seahorse
   ];
 
   fonts.packages = with pkgs; [
