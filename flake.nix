@@ -105,7 +105,25 @@
     };
     nixosConfigurations.Nixbox = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
-      modules = [.Hossts/Nixbox/configuration.nix];
+      modules = [
+        
+        ./Hosts/Nixbox/configuration.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          #home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.howard = {pkgs, ...}: {
+            imports = [
+              nur.modules.homeManager.default
+              ./Hosts/Nixbox/home.nix
+            ];
+          };
+
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
+      ];
     };
 
   };
