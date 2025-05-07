@@ -103,5 +103,10 @@
         }
       ];
     };
+    nixosConfigurations.Nixbox = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [.Hossts/Nixbox/configuration.nix];
+    };
+
   };
 }
