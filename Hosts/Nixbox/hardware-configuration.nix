@@ -1,5 +1,6 @@
-hardware-configuration.nix                                                    
-{ modulesPath, ... }:
+{  config,
+  lib,
+  modulesPath, ... }:
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   boot.loader.grub = {
