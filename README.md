@@ -21,3 +21,6 @@ journalctl -xe --unit home-manager-howard
 if it starts saying flake not found and youa re in the right repo your issue is nix store related
 
 sudo nix-store --repair --verify --check-contents
+
+fixing ghostty ssh issues
+https://ghostty.org/docs/help/terminfo
