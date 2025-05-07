@@ -1,6 +1,4 @@
-{  config,
-  lib,
-  modulesPath, ... }:
+{ config,lib,modulesPath, ... }:
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   boot.loader.grub = {
@@ -8,11 +6,10 @@
     efiInstallAsRemovable = true;
     device = "nodev";
   };
-  fileSystems."/boot" = { device = "/dev/disk/by-uuid/BA02-9F98"; fsType = "vfat"; };
+  fileSystems."/boot" = { device = "/dev/disk/by-uuid/92B6-AAE1"; fsType = "vfat"; };
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "xen_blkfront" ];
   boot.initrd.kernelModules = [ "nvme" ];
-  fileSystems."/" = { device = "/dev/sda1"; fsType = "ext4"; };
-  
+  fileSystems."/" = { device = "/dev/sda3"; fsType = "xfs"; };
+  swapDevices = [ { device = "/dev/sda2"; } ];
 }
-
 

@@ -4,6 +4,7 @@
     ./../../modules/default-server.nix
     
   ];
+  boot.loader.grub.configurationLimit = 1;
 
   networking.hostName = "nixbox";
 
