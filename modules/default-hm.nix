@@ -44,7 +44,7 @@
 		builtin cd -- "$cwd"
 	end
 	rm -f -- "$tmp"
-      "};
+      ";};
     };
   };
   home.sessionVariables = {
