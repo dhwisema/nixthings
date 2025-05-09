@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  services.mako = {
+  services.mako.settings = {
     enable = true;
     layer = "overlay";
     anchor = "top-center";
