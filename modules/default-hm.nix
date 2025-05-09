@@ -35,6 +35,18 @@
   programs.home-manager.enable = true;
   programs.fish.enable = true;
   programs.fish.shellInit = ''set -gx _JAVA_AWT_WM_NONREPARENTING 1'';
+  programs.fish.functions = {
+    y = {
+      body = {"
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+      "};
+    };
+  };
   home.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
   };
