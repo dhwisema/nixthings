@@ -11,6 +11,7 @@
     ./common/nix-nh.nix
     ./desktops/niri/niri.nix
     ./stylix/stylix.nix
+    ./tailscale.nix
   ];
 
   #optional modules
