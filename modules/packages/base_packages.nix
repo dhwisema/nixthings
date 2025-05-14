@@ -20,6 +20,7 @@
     libsecret
     seahorse
     goofcord
+    gcc
   ];
 
   fonts.packages = with pkgs; [
