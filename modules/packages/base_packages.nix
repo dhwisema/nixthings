@@ -19,7 +19,6 @@
     verible
     libsecret
     seahorse
-    goofcord
     gcc
   ];
 
