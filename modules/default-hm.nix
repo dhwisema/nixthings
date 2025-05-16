@@ -97,5 +97,6 @@
     distrobox-tui
     distrobox
     goofcord
+    appflowy
   ];
 }
