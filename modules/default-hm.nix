@@ -14,7 +14,7 @@
     ./mako.nix
   ];
   nixpkgs.config.allowUnfree = true;
-  stylix.enableReleaseChecks = true;
+  stylix.enableReleaseChecks = false;
   stylix.enable = true;
   stylix.targets.firefox.enable = false;
   stylix.autoEnable = true;
