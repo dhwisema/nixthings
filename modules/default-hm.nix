@@ -15,7 +15,7 @@
   ];
   nixpkgs.config.allowUnfree = true;
   stylix.enable = true;
-  stylix.targets.firefox.enable = true;
+  stylix.targets.firefox.enable = false;
   stylix.autoEnable = true;
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -34,11 +34,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.fish.enable = true;
-  programs.fish.shellInit = ''set -gx _JAVA_AWT_WM_NONREPARENTING 1'';
+  #remove comment when using vivado again
+  # programs.fish.shellInit = ''set -gx _JAVA_AWT_WM_NONREPARENTING 1'';
   
-  home.sessionVariables = {
-    _JAVA_AWT_WM_NONREPARENTING = "1";
-  };
+  # home.sessionVariables = {
+  #   _JAVA_AWT_WM_NONREPARENTING = "1";
+  # };
 #stylix eval issue fix here
 
   programs.firefox = {
