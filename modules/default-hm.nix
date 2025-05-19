@@ -96,5 +96,7 @@
     kdePackages.konsole
     distrobox-tui
     distrobox
+    goofcord
+    appflowy
   ];
 }
