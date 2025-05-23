@@ -17,7 +17,6 @@
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
-    "com.jetbrains.CLion"
     "im.riot.Riot"
   ];
 
