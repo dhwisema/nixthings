@@ -11,5 +11,6 @@
     appflowy
     jetbrains.clion
     cmake
+    gnumake
   ];
 }
