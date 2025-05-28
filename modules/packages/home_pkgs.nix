@@ -10,5 +10,6 @@
     goofcord
     appflowy
     jetbrains.clion
+    cmake
   ];
 }
