@@ -12,5 +12,6 @@
     jetbrains.clion
     cmake
     gnumake
+    obsidian
   ];
 }
