@@ -13,6 +13,7 @@
     ./stylix/stylix.nix
     ./tailscale.nix
   ];
+  nixpkgs.config.allowUnfree = true;
 
   #optional modules
   stylix.enable = true;
