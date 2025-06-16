@@ -191,7 +191,7 @@
     "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = {};
 
     # Alternatively, there are commands to move just a single window:
-    # Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
+    # Mod+Shift+Ctrl+Left  { move-window-!-monitor-left; }
     # ...
 
     # And you can also move a whole workspace to another monitor:
@@ -320,6 +320,9 @@
     # Finer height adjustments when in column with other windows.
     "Mod+Shift+Minus".action.set-window-height = "-10%";
     "Mod+Shift+Equal".action.set-window-height = "+10%";
+
+    #floating and no floating
+    "Mod+Slash".toggle-window-floating = {};
 
     # Actions to switch layouts.
     # Note: if you uncomment these, make sure you do NOT have
