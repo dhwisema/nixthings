@@ -322,7 +322,7 @@
     "Mod+Shift+Equal".action.set-window-height = "+10%";
 
     #floating and no floating
-    "Mod+Slash".toggle-window-floating = {};
+    "Mod+Slash".action.toggle-window-floating = {};
 
     # Actions to switch layouts.
     # Note: if you uncomment these, make sure you do NOT have
