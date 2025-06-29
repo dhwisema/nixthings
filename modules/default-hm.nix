@@ -12,6 +12,7 @@
     ./waybar/waybar.nix
     ./desktops/niri/swaylock.nix
     ./mako.nix
+    ./packages/home_pkgs.nix
   ];
   nixpkgs.config.allowUnfree = true;
   stylix.enableReleaseChecks = false;
@@ -90,15 +91,5 @@
   };
 
 
-  home.packages = with pkgs; [
-    ghostty
-    art
-    libreoffice-fresh
-    yazi
-    kdePackages.konsole
-    distrobox-tui
-    distrobox
-    goofcord
-    appflowy
-  ];
+  
 }

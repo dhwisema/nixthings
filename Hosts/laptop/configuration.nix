@@ -13,7 +13,7 @@
   networking.hostName = "laptop";
 
    services.fprintd.enable = lib.mkDefault true;
-   boot.kernelParams = ["amdgpu.dcdebugmask=0x200"]; #disable psr-su
+   boot.kernelParams = ["amdgpu.dcdebugmask=0x10"]; #disable psr-su
 
   #iso use only networking.networkmanager.enable = lib.mkForce false;
 
