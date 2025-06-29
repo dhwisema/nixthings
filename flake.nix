@@ -2,7 +2,8 @@
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
