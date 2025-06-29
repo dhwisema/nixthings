@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  nixpkgs-stable
   ...
 }: {
   # Add an option to enable or disable gaming-related configurations
