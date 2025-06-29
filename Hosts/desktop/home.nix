@@ -18,7 +18,7 @@
     mode = "2560x1440@164.958";
   };
   programs.niri.settings.outputs."Lenovo Group Limited T24i-2L VKMR6552" = {
-    position.x = -1921;
+    position.x = -1920;
     position.y = 0;
   };
 }
