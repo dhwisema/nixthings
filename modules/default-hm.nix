@@ -64,7 +64,9 @@
 
           }
         '';
-        settings = {"toolkit.legacyUserProfileCustomizations.stylesheets" = true;}
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          };
         # settings = {
         #   # specify profile-specific preferences here; check about:config for options
         #   "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
