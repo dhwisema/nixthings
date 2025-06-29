@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  nur,
   stylix,
   ...
 }: {
@@ -80,7 +79,6 @@
         # };
       };
     };
-    
   };
 
 
