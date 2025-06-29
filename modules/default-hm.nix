@@ -78,9 +78,7 @@
         #   # add preferences for profile_0 here...
         # };
       };
-    };
-  };
+  };  
+};
 
-
-  
 }
