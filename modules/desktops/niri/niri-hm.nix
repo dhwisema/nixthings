@@ -56,7 +56,7 @@
     hide-after-inactive-ms = 300;
     hide-when-typing = true;
     size = 12;
-    theme = "rose-pine-cursors"
+    theme = "rose-pine-cursors";
 
   };
   programs.niri.settings.window-rules = [
