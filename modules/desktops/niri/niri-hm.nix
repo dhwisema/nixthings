@@ -83,8 +83,10 @@
     "Mod+Shift+Slash".action.show-hotkey-overlay = {};
 
     # Suggested binds for running programs: terminal, app launcher, screen locker.
+    "Mod+A".action.spawn = "pavucontrol";
+    "Mod+N".action.spawn = ["sh" "nmtui"];
     "Mod+T".action.spawn = "ghostty";
-    "Mod+S".action.spawn = "vesktop";
+    "Mod+S".action.spawn = "goofcord";
     "Mod+B".action.spawn = "firefox";
     "Mod+E".action.spawn = "Thunar";
     "Mod+D".action.spawn = ["rofi" "-show" "drun"];
