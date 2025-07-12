@@ -22,6 +22,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      rose-pine-cursor
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
