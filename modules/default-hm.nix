@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  nur,
   stylix,
   ...
 }: {
@@ -42,6 +41,11 @@
   # home.sessionVariables = {
   #   _JAVA_AWT_WM_NONREPARENTING = "1";
   # };
+
+
+
+
+
 #stylix eval issue fix here
 
   programs.firefox = {
@@ -65,14 +69,9 @@
 
           }
         '';
-        settings = {"toolkit.legacyUserProfileCustomizations.stylesheets" = true;};
-        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          tree-style-tab
-          multi-account-containers
-          bitwarden
-          firefox-color
-        ];
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          };
         # settings = {
         #   # specify profile-specific preferences here; check about:config for options
         #   "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
@@ -86,10 +85,7 @@
         #   # add preferences for profile_0 here...
         # };
       };
-    };
-    
-  };
+  };  
+};
 
-
-  
 }

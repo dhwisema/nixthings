@@ -8,8 +8,6 @@
     distrobox-tui
     distrobox
     goofcord
-    appflowy
-    jetbrains.clion
     cmake
     gnumake
     obsidian

@@ -2,7 +2,9 @@
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
@@ -16,19 +18,14 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     #waveforms
     #waveforms.url = "github:liff/waveforms-flake";
   };
 
   outputs = {
-    nur,
     self,
     nixpkgs,
+    nixpkgs-stable,
     nix-flatpak,
     nixos-hardware,
     home-manager,
@@ -42,8 +39,6 @@
       modules = [
         #niri
         niri.nixosModules.niri
-        nur.modules.nixos.default
-
         #hardware imports for amd gpu and laptop drivers
         nixos-hardware.nixosModules.lenovo-thinkpad-z
         stylix.nixosModules.stylix
@@ -61,7 +56,6 @@
           home-manager.users.howard = {pkgs, ...}: {
             imports = [
               ./Hosts/laptop/home.nix
-              nur.modules.homeManager.default
             ];
           };
 
@@ -76,7 +70,6 @@
       modules = [
         # niri
         niri.nixosModules.niri
-        nur.modules.nixos.default
         stylix.nixosModules.stylix
 
         #sets scheduling things for kernel
@@ -93,7 +86,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.howard = {pkgs, ...}: {
             imports = [
-              nur.modules.homeManager.default
               ./Hosts/laptop/home.nix
             ];
           };

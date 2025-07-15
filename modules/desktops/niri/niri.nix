@@ -22,6 +22,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      rose-pine-cursor
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
@@ -47,6 +48,7 @@
     programs.niri.enable = true;
 
     services.displayManager.gdm.enable = true;
+    services.displayManager.gdm.wayland = true;
     # services.displayManager.sddm = {
     #   enable = true;
     #   wayland.enable = true;

@@ -4,6 +4,21 @@
   lib,
   ...
 }: {
+
+ 
+  #defining monitors for me niri
+  programs.niri.settings.outputs."DP-5" = {
+    position.x = 0;
+    position.y = 0;
+#    variable-refresh-rate = false;
+    # mode = "2560x1440@164.958";
+  };
+  programs.niri.settings.outputs."DP-4" = {
+    position.x = -1920;
+    position.y = 0;
+  };
+
+
   stylix.targets.niri.enable = true;
   programs.niri.settings.spawn-at-startup = [
     {command = ["waybar"];}
@@ -37,6 +52,13 @@
     };
   };
 
+  programs.niri.settings.cursor = {
+    hide-after-inactive-ms = 1000;
+    hide-when-typing = true;
+    size = 12;
+    theme = "rose-pine-cursor";
+
+  };
   programs.niri.settings.window-rules = [
     {
       geometry-corner-radius = {
@@ -68,8 +90,10 @@
     "Mod+Shift+Slash".action.show-hotkey-overlay = {};
 
     # Suggested binds for running programs: terminal, app launcher, screen locker.
+    "Mod+A".action.spawn = "pavucontrol";
+    "Mod+N".action.spawn = ["sh" "nmtui"];
     "Mod+T".action.spawn = "ghostty";
-    "Mod+S".action.spawn = "vesktop";
+    "Mod+S".action.spawn = "goofcord";
     "Mod+B".action.spawn = "firefox";
     "Mod+E".action.spawn = "Thunar";
     "Mod+D".action.spawn = ["rofi" "-show" "drun"];

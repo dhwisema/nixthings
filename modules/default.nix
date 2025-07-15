@@ -4,8 +4,6 @@
     ./packages/base_packages.nix
     ./packages/gaming.nix
     ./packages/kernel.nix
-    ./desktops/gnome.nix
-    ./desktops/kde.nix
     ./packages/flatpak.nix
     ./common/time.nix
     ./common/nix-nh.nix
