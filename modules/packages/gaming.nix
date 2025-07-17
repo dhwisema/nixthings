@@ -25,6 +25,7 @@
       steam
       gamescope
       protonup-qt
+      jq
     ];
     programs.nix-ld = {
       enable = true;
