@@ -26,6 +26,9 @@
       gamescope
       protonup-qt
       jq
+      min-ed-launcher
+      ed-odyssey-materials-helper
+      edmarketconnector
     ];
     programs.nix-ld = {
       enable = true;
