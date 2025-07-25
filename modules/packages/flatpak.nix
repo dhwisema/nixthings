@@ -25,5 +25,5 @@
     onCalendar = "daily"; # Default value
   };
 
-  services.flatpak.update.onActivation = true;
+  #services.flatpak.update.onActivation = true;
 }
