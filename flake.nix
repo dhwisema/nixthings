@@ -8,7 +8,7 @@
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
-    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     #home-manager till i decide to nuke it again
     home-manager.url = "github:nix-community/home-manager";
