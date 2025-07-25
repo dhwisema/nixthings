@@ -11,13 +11,11 @@
 
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
-    "com.calibre_ebook.calibre"
     "com.github.corna.Vivado"
     "io.github.flattool.Warehouse"
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
-    "im.riot.Riot"
   ];
 
   # using https://github.com/gmodena/nix-flatpak
