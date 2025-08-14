@@ -8,7 +8,7 @@
   options = {
     Idevice.enable = lib.mkOption {
       type = lib.types.bool;
-      default = false;
+      default = true;
       description = "Enable Idevice.";
     };
   };
@@ -17,6 +17,7 @@
   #
   config = lib.mkIf config.Idevice.enable {
     environment.systemPackages = with pkgs; [
+      usbmuxd
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
     ];
