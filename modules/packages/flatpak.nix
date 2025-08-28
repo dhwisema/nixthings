@@ -11,7 +11,8 @@
 
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
-    "com.github.corna.Vivado"
+    #"com.github.corna.Vivado"
+    "md.obsidian.Obsidian"
     "io.github.flattool.Warehouse"
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
