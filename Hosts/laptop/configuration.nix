@@ -10,6 +10,7 @@
   gaming.enable = true;
   hardware.bluetooth.enable = true;
   niri.enable = true;
+  power.enable = true;
   networking.hostName = "laptop";
 
    services.fprintd.enable = lib.mkDefault true;
