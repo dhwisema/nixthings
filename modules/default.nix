@@ -2,6 +2,7 @@
   imports = [
     ./graphics/nvidia.nix
     ./packages/base_packages.nix
+    ./packages/power.nix
     ./packages/gaming.nix
     ./packages/kernel.nix
     ./packages/flatpak.nix
