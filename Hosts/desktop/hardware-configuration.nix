@@ -16,7 +16,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
-  boot.kernelParams = [ "video=DP-3:2388x1668R@120D" ];
+  boot.kernelParams = [ "video=DP-3:2388x1668@120" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c769d505-3c7c-4088-8119-794b6fdbc608";
