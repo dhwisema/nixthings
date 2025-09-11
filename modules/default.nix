@@ -11,7 +11,7 @@
     ./desktops/niri/niri.nix
     ./stylix/stylix.nix
     ./packages/tailscale.nix
-    ./packages/moonlight.nix
+    ./packages/sunshine.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
