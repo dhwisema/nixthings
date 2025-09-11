@@ -11,6 +11,7 @@
   niri.enable = true;
   gaming.enable = true;
   nvidia.enable = true;
+  desktopManager.gnome.enable = true;
 
   hardware.bluetooth.enable = true;
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
