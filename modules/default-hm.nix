@@ -10,7 +10,7 @@
     ./desktops/niri/rofi-wayland/rofi-wayland.nix
     ./waybar/waybar.nix
     ./desktops/niri/swaylock.nix
-    ./mako.nix
+    ./desktops/niri/mako.nix
     ./packages/home_pkgs.nix
   ];
   nixpkgs.config.allowUnfree = true;
