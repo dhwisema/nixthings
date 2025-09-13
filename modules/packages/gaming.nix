@@ -29,6 +29,7 @@
       min-ed-launcher
       ed-odyssey-materials-helper
       edmarketconnector
+      nexusmods-app-unfree
     ];
     programs.nix-ld = {
       enable = true;
