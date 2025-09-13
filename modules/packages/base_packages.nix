@@ -20,6 +20,7 @@
     libsecret
     seahorse
     gcc
+    gearlever
   ];
 
   fonts.packages = with pkgs; [
