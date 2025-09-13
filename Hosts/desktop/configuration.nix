@@ -11,10 +11,7 @@
   niri.enable = true;
   gaming.enable = true;
   nvidia.enable = true;
-  services.desktopManager.gnome.enable = true;
-      systemd.services.gnome-remote-desktop = {
-      wantedBy = [ "graphical.target" ];
-    };
+
 
   hardware.bluetooth.enable = true;
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
