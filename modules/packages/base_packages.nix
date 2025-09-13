@@ -23,6 +23,14 @@
     gearlever
   ];
 
+programs.appimage.enable = true;
+programs.appimage.binfmt = true;
+programs.appimage.package = pkgs.appimage-run.override { extraPkgs = pkgs: [
+...
+pkgs.python312
+...
+]; };
+
   fonts.packages = with pkgs; [
     nerd-fonts.hack
     nerd-fonts.fira-code
