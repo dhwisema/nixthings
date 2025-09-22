@@ -325,6 +325,18 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-iCGWf/LTy+aY0zFu8q12lK8KuZp7yvdhStehhyX1v8w=",
+        "path": "/nix/store/081zspnjiwbq85jqhx89gkk2nbyrfg3y-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -358,7 +370,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable_2",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "waveforms": "waveforms"
       }
     },
     "stylix": {
@@ -486,6 +499,24 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "waveforms": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1757845097,
+        "narHash": "sha256-pA+G2XGZ1ZDDJ2L5SG0JcvACXNm0oZ3n2erujcD3A9o=",
+        "owner": "liff",
+        "repo": "waveforms-flake",
+        "rev": "c6fac3b8694ab95a3f4204b6bf110df9d2594d0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "liff",
+        "repo": "waveforms-flake",
         "type": "github"
       }
     },
