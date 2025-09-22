@@ -18,8 +18,10 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    
+
     #waveforms
-    #waveforms.url = "github:liff/waveforms-flake";
+    waveforms.url = "github:liff/waveforms-flake";
   };
 
   outputs = {
@@ -31,6 +33,7 @@
     home-manager,
     stylix,
     niri,
+    waveforms,
     ...
     #waveforms,
   }: {
@@ -45,8 +48,8 @@
 
         nix-flatpak.nixosModules.nix-flatpak
 
-        #waveforms.nixosModule
-        #{users.users.howard.extraGroups = ["plugdev"];}
+        waveforms.nixosModule
+        {users.users.howard.extraGroups = ["plugdev"];}
         ./Hosts/laptop/configuration.nix
 
         home-manager.nixosModules.home-manager
