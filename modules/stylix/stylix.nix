@@ -11,7 +11,7 @@
   stylix.polarity = "dark";
   stylix.autoEnable = true;
   stylix.cursor = {
-    name = rose-pine-cursor;
+    name = "rose-pine-cursor";
     package = pkgs.rose-pine-cursor;
     size = 12;
   };
