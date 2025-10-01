@@ -35,6 +35,7 @@
       bluetuith
       file-roller
       gnome-keyring
+      nome-control-center
 
       #sddm specific files
     ];
