@@ -7,6 +7,9 @@
     ./hardware-configuration.nix
     ./../../modules/default.nix
   ];
+
+  services.power-profiles-daemon.enable = true;
+  mkForce services.tlp.enable = false;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
   niri.enable = true;
