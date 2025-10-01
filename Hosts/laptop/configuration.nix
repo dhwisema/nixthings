@@ -9,7 +9,7 @@
   ];
 
   services.power-profiles-daemon.enable = true;
-  mkForce services.tlp.enable = false;
+  services.tlp.enable = pkgs.lib.mkForce false;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
   niri.enable = true;
