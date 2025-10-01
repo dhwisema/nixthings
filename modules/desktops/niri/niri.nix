@@ -18,8 +18,10 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
       ];
     };
+    services.gnome.gnome-settings-daemon.enable = true;
 
     environment.systemPackages = with pkgs; [
       rose-pine-cursor
