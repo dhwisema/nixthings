@@ -18,7 +18,7 @@
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gnome
       ];
     };
     services.gnome.gnome-settings-daemon.enable = true;
