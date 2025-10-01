@@ -20,6 +20,7 @@
     libsecret
     seahorse
     gcc
+    onlyoffice-desktopeditors
     
   ];
 
