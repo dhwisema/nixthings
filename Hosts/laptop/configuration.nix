@@ -24,12 +24,11 @@
 
   #boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
   systemd.user.services."exit-ccs" = {
-    Unit = {
-      Description = "Stop distrobox ccs container on logout";
-      After = [ "graphical-session.target" ];
-    };
 
-    Service = {
+    Description = "Stop distrobox ccs container on logout";
+    After = [ "graphical-session.target" ];
+
+    ServiceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
     };
