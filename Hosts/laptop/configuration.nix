@@ -34,9 +34,8 @@
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
     };
 
-    Install = {
-      WantedBy = [ "exit.target" ];
-    };
+    WantedBy = [ "exit.target" ];
+
   };
 
 }
