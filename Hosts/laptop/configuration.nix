@@ -23,18 +23,18 @@
   #iso use only networking.networkmanager.enable = lib.mkForce false;
 
   #boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
-  systemd.user.services."exit-ccs" = {
+  # systemd.user.services."exit-ccs" = {
 
-    description = "Stop distrobox ccs container on logout";
-    after = [ "graphical-session.target" ];
+  #   description = "Stop distrobox ccs container on logout";
+  #   after = [ "graphical-session.target" ];
 
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
-    };
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
+  #   };
 
-    wantedBy = [ "exit.target" ];
+  #   wantedBy = [ "exit.target" ];
 
-  };
+  # };
 
 }
