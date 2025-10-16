@@ -218,7 +218,6 @@
   #overview keybind
     "Mod+Tab" = {
       action.toggle-overview = { };
-      hotkey-overlay = "Open overview";
     };
 
 
