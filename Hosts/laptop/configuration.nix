@@ -28,7 +28,7 @@
     description = "Stop distrobox ccs container on logout";
     after = [ "graphical-session.target" ];
 
-    ServiceConfig = {
+    serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
     };
