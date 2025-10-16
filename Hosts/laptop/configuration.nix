@@ -33,7 +33,7 @@
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.distrobox}/bin/distrobox stop ccs'";
     };
 
-    WantedBy = [ "exit.target" ];
+    wantedBy = [ "exit.target" ];
 
   };
 
