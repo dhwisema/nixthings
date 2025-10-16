@@ -195,7 +195,7 @@
     };
 
     # brightness
-    "Mod+F5" = {
+    "XF86MonBrightnessUp" = {
       action.spawn = [
         "brillo"
         "-U"
@@ -204,7 +204,7 @@
       repeat = true;
       cooldown-ms = 50;
     };
-    "Mod+F6" = {
+    "XF86MonBrightnessDown" = {
       action.spawn = [
         "brillo"
         "-A"
