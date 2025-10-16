@@ -216,8 +216,11 @@
 
     "Mod+Q".action.close-window = { };
   #overview keybind
-    "Mod+Tab".action.toggle-overview = { };
-    "Mod+Tab".hotkey-overlay = "Open overview";
+    "Mod+Tab" = {
+      action.toggle-overview = { };
+      hotkey-overlay = "Open overview";
+    };
+
 
     "Mod+Left".action.focus-column-left = { };
     "Mod+Down".action.focus-window-down = { };
