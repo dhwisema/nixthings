@@ -198,7 +198,7 @@
     "XF86MonBrightnessUp" = {
       action.spawn = [
         "brillo"
-        "-U"
+        "-A"
         "5"
       ];
       repeat = true;
@@ -207,7 +207,7 @@
     "XF86MonBrightnessDown" = {
       action.spawn = [
         "brillo"
-        "-A"
+        "-U"
         "5"
       ];
       repeat = true;
