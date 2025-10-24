@@ -9,7 +9,14 @@
     ./../../modules/default.nix
   ];
 
-  services.power-profiles-daemon.enable = true;
+  services.tuned = {
+    enable = true;
+    settings = {
+      dynamic_tuning = true;
+      recommend_command = true;
+    };
+  };
+
   services.tlp.enable = pkgs.lib.mkForce false;
   gaming.enable = true;
   hardware.bluetooth.enable = true;
