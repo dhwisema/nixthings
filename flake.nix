@@ -18,85 +18,93 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    
+    inputs.sops-nix.url = "github:Mic92/sops-nix";
+    inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-stable,
-    nix-flatpak,
-    nixos-hardware,
-    home-manager,
-    stylix,
-    niri,
-    waveforms,
-    ...
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      nix-flatpak,
+      nixos-hardware,
+      home-manager,
+      stylix,
+      niri,
+      sops-nix,
+      waveforms,
+      ...
     #waveforms,
-  }: {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        #niri
-        niri.nixosModules.niri
-        #hardware imports for amd gpu and laptop drivers
-        nixos-hardware.nixosModules.lenovo-thinkpad-z
-        stylix.nixosModules.stylix
+    }:
+    {
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          #niri
+          niri.nixosModules.niri
+          #hardware imports for amd gpu and laptop drivers
+          nixos-hardware.nixosModules.lenovo-thinkpad-z
+          stylix.nixosModules.stylix
 
-        nix-flatpak.nixosModules.nix-flatpak
+          nix-flatpak.nixosModules.nix-flatpak
+          sops-nix.nixosModules.sops
+          waveforms.nixosModule
+          { users.users.howard.extraGroups = [ "plugdev" ]; }
+          ./Hosts/laptop/configuration.nix
 
-        waveforms.nixosModule
-        {users.users.howard.extraGroups = ["plugdev"];}
-        ./Hosts/laptop/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            #home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.howard =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./Hosts/laptop/home.nix
+                ];
+              };
 
-        home-manager.nixosModules.home-manager
-        {
-          #home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.howard = {pkgs, ...}: {
-            imports = [
-              ./Hosts/laptop/home.nix
-            ];
-          };
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+        ];
+      };
 
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
-      ];
+      nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # niri
+          niri.nixosModules.niri
+          stylix.nixosModules.stylix
+
+          #sets scheduling things for kernel
+          nixos-hardware.nixosModules.common-cpu-amd
+          #ssd trim
+          nixos-hardware.nixosModules.common-pc-ssd
+          nix-flatpak.nixosModules.nix-flatpak
+          sops-nix.nixosModules.sops
+          ./Hosts/desktop/configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            #home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.howard =
+              { pkgs, ... }:
+              {
+                imports = [
+                  ./Hosts/laptop/home.nix
+                ];
+              };
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+        ];
+      };
     };
-
-    nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # niri
-        niri.nixosModules.niri
-        stylix.nixosModules.stylix
-
-        #sets scheduling things for kernel
-        nixos-hardware.nixosModules.common-cpu-amd
-        #ssd trim
-        nixos-hardware.nixosModules.common-pc-ssd
-        nix-flatpak.nixosModules.nix-flatpak
-
-        ./Hosts/desktop/configuration.nix
-
-        home-manager.nixosModules.home-manager
-        {
-          #home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.howard = {pkgs, ...}: {
-            imports = [
-              ./Hosts/laptop/home.nix
-            ];
-          };
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
-      ];
-    };
-  };
 }
