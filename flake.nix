@@ -18,8 +18,8 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-   sops-nix.url = "github:Mic92/sops-nix";
-  sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
