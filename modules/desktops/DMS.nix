@@ -11,6 +11,5 @@
 
   programs.dankMaterialShell = {
     enable = true;
-    quickshell.package = pkgs.quickshell;
   };
 }
