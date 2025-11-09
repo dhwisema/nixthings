@@ -2,9 +2,7 @@
   description = "My NixOS Configurations for Desktop and Laptop";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     #hardware
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     #flatpak
@@ -23,13 +21,31 @@
 
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
+    
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+      inputs.dms-cli.follows = "dms-cli";
+    };
+
+    #dms 
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       nix-flatpak,
       nixos-hardware,
       home-manager,
@@ -97,7 +113,7 @@
               { pkgs, ... }:
               {
                 imports = [
-                  ./Hosts/laptop/home.nix
+                  ./Hosts/desktop/home.nix
                 ];
               };
 
