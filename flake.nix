@@ -83,6 +83,8 @@
               { pkgs, ... }:
               {
                 imports = [
+                                      dankMaterialShell.homeModules.dankMaterialShell.default
+                    dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/laptop/home.nix
                 ];
               };
