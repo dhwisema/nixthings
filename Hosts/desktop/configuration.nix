@@ -16,7 +16,7 @@
   hardware.bluetooth.enable = true;
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
   networking.hostName = "deskbox";
-  time.hardwareClockInLocalTime = true;
+  # time.hardwareClockInLocalTime = true;
 
   systemd.services."systemd-suspend" = {
     serviceConfig = {
