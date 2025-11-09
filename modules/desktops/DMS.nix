@@ -11,7 +11,7 @@
 programs.dankMaterialShell = {
   enable = true;
   niri = {
-    enableKeybinds = true;  # Automatic keybinding configuration
+    enableKeybinds = false;  # Automatic keybinding configuration
     enableSpawn = true;      # Auto-start DMS with niri
   };
 };
