@@ -43,7 +43,22 @@
   };
 
   outputs =
-inputs @ {nixpkgs, ...}:
+    {
+      self,
+      dgop,
+      dms-cli,
+      dankMaterialShell,
+      nixpkgs,
+      nix-flatpak,
+      nixos-hardware,
+      home-manager,
+      stylix,
+      niri,
+      sops-nix,
+      waveforms,
+      ...
+    #waveforms,
+    }:
     {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
