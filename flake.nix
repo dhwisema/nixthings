@@ -45,6 +45,9 @@
   outputs =
     {
       self,
+      dgop,
+      dms-cli,
+      dankMaterialShell,
       nixpkgs,
       nix-flatpak,
       nixos-hardware,
