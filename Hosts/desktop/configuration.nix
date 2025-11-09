@@ -14,7 +14,7 @@
 
 
   hardware.bluetooth.enable = true;
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+  # boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
   networking.hostName = "deskbox";
   # time.hardwareClockInLocalTime = true;
 
