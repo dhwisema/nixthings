@@ -21,7 +21,7 @@
 
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
-    
+
     dgop = {
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +39,7 @@
       inputs.dms-cli.follows = "dms-cli";
     };
 
-    #dms 
+    #dms
   };
 
   outputs =
@@ -83,8 +83,8 @@
               { pkgs, ... }:
               {
                 imports = [
-                                      dankMaterialShell.homeModules.dankMaterialShell.default
-                    dankMaterialShell.homeModules.dankMaterialShell.niri
+                  dankMaterialShell.homeModules.dankMaterialShell.default
+                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/laptop/home.nix
                 ];
               };
@@ -118,8 +118,8 @@
               { pkgs, ... }:
               {
                 imports = [
-                    dankMaterialShell.homeModules.dankMaterialShell.default
-                    dankMaterialShell.homeModules.dankMaterialShell.niri
+                  dankMaterialShell.homeModules.dankMaterialShell.default
+                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/desktop/home.nix
                 ];
               };
