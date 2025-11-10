@@ -5,14 +5,12 @@
     wantedBy = ["multi-user.target"];
     path = [pkgs.flatpak];
     script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      flatpak remote-add --if-not-exists flathub https://www.flathub.org/repo/flathub.flatpakrepo
     '';
   };
 
   services.flatpak.packages = [
     #{appId = ""; origin = "flathub";}
-    #"com.github.corna.Vivado"
-    "md.obsidian.Obsidian"
     "io.github.flattool.Warehouse"
     "camp.nook.nookdesktop"
     "com.usebottles.bottles"
@@ -26,5 +24,5 @@
     onCalendar = "daily"; # Default value
   };
 
-  #services.flatpak.update.onActivation = true;
+  services.flatpak.update.onActivation = true;
 }
