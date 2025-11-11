@@ -99,6 +99,8 @@
         system = "x86_64-linux";
         modules = [
           # niri
+          waveforms.nixosModule
+          { users.users.howard.extraGroups = [ "plugdev" ]; }
           niri.nixosModules.niri
           stylix.nixosModules.stylix
 
