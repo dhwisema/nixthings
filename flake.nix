@@ -72,7 +72,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           sops-nix.nixosModules.sops
           waveforms.nixosModule
-          { users.users.howard.extraGroups = [ "plugdev" ]; }
+          ({ users.users.howard.extraGroups = [ "plugdev" ]; })
           ./Hosts/laptop/configuration.nix
 
           home-manager.nixosModules.home-manager
@@ -100,7 +100,7 @@
         modules = [
           # niri
           waveforms.nixosModule
-          { users.users.howard.extraGroups = [ "plugdev" ]; }
+          ({ users.users.howard.extraGroups = [ "plugdev" ]; })
           niri.nixosModules.niri
           stylix.nixosModules.stylix
 
