@@ -41,7 +41,6 @@
     {
       self,
       dgop,
-      dms-cli,
       dankMaterialShell,
       nixpkgs,
       nix-flatpak,
