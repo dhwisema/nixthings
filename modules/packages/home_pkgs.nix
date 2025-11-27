@@ -10,5 +10,6 @@
     gnumake
     obsidian
     zellij
+    eza
   ];
 }
