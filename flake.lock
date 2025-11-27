@@ -78,11 +78,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764221516,
-        "narHash": "sha256-B4RFNcOte2Ew2TR2dJxhN2D/NmkvUDASoj53tdCasx4=",
+        "lastModified": 1764223295,
+        "narHash": "sha256-PnmYebWEl+9xABTZYiko2O4b9j9mQGz8689DHrV1hc8=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "4f24312432c8706096914a0bf792479ba76438a8",
+        "rev": "5b0c38b0ed014e47c3e6ba4be0891a9d421f9637",
         "type": "github"
       },
       "original": {
@@ -559,15 +559,15 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1764053334,
-        "narHash": "sha256-oxJM+tclx75Q/YiIz27CXGN9pMjscCtKRBAcFvOVQkg=",
-        "owner": "liff",
+        "lastModified": 1764223330,
+        "narHash": "sha256-o7RAu5PzgNGOg7S4UuwBo9qDhQ/nmYqJeP3VZPJmj/o=",
+        "owner": "dhwisema",
         "repo": "waveforms-flake",
-        "rev": "19e051a2a01d8d6382047ca9683ccd442b75b432",
+        "rev": "79c01200141b97400995397dbf9b931aabfe407d",
         "type": "github"
       },
       "original": {
-        "owner": "liff",
+        "owner": "dhwisema",
         "repo": "waveforms-flake",
         "type": "github"
       }
