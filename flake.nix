@@ -20,7 +20,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     #waveforms
-    waveforms.url = "github:dhwisema/waveforms-flake";
+    waveforms.url = "github:liff/waveforms-flake";
 
     dgop = {
       url = "github:AvengeMedia/dgop";
