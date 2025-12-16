@@ -9,5 +9,7 @@
     cmake
     gnumake
     obsidian
+    zellij
+    eza
   ];
 }

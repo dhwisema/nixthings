@@ -20,6 +20,7 @@
   networking.hostName = lib.mkDefault "default-hostname";
   networking.networkmanager.enable = true;
 
+  services.fwupd.enable = true;
   services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us";

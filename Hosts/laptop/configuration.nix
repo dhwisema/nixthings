@@ -23,6 +23,7 @@
   niri.enable = true;
   power.enable = false;
   networking.hostName = "laptop";
+  
 
   services.fprintd.enable = lib.mkDefault true;
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ]; # disable psr-su
