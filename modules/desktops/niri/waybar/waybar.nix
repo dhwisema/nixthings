@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  programs.waybar.enable = true;
+  programs.waybar.enable = false;
   programs.waybar.settings = {
     mainBar = {
       layer = "top";
