@@ -13,7 +13,6 @@
     #{appId = ""; origin = "flathub";}
     "io.github.flattool.Warehouse"
     "camp.nook.nookdesktop"
-    "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
   ];
 
