@@ -20,31 +20,12 @@
       gamemode
       wine
       steam-run
-      vulkan-tools
       steam
       protonup-qt
       min-ed-launcher
     ];
     programs.nix-ld = {
       enable = true;
-      libraries =
-        (pkgs.steam.args.multiPkgs pkgs)
-        ++ (with pkgs; 
-        [
-        xorg.libxcb 
-        libxkbcommon 
-        wayland 
-        protonup-qt 
-        alsa-lib
-        stdenv.cc.cc
-        zlib
-        fuse3
-        icu
-        nss
-        openssl
-        curl
-        expat
-        ]);
     };
   };
 }

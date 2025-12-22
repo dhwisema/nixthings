@@ -16,9 +16,6 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
 
@@ -33,7 +30,6 @@
       home-manager,
       stylix,
       niri,
-      sops-nix,
       waveforms,
       ...
     #waveforms,
@@ -49,7 +45,7 @@
           stylix.nixosModules.stylix
 
           nix-flatpak.nixosModules.nix-flatpak
-          sops-nix.nixosModules.sops
+
           waveforms.nixosModule
           ({ users.users.howard.extraGroups = [ "plugdev" ]; })
           ./Hosts/laptop/configuration.nix
@@ -83,7 +79,7 @@
           #ssd trim
           nixos-hardware.nixosModules.common-pc-ssd
           nix-flatpak.nixosModules.nix-flatpak
-          sops-nix.nixosModules.sops
+
           ./Hosts/desktop/configuration.nix
 
           home-manager.nixosModules.home-manager
