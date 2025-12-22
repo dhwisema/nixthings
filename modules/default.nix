@@ -21,11 +21,6 @@
   networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Most Electron Applications
@@ -40,12 +35,6 @@
   };
 
   services.libinput.enable = true;
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
 
   home-manager.backupFileExtension = "backup";
 
