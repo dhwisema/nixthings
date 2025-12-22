@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     ghostty
     yazi
-    onlyofficedesktopeditors
+    onlyoffice-desktopeditors
     kdePackages.konsole
     distrobox-tui
     distrobox
