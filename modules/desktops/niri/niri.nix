@@ -24,7 +24,6 @@
     services.gnome.gnome-settings-daemon.enable = true;
 
     environment.systemPackages = with pkgs; [
-      rose-pine-cursor
       sway-contrib.grimshot
       xwayland-satellite
       pavucontrol
@@ -35,7 +34,6 @@
       bluetuith
       file-roller
       gnome-keyring
-      gnome-control-center
 
       #sddm specific files
     ];
