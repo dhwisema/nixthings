@@ -22,25 +22,11 @@
     #waveforms
     waveforms.url = "github:liff/waveforms-flake";
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
-    };
-
-    #dms
   };
 
   outputs =
     {
       self,
-      dgop,
-      dankMaterialShell,
       nixpkgs,
       nix-flatpak,
       nixos-hardware,
@@ -76,14 +62,9 @@
               { pkgs, ... }:
               {
                 imports = [
-                  dankMaterialShell.homeModules.dankMaterialShell.default
-                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/laptop/home.nix
                 ];
               };
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
       };
@@ -113,14 +94,9 @@
               { pkgs, ... }:
               {
                 imports = [
-                  dankMaterialShell.homeModules.dankMaterialShell.default
-                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/desktop/home.nix
                 ];
               };
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
       };
