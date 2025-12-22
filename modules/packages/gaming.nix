@@ -23,7 +23,6 @@
       steam-run
       vulkan-tools
       steam
-      gamescope
       protonup-qt
       min-ed-launcher
     ];
