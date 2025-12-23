@@ -17,6 +17,7 @@
     seahorse
     gcc
     jq 
+    
   ];
 
 

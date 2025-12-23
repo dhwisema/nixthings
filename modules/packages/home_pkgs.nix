@@ -7,7 +7,6 @@
     distrobox-tui
     distrobox
     goofcord
-    obsidian
     zellij
     eza
   ];
