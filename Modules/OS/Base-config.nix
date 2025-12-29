@@ -1,12 +1,26 @@
-{pkgs,lib,config,...}:
 {
-  imports = [./nix-config.nix];
-  
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  imports = [
+    ./nix-config.nix
+    ./users.nix
+    ./ssh.nix
+  ];
+  #enable and make fish defaultUserShell
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+  #set locale
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
-
+  #autologin remove
   services.getty.autologinUser = null;
-    
+  systemd.targets.multi-user.enable = true;
+  
+  #systemd boot enable and also set latest kernel
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -18,26 +32,16 @@
     };
     initrd.systemd.enable = true;
   };
-
+  #network manager default
   networking.networkmanager.enable = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
+  #tuned powermanagement
+  services.tuned = {
     enable = true;
     settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
+      dynamic_tuning = true;
     };
   };
+  #tailscale
+  services.tailscale.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
-
-
-
-
-
-  
 }

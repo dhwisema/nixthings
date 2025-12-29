@@ -16,8 +16,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "howard";
-  home.homeDirectory = "/home/howard";
+  home.username = "irrelevancy";
+  home.homeDirectory = "/home/irrelevancy";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
