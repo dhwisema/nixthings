@@ -11,16 +11,12 @@
     nil
     gvfs
     udisks
-    labwc
-    cmake
-    gtest
     nautilus
     vscode-fhs
-    verible
     libsecret
     seahorse
     gcc
-    onlyoffice-desktopeditors
+    jq 
     
   ];
 

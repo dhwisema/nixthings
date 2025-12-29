@@ -16,39 +16,20 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
     #waveforms
-    waveforms.url = "github:dhwisema/waveforms-flake";
+    waveforms.url = "github:liff/waveforms-flake";
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
-    };
-
-
-    #dms
   };
 
   outputs =
     {
       self,
-      dgop,
-      dankMaterialShell,
       nixpkgs,
       nix-flatpak,
       nixos-hardware,
       home-manager,
       stylix,
       niri,
-      sops-nix,
       waveforms,
       ...
     #waveforms,
@@ -64,7 +45,7 @@
           stylix.nixosModules.stylix
 
           nix-flatpak.nixosModules.nix-flatpak
-          sops-nix.nixosModules.sops
+
           waveforms.nixosModule
           ({ users.users.howard.extraGroups = [ "plugdev" ]; })
           ./Hosts/laptop/configuration.nix
@@ -77,14 +58,9 @@
               { pkgs, ... }:
               {
                 imports = [
-                  dankMaterialShell.homeModules.dankMaterialShell.default
-                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/laptop/home.nix
                 ];
               };
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
       };
@@ -103,7 +79,7 @@
           #ssd trim
           nixos-hardware.nixosModules.common-pc-ssd
           nix-flatpak.nixosModules.nix-flatpak
-          sops-nix.nixosModules.sops
+
           ./Hosts/desktop/configuration.nix
 
           home-manager.nixosModules.home-manager
@@ -114,14 +90,9 @@
               { pkgs, ... }:
               {
                 imports = [
-                  dankMaterialShell.homeModules.dankMaterialShell.default
-                  dankMaterialShell.homeModules.dankMaterialShell.niri
                   ./Hosts/desktop/home.nix
                 ];
               };
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
       };

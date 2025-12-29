@@ -15,9 +15,5 @@
     package = pkgs.rose-pine-cursor;
     size = 12;
   };
-#   stylix.targets.firefox = {
-#     profileNames = ["profile_0"];
-#     colorTheme.enable = true;
-#     enable = true;    
-# };
+
 }

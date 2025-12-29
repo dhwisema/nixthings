@@ -2,13 +2,11 @@
   home.packages = with pkgs; [
     ghostty
     yazi
+    onlyoffice-desktopeditors
     kdePackages.konsole
     distrobox-tui
     distrobox
     goofcord
-    cmake
-    gnumake
-    obsidian
     zellij
     eza
   ];

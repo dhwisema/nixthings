@@ -17,40 +17,15 @@
   config = lib.mkIf config.gaming.enable {
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
-      winetricks
       gamemode
       wine
       steam-run
-      vulkan-tools
       steam
-      gamescope
       protonup-qt
-      jq
       min-ed-launcher
-      ed-odyssey-materials-helper
-      edmarketconnector
-      nexusmods-app-unfree
     ];
     programs.nix-ld = {
       enable = true;
-      libraries =
-        (pkgs.steam.args.multiPkgs pkgs)
-        ++ (with pkgs; 
-        [
-        xorg.libxcb 
-        libxkbcommon 
-        wayland 
-        protonup-qt 
-        alsa-lib
-        stdenv.cc.cc
-        zlib
-        fuse3
-        icu
-        nss
-        openssl
-        curl
-        expat
-        ]);
     };
   };
 }

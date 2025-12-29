@@ -8,11 +8,10 @@
   imports = [
     ./desktops/niri/niri-hm.nix
     ./desktops/niri/rofi-wayland/rofi-wayland.nix
-    # ./desktops/niri/waybar/waybar.nix
+    ./desktops/niri/waybar/waybar.nix
     ./desktops/niri/swaylock.nix
     ./desktops/niri/mako.nix
     ./packages/home_pkgs.nix
-    ./desktops/DMS.nix
   ];
   nixpkgs.config.allowUnfree = true;
   stylix.enableReleaseChecks = false;
