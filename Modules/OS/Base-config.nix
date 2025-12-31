@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  hostname,
   ...
 }:
 {
@@ -11,6 +12,8 @@
     ./ssh.nix
     ./../hardware/nvidia.nix
   ];
+
+  networking.hostName = hostname;
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
