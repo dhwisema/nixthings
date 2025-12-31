@@ -32,7 +32,7 @@
 
   users = {
     mutableUsers = true;
-    users.username = {
+    users.${username} = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"
