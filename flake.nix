@@ -31,9 +31,11 @@
       stylix,
       niri,
       agenix,
+      waveforms,
       ...
     }@inputs:
     let
+      username = "irrelevancy";
       configurationDefaults = args: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -45,11 +47,25 @@
         {
           system ? "x86_64-linux",
           role ? "server",
+          nvidia ? false,
           hostname,
           args ? { },
           modules,
         }:
         let
+          default-conf =
+            if role == "server" then
+              [ ./Modules/OS/Base-config.nix ]
+            else
+              [
+                ./Modules/OS/desktop-config.nix
+                stylix.nixosModules.stylix
+                niri.nixosModules.niri
+                waveforms.nixosModule
+                ({ users.users.howard.extraGroups = [ "plugdev" ]; })
+              ];
+          default-hm = if role == "server" then [ ./Home/server.nix] else [ ./Home/desktop.nix ];
+          hw-conf = ./Host/${hostname}/hardware-configuration.nix;
           specialArgs = {
             inherit hostname;
           }
@@ -58,11 +74,17 @@
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
+            default-conf
             (configurationDefaults specialArgs)
             home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username} = default-hm;
+            }
+
             #disko will go here soon
           ]
-          ++ modules;
+          ++ modules
+          ++ default-conf;
         };
     in
 
@@ -73,6 +95,7 @@
       }; # thinkpad z16
       nixosConfiguration.Fjord = mkNixosConfiguration {
         hostname = "Beau";
+        nvidia = true;
         modules = [ ];
       }; # 7800x3d gaming pc
       nixosConfiguration.Stacy-Fakename = mkNixosConfiguration {
