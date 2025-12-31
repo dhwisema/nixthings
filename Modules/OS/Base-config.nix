@@ -9,6 +9,7 @@
     ./nix-config.nix
     ./users.nix
     ./ssh.nix
+    ./../hardware/nvidia.nix
   ];
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
