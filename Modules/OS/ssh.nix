@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  username,
   ...
 }:{
   # Enable the OpenSSH daemon.
@@ -19,7 +20,7 @@
   # Enable passwordless sudo.
   security.sudo.extraRules = [
     {
-      users = [ "howard" ];
+      users = [ username ];
       commands = [
         {
           command = "ALL";
@@ -31,7 +32,7 @@
 
   users = {
     mutableUsers = true;
-    users.${"howard"} = {
+    users.username = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"
