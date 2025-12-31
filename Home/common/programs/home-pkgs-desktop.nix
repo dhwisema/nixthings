@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./home-pkgs-server.nix ];
+  
   home.packages = with pkgs; [
     onlyoffice-desktopeditors
     # distrobox-tui
