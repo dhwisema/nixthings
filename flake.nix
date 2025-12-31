@@ -21,19 +21,22 @@
       inputs.darwin.follows = "";
     };
   };
-  outputs =
+  # outputs = inputs:
+  # with inputs; weird syntax thing.... i think its neat apparantly this would work but
+    outputs =
     {
       self,
       nixpkgs,
-      home-manager,
+      agenix,
       disko,
       nixos-hardware,
+      home-manager,
       stylix,
       niri,
-      agenix,
       waveforms,
       ...
-    }@inputs:
+    #waveforms,
+    }:
     let
       username = "irrelevancy";
       configurationDefaults = args: {
@@ -65,7 +68,7 @@
                 ({ users.users.howard.extraGroups = [ "plugdev" ]; })
               ];
           default-hm = if role == "server" then [ ./Home/server.nix] else [ ./Home/desktop.nix ];
-          hw-conf = ./Host/${hostname}/hardware-configuration.nix;
+          hw-conf = ./. + "/Host/${hostname}/hardware-configuration.nix";
           specialArgs = {
             inherit hostname;
           }
@@ -84,7 +87,8 @@
             #disko will go here soon
           ]
           ++ modules
-          ++ default-conf;
+          ++ default-conf
+          ++ hw-conf;
         };
     in
 
