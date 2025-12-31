@@ -23,7 +23,7 @@
   };
   # outputs = inputs:
   # with inputs; weird syntax thing.... i think its neat apparantly this would work but
-    outputs =
+  outputs =
     {
       self,
       nixpkgs,
@@ -67,7 +67,7 @@
                 waveforms.nixosModule
                 ({ users.users.howard.extraGroups = [ "plugdev" ]; })
               ];
-          default-hm = if role == "server" then [ ./Home/server.nix] else [ ./Home/desktop.nix ];
+          default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
           hw-conf = ./. + "/Host/${hostname}/hardware-configuration.nix";
           specialArgs = {
             inherit hostname;
