@@ -21,172 +21,73 @@
       inputs.darwin.follows = "";
     };
   };
-
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       home-manager,
       disko,
-      agenix,
       nixos-hardware,
       stylix,
       niri,
-      waveforms,
+      agenix,
       ...
-    }:
+    }@inputs:
     let
-      lib = nixpkgs.lib;
-
-      # Defaults you want
-      defaultSystem = "x86_64-linux";
-      defaultRole = "server";
-      defaultUser = "irrelevancy";
-
-      # Single base dir for all hosts
-      hostsDir = ./host;
-
-      # Stacks
-      desktopStack = [
-        niri.nixosModules.niri
-        stylix.nixosModules.stylix
-        waveforms.nixosModule
-        (
-          { ... }:
-          {
-            users.users.${defaultUser}.extraGroups = [ "plugdev" ];
-          }
-        )
-      ];
-
-      serverStack = [
-        # nothing by default; add common server modules here if you want
-      ];
-
-      # Feature modules (reused)
-      hmModule = role: hostHomePath: {
-        imports = [ home-manager.nixosModules.home-manager ];
+      configurationDefaults = args: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.${defaultUser} =
-          if hostHomePath != null then
-            hostHomePath
-          else if role == "desktop" then
-            ./modules/desktop-home.nix
-          else
-            ./modules/server-home.nix;
+        home-manager.backupFileExtension = "hm-backup";
+        home-manager.extraSpecialArgs = args;
       };
 
-      agenixModule =
-        { pkgs, ... }:
+      mkNixosConfiguration =
         {
-          imports = [ agenix.nixosModules.default ];
-          environment.systemPackages = [ agenix.packages.${pkgs.system}.default ];
-        };
-
-      # Only include disko if the disk-config file exists OR if forced on.
-      diskoModulesFor =
-        hostDir: force:
+          system ? "x86_64-linux",
+          role ? "server",
+          hostname,
+          args ? { },
+          modules,
+        }:
         let
-          disk = hostDir + "/disk-config.nix";
-        in
-        lib.optionals (force || builtins.pathExists disk) [
-          disko.nixosModules.disko
-          disk
-        ];
-
-      # Host declarations: minimal overrides only.
-      #
-      # Defaults:
-      # - system = x86_64-linux
-      # - role   = server
-      # - home   = role-based default (server-home / desktop-home)
-      # - disko  = enabled if disk-config.nix exists
-      hostsRaw = {
-        laptop = {
-          role = "desktop";
-          extraModules = [
-            nixos-hardware.nixosModules.lenovo-thinkpad-z
-          ];
-        };
-
-        deskbox = {
-          role = "desktop";
-          extraModules = [
-            nixos-hardware.nixosModules.common-cpu-amd
-            nixos-hardware.nixosModules.common-pc-ssd
-          ];
-        };
-
-        Nixbox = {
-          system = "aarch64-linux";
-          # role defaults to server
-          # disko auto by presence
-        };
-
-        Optiplex = { };
-        MQ90 = { };
-
-        generic = {
-          extraModules = [
-            (hostsDir + "/generic/hardware-configuration.nix")
-          ];
-        };
-      };
-
-      # Apply defaults to each host
-      hosts = lib.mapAttrs (_: h: {
-        name = h.name or null; # unused; kept harmless
-        system = h.system or defaultSystem;
-        role = h.role or defaultRole;
-        # Optional overrides
-        home = h.home or null; # override HM path per host if desired
-        forceDisko = h.forceDisko or false; # force disko even if file missing
-        extraModules = h.extraModules or [ ];
-      }) hostsRaw;
-
-      mkHost =
-        hostname: h:
-        let
-          hostDir = hostsDir + "/${hostname}";
-          cfg = hostDir + "/configuration.nix";
-        in
-        lib.nixosSystem {
-          system = h.system;
-
           specialArgs = {
-            inherit inputs hostname;
-            role = h.role;
-            isServer = (h.role == "server");
-            username = defaultUser;
-          };
-
+            inherit hostname;
+          }
+          // args;
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system specialArgs;
           modules = [
-            (
-              { ... }:
-              {
-                networking.hostName = hostname;
-              }
-            )
-
-            # Host config (always)
-            cfg
-
-            # Shared: agenix everywhere
-            agenixModule
-
-            # HM (role-based default unless overridden)
-            (hmModule h.role h.home)
+            (configurationDefaults specialArgs)
+            home-manager.nixosModules.home-manager
+            #disko will go here soon
           ]
-          # Role stacks
-          ++ (if h.role == "desktop" then desktopStack else serverStack)
-          # Disko if present/forced
-          ++ (diskoModulesFor hostDir h.forceDisko)
-          # Host-specific extras
-          ++ h.extraModules;
+          ++ modules;
         };
     in
+
     {
-      nixosConfigurations = lib.mapAttrs mkHost hosts;
+      nixosConfiguration.Jester = mkNixosConfiguration {
+        hostname = "Jester";
+        modules = [ ];
+      }; # thinkpad z16
+      nixosConfiguration.Fjord = mkNixosConfiguration {
+        hostname = "Beau";
+        modules = [ ];
+      }; # 7800x3d gaming pc
+      nixosConfiguration.Stacy-Fakename = mkNixosConfiguration {
+        hostname = "Stacy-Fakename";
+        system = "aarch64-linux";
+        modules = [ ];
+      }; # oracle cloud box
+      nixosConfiguration.Optiplex = mkNixosConfiguration {
+        hostname = "Pumat";
+        modules = [ ];
+      }; # dell optiplex
+      nixosConfiguration.MQ90 = mkNixosConfiguration {
+        hostname = "Yasha";
+        modules = [ ];
+      }; # lenovo mq90
     };
+
 }

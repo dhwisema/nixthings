@@ -8,7 +8,6 @@
       user.email = "dhwisema@ncsu.edu";
       user.name = "dhwisema";
     };
-
   };
 
   home.packages = with pkgs; [
