@@ -61,7 +61,8 @@
         let
           default-conf =
             if role == "server" then
-              [ ./Modules/OS/Base-config.nix 
+              [
+                ./Modules/OS/Base-config.nix
                 quadlet-nix.nixosModules.quadlet
               ]
             else
@@ -111,30 +112,31 @@
     {
       nixosConfigurations = {
 
-      nixosConfiguration.Jester = mkNixosConfiguration {
-        hostname = "Jester";
-        disko-use = false;
-        modules = [ ];
-      }; # thinkpad z16
-      nixosConfiguration.Fjord = mkNixosConfiguration {
-        hostname = "Beau";
-        disko-use = false;
-        nvidia = true;
-        modules = [ ];
-      }; # 7800x3d gaming pc
-      nixosConfiguration.Stacy-Fakename = mkNixosConfiguration {
-        hostname = "Stacy-Fakename";
-        system = "aarch64-linux";
-        modules = [ ];
-      }; # oracle cloud box
-      nixosConfiguration.Optiplex = mkNixosConfiguration {
-        hostname = "Pumat";
-        modules = [ ];
-      }; # dell optiplex
-      nixosConfiguration.MQ90 = mkNixosConfiguration {
-        hostname = "Yasha";
-        modules = [ ];
-      }; # lenovo mq90
-    };
+        nixosConfiguration.Jester = mkNixosConfiguration {
+          hostname = "Jester";
+          disko-use = false;
+          modules = [ ];
+        }; # thinkpad z16
+        nixosConfiguration.Fjord = mkNixosConfiguration {
+          hostname = "Beau";
+          disko-use = false;
+          nvidia = true;
+          modules = [ ];
+        }; # 7800x3d gaming pc
+        nixosConfiguration.Stacy-Fakename = mkNixosConfiguration {
+          hostname = "Stacy-Fakename";
+          system = "aarch64-linux";
+          modules = [ ];
+        }; # oracle cloud box
+        nixosConfiguration.Optiplex = mkNixosConfiguration {
+          hostname = "Pumat";
+          modules = [ ];
+        }; # dell optiplex
+        nixosConfiguration.MQ90 = mkNixosConfiguration {
+          hostname = "Yasha";
+          modules = [ ];
+        }; # lenovo mq90
+      };
 
+    };
 }
