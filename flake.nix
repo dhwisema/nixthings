@@ -73,7 +73,7 @@
                 waveforms.nixosModule
                 ({ users.users.howard.extraGroups = [ "plugdev" ]; })
               ];
-          disko-path = ./. + "/host/${hostname}/disk-config.nix";
+          disko-path = ./. + "/Host/${hostname}/disk-config.nix";
           disko-conf =
             if disko-use == true then
               [
