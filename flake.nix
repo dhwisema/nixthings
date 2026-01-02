@@ -97,13 +97,14 @@
             {
               home-manager.users.${username} = default-hm;
             }
-
+            hw-conf
+            disko-conf
             #disko will go here soon
           ]
           ++ modules
-          ++ default-conf
-          ++ hw-conf
-          ++ disko-conf;
+          # ++ default-conf
+          # ++ hw-conf
+          # ++ disko-conf;
         };
     in
 
