@@ -101,7 +101,7 @@
             disko-conf
             #disko will go here soon
           ]
-          ++ modules
+          ++ modules;
           # ++ default-conf
           # ++ hw-conf
           # ++ disko-conf;
