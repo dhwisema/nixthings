@@ -98,43 +98,44 @@
             {
               home-manager.users.${username} = default-hm;
             }
-            hw-conf
-            disko-conf
+            # hw-conf
+            # disko-conf
             #disko will go here soon
           ]
-          ++ modules;
-          # ++ default-conf
-          # ++ hw-conf
-          # ++ disko-conf;
+          ++ modules
+          ++ default-conf
+          ++ hw-conf
+          ++ disko-conf;
         };
     in
 
     {
       
-
-        nixosConfigurations.Jester = mkNixosConfiguration {
+      nixosConfigurations = {
+        Jester = mkNixosConfiguration {
           hostname = "Jester";
           disko-use = false;
           modules = [ ];
         }; # thinkpad z16
-        nixosConfigurations.Fjord = mkNixosConfiguration {
+        Fjord = mkNixosConfiguration {
           hostname = "Beau";
           disko-use = false;
           nvidia = true;
           modules = [ ];
         }; # 7800x3d gaming pc
-        nixosConfigurations.Stacy-Fakename = mkNixosConfiguration {
+        Stacy-Fakename = mkNixosConfiguration {
           hostname = "Stacy-Fakename";
           system = "aarch64-linux";
           modules = [ ];
         }; # oracle cloud box
-        nixosConfigurations.Optiplex = mkNixosConfiguration {
+        Pumat = mkNixosConfiguration {
           hostname = "Pumat";
           modules = [ ];
         }; # dell optiplex
-        nixosConfigurations.MQ90 = mkNixosConfiguration {
+        Yasha = mkNixosConfiguration {
           hostname = "Yasha";
           modules = [ ];
         }; # lenovo mq90
       };
+    };
 }
