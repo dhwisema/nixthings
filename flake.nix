@@ -21,22 +21,23 @@
       inputs.darwin.follows = "";
     };
   };
-  # outputs = inputs:
-  # with inputs; weird syntax thing.... i think its neat apparantly this would work but
   outputs =
-    {
-      self,
-      nixpkgs,
-      agenix,
-      disko,
-      nixos-hardware,
-      home-manager,
-      stylix,
-      niri,
-      waveforms,
-      ...
-    #waveforms,
-    }:
+    inputs:
+    with inputs; # weird syntax thing.... i think its neat apparantly this would work but
+    # outputs =
+    #   {
+    #     self,
+    #     nixpkgs,
+    #     agenix,
+    #     disko,
+    #     nixos-hardware,
+    #     home-manager,
+    #     stylix,
+    #     niri,
+    #     waveforms,
+    #     ...
+    #   #waveforms,
+    #   }:
     let
       username = "irrelevancy";
       configurationDefaults = args: {
@@ -51,6 +52,7 @@
           system ? "x86_64-linux",
           role ? "server",
           nvidia ? false,
+          disko-use ? true,
           hostname,
           args ? { },
           modules,
@@ -67,6 +69,15 @@
                 waveforms.nixosModule
                 ({ users.users.howard.extraGroups = [ "plugdev" ]; })
               ];
+
+          disko-conf =
+            if disko-use == true then
+              [
+                disko.nixosModules.disko
+               (./. + "/host/${hostname}/disk-config.nix")
+              ]
+            else
+              [ ];
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
           hw-conf = ./. + "/Host/${hostname}/hardware-configuration.nix";
           specialArgs = {
@@ -88,17 +99,19 @@
           ]
           ++ modules
           ++ default-conf
-          ++ hw-conf;
+          ++ hw-conf ++ disko-conf;
         };
     in
 
     {
       nixosConfiguration.Jester = mkNixosConfiguration {
         hostname = "Jester";
+        disko-use = false;
         modules = [ ];
       }; # thinkpad z16
       nixosConfiguration.Fjord = mkNixosConfiguration {
         hostname = "Beau";
+        disko-use = false;
         nvidia = true;
         modules = [ ];
       }; # 7800x3d gaming pc
