@@ -20,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.darwin.follows = "";
     };
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
   };
   outputs =
     inputs:
@@ -60,7 +61,9 @@
         let
           default-conf =
             if role == "server" then
-              [ ./Modules/OS/Base-config.nix ]
+              [ ./Modules/OS/Base-config.nix 
+                quadlet-nix.nixosModules.quadlet
+              ]
             else
               [
                 ./Modules/OS/desktop-config.nix
