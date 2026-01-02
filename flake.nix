@@ -109,6 +109,8 @@
     in
 
     {
+      nixosConfigurations = {
+
       nixosConfiguration.Jester = mkNixosConfiguration {
         hostname = "Jester";
         disko-use = false;
