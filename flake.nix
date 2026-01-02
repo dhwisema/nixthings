@@ -95,7 +95,9 @@
             (configurationDefaults specialArgs)
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.${username} = default-hm;
+              home-manager.users.${username} = {
+                imports = default-hm;
+              };
             }
             hw-conf
             # disko-conf
@@ -108,7 +110,7 @@
     in
 
     {
-      
+
       nixosConfigurations = {
         Jester = mkNixosConfiguration {
           hostname = "Jester";
