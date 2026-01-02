@@ -110,33 +110,31 @@
     in
 
     {
-      nixosConfigurations = {
+      
 
-        nixosConfiguration.Jester = mkNixosConfiguration {
+        nixosConfigurations.Jester = mkNixosConfiguration {
           hostname = "Jester";
           disko-use = false;
           modules = [ ];
         }; # thinkpad z16
-        nixosConfiguration.Fjord = mkNixosConfiguration {
+        nixosConfigurations.Fjord = mkNixosConfiguration {
           hostname = "Beau";
           disko-use = false;
           nvidia = true;
           modules = [ ];
         }; # 7800x3d gaming pc
-        nixosConfiguration.Stacy-Fakename = mkNixosConfiguration {
+        nixosConfigurations.Stacy-Fakename = mkNixosConfiguration {
           hostname = "Stacy-Fakename";
           system = "aarch64-linux";
           modules = [ ];
         }; # oracle cloud box
-        nixosConfiguration.Optiplex = mkNixosConfiguration {
+        nixosConfigurations.Optiplex = mkNixosConfiguration {
           hostname = "Pumat";
           modules = [ ];
         }; # dell optiplex
-        nixosConfiguration.MQ90 = mkNixosConfiguration {
+        nixosConfigurations.MQ90 = mkNixosConfiguration {
           hostname = "Yasha";
           modules = [ ];
         }; # lenovo mq90
       };
-
-    };
 }
