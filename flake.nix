@@ -25,20 +25,6 @@
   outputs =
     inputs:
     with inputs; # weird syntax thing.... i think its neat apparantly this would work but
-    # outputs =
-    #   {
-    #     self,
-    #     nixpkgs,
-    #     agenix,
-    #     disko,
-    #     nixos-hardware,
-    #     home-manager,
-    #     stylix,
-    #     niri,
-    #     waveforms,
-    #     ...
-    #   #waveforms,
-    #   }:
     let
       username = "irrelevancy";
       configurationDefaults = args: {
@@ -108,7 +94,6 @@
           ++ disko-conf;
         };
     in
-
     {
 
       nixosConfigurations = {
