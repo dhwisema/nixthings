@@ -115,13 +115,13 @@
         Jester = mkNixosConfiguration {
           hostname = "Jester";
           disko-use = false;
-          modules = [ ];
+          modules = [ ./Host/Jester/configuration.nix ];
         }; # thinkpad z16
         Fjord = mkNixosConfiguration {
           hostname = "Beau";
           disko-use = false;
           nvidia = true;
-          modules = [ ];
+          modules = [ ./Host/Beau/configuration.nix ];
         }; # 7800x3d gaming pc
         Stacy-Fakename = mkNixosConfiguration {
           hostname = "Stacy-Fakename";
