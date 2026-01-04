@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
 
@@ -17,7 +17,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "irrelevancy";
-  home.homeDirectory = "/home/irrelevancy";
+  home.homeDirectory =  ./. + "/${username}/irrelevancy";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

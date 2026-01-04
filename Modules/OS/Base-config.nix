@@ -20,10 +20,10 @@
   #set locale
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
-  #autologin remove
-  services.getty.autologinUser = null;
+
   systemd.targets.multi-user.enable = true;
-  
+  hardware.enableAllFirmware = true;
+  hardware.enableAllHardware = true;
   #systemd boot enable and also set latest kernel
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -45,7 +45,8 @@
       dynamic_tuning = true;
     };
   };
+  services.firewalld.enable = true;
   #tailscale
   services.tailscale.enable = true;
-  system.stateVersion = "25.11"; 
+  system.stateVersion = "25.11";
 }

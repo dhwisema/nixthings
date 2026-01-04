@@ -3,6 +3,7 @@
   lib,
   config,
   hostname,
+  username,
   ...
 }:
 {
@@ -18,8 +19,16 @@
     udisks
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-    nerd-fonts.fira-code
+  # fonts.packages = with pkgs; [
+  #   nerd-fonts.hack
+  #   nerd-fonts.fira-code
+  # ];
+  users.users.${username}.extraGroups = [
+    "video"
+    "audio"
+    "render"
   ];
+  services.fwupd.enable = true;
+  services.libinput.enable = true;
+  zramSwap.enable = true;
 }
