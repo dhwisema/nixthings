@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  
+
   home.packages = with pkgs; [
     onlyoffice-desktopeditors
     # distrobox-tui
@@ -8,6 +8,9 @@
     goofcord
     zellij
     ghostty
+    alejandra
+    nil
+    nixd
   ];
 
 }

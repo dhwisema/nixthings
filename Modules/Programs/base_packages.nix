@@ -5,27 +5,23 @@
 
     #usbmuxd 
     #git
-    #lazygit
     #btop
-    #brillo
-    #alejandra
-    #nil
-    #gvfs
+
+
+
     #udisks
     #nautilus
     #vscode-fhs
     #libsecret
-    #seahorse
+ 
     #gcc
     #jq 
-    
+    curl 
+    wget
   ];
 
   #why tf are some of thesehere lol
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-    nerd-fonts.fira-code
-  ];
+
 
 }

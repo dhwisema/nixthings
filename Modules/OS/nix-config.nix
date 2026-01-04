@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  username,
   ...
 }:
 {
@@ -13,7 +14,7 @@
     clean.enable = true;
     clean.dates = "weekly";
     clean.extraArgs = "--keep 2";
-    flake = "/home/howard/Nix-servers";
+    flake = ./. + "/home/${username}/Nix-Config";
   };
 
   nix = {
@@ -38,7 +39,7 @@
       trusted-users = [
         "root"
         "@wheel"
-        "howard"
+        username
       ];
     };
   };

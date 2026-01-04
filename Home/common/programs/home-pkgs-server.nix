@@ -3,5 +3,6 @@
     yazi
     eza
     helix
+    lazygit
   ];
 }
