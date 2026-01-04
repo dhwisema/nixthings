@@ -7,15 +7,13 @@
 {
 
   environment.systemPackages = with pkgs; [
-    compose2nix
     curl
     wget
     lazygit
     yazi
-    pik
+    pkill
     btop
-    sqlite
+    jq
+  
   ];
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
 }
