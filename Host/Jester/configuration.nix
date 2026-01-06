@@ -4,18 +4,7 @@
   ...
 }:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./../../modules/default.nix
-  ];
 
-  services.tuned = {
-    enable = true;
-    settings = {
-      dynamic_tuning = true;
-      recommend_command = true;
-    };
-  };
 
   services.tlp.enable = pkgs.lib.mkForce false;
 
