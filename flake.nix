@@ -63,7 +63,7 @@
 
                 nixos-hardware.nixosModules.common-pc-ssd # ssd trim
               ];
-          disko-path = ./. + "/Host/${hostname}/disk-config.nix";
+          disko-path = "./Host/${hostname}/disk-config.nix";
           disko-conf =
             if disko-use == true then
               [
@@ -73,7 +73,7 @@
             else
               [ ];
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
-          hw-conf = ./. + "/Host/${hostname}/hardware-configuration.nix";
+          hw-conf = "./Host/${hostname}/hardware-configuration.nix";
           specialArgs = {
             inherit hostname;
           }
@@ -108,7 +108,7 @@
             nixos-hardware.nixosModules.lenovo-thinkpad-z #i fear lenovo did not cook with this one
           ];
         }; # thinkpad z16
-        Fjord = mkNixosConfiguration {
+        Beau = mkNixosConfiguration {
           hostname = "Beau";
           disko-use = false;
           nvidia = true;
