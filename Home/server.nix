@@ -1,4 +1,9 @@
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
 
@@ -10,24 +15,16 @@
     };
   };
 
-  imports = [./common/programs/home-pkgs-server.nix];
-  home.packages = with pkgs; [
-  ];
+  imports = [ ./common/programs/home-pkgs-server.nix ];
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "irrelevancy";
-  # home.homeDirectory =  /home/. + "/${username}";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "25.11";
+  home = {
+    packages = with pkgs; [
+    ];
+    enableNixpkgsReleaseCheck = false; #because unstable and hm just doesnt care so 25.11 and 26.05 and so on 
+    # username = "irrelevancy"; # may break
+    username = username; 
+    stateVersion = "25.11"; 
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
