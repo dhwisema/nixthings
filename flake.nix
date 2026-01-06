@@ -37,7 +37,7 @@
           modules,
         }@args-os:
         let
-          default-conf =
+          defaultconf =
             if role == "server" then
               [
                 ./Modules/OS/Base-config.nix
@@ -56,20 +56,21 @@
                 nixos-hardware.nixosModules.common-pc-ssd # ssd trim
               ];
 
-          disko-path = ./. + "/Host/${hostname}/disk-config.nix";
-          hw-conf = ./. + "/Host/${hostname}/hardware-configuration.nix";
-          disko-conf =
+          diskopath = ./. + "/Host/${hostname}/disk-config.nix";
+          hwconf = ./. + "/Host/${hostname}/hardware-configuration.nix";
+          diskoconf =
             if disko-use == true then
               [
                 disko.nixosModules.disko
-                disko-path
+                diskopath
               ]
             else
               [ ];
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
 
           specialArgs = {
-            inherit inputs username;
+         
+            inherit inputs username hostname role nvidia;
           }
           // args-os;
         in
@@ -89,13 +90,13 @@
                 imports = default-hm;
               };
             }
-            hw-conf
+            hwconf
             # disko-conf
             #disko will go here soon
           ]
           ++ modules
-          ++ default-conf
-          ++ disko-conf;
+          ++ defaultconf
+          ++ diskoconf;
         };
     in
     {
