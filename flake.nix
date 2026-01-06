@@ -78,7 +78,7 @@
           specialArgs = {
             inherit inputs username;
           }
-          // args //args-os;
+          //args-os;
         in
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
