@@ -41,9 +41,8 @@
           nvidia ? false,
           disko-use ? true,
           hostname,
-          args ? { },
           modules,
-        }:
+        }@args:
         let
           default-conf =
             if role == "server" then
