@@ -77,7 +77,7 @@
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
      
           specialArgs = {
-            inherit hostname inputs;
+            inherit hostname inputs username;
           }
           // args;
         in
