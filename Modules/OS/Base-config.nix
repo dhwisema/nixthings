@@ -49,7 +49,7 @@
       };
     };
     firewalld.enable = true; # firewall goodness
-    services.tailscale.enable = true; # tailscale
+    tailscale.enable = true; # tailscale
   };
 
   system.stateVersion = "25.11";
