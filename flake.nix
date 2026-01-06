@@ -27,12 +27,11 @@
     with inputs; # weird syntax thing.... i think its neat apparantly this would work but,,, 2026 01 06 -> i fear i understand that this way causes me pain
     let
       username = "irrelevancy";
-      configurationDefaults = { inputs, username, ... }:{
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "hm-backup";
-        home-manager.extraSpecialArgs = { inherit inputs username; };
-      };
+      # configurationDefaults =
+      #   { inputs, username, ... }:
+      #   {
+
+      #   };
 
       mkNixosConfiguration =
         {
@@ -74,11 +73,11 @@
             else
               [ ];
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
-     
+
           specialArgs = {
             inherit inputs username;
           }
-          //args-os;
+          // args-os;
         in
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
@@ -86,6 +85,12 @@
             (configurationDefaults specialArgs)
             home-manager.nixosModules.home-manager
             {
+
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-backup";
+              home-manager.extraSpecialArgs = { inherit inputs username; };
+
               home-manager.users.${username} = {
                 imports = default-hm;
               };
