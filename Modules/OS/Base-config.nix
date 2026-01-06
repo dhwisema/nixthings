@@ -12,7 +12,12 @@
     ./../hardware/nvidia.nix
   ];
 
-  networking.hostName = hostname;
+  networking = {
+    hostName = hostname;
+    nftables.enable = true;
+    networkmanager.enable = true; # network manager default
+  };
+
   #enable and make fish defaultUserShell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
@@ -34,17 +39,18 @@
     };
     initrd.systemd.enable = true;
   };
-  #network manager default
-  networking.networkmanager.enable = true;
-  #tuned powermanagement
-  services.tuned = {
-    enable = true;
-    settings = {
-      dynamic_tuning = true;
+
+  #services
+  services = {
+    tuned = { #tuned powermanagement
+      enable = true;
+      settings = {
+        dynamic_tuning = true;
+      };
     };
+    firewalld.enable = true; # firewall goodness
+    services.tailscale.enable = true; # tailscale
   };
-  services.firewalld.enable = true;
-  #tailscale
-  services.tailscale.enable = true;
+
   system.stateVersion = "25.11";
 }
