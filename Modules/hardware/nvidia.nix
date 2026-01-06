@@ -1,18 +1,10 @@
 {
   config,
   lib,
+  nvidia,
   ...
 }: {
-  # Add an option to enable or disable gaming-related configurations
-  options = {
-    nvidia.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable nvidia.";
-    };
-  };
-
-  config = lib.mkIf config.nvidia.enable {
+  config = lib.mkIf nvidia {
     #nvidia and open gl
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
