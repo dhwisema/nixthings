@@ -58,6 +58,10 @@
                 niri.nixosModules.niri
                 waveforms.nixosModule
                 ({ users.users.howard.extraGroups = [ "plugdev" ]; })
+
+                nixos-hardware.nixosModules.common-cpu-amd # sets scheduling things for kernel
+
+                nixos-hardware.nixosModules.common-pc-ssd # ssd trim
               ];
           disko-path = ./. + "/Host/${hostname}/disk-config.nix";
           disko-conf =
@@ -100,7 +104,10 @@
         Jester = mkNixosConfiguration {
           hostname = "Jester";
           disko-use = false;
-          modules = [ ./Host/Jester/configuration.nix ];
+          modules = [
+            ./Host/Jester/configuration.nix
+            nixos-hardware.nixosModules.lenovo-thinkpad-z #i fear lenovo did not cook with this one
+          ];
         }; # thinkpad z16
         Fjord = mkNixosConfiguration {
           hostname = "Beau";
