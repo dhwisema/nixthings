@@ -9,7 +9,6 @@
   imports = [
     ./nix-config.nix
     ./users.nix
-    ./ssh.nix
     ./../hardware/nvidia.nix
   ];
 
