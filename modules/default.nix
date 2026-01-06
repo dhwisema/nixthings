@@ -5,7 +5,7 @@
     ./packages/power.nix
     ./packages/gaming.nix
     ./packages/kernel.nix
-    ./packages/flatpak.nix
+    # ./packages/flatpak.nix
     ./common/time.nix
     ./common/nix-nh.nix
     ./desktops/niri/niri.nix
