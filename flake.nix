@@ -82,7 +82,7 @@
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
-            (configurationDefaults specialArgs)
+            (specialArgs)
             home-manager.nixosModules.home-manager
             {
 
