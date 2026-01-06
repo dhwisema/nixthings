@@ -103,7 +103,6 @@
       nixosConfigurations = {
         Jester = mkNixosConfiguration {
           hostname = "Jester";
-          disko-use = false;
           modules = [
             ./Host/Jester/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-z #i fear lenovo did not cook with this one
