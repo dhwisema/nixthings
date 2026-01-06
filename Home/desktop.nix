@@ -3,7 +3,7 @@
 {
   imports = [
     ./server.nix
-    ./programs/gaming.nix
-    ./Desktop/niri.nix
+    ./common/programs/gaming.nix
+    ./common/Desktop/niri.nix
   ];
 }

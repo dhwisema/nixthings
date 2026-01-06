@@ -10,7 +10,7 @@
     };
   };
 
-  imports = [./programs/home-pkgs-server.nix];
+  imports = [./common/programs/home-pkgs-server.nix];
   home.packages = with pkgs; [
   ];
 
