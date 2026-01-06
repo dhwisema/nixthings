@@ -22,8 +22,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   systemd.targets.multi-user.enable = true;
-  hardware.enableAllFirmware = true;
-  hardware.enableAllHardware = true;
+  hardware.enableRedistributableFirmware = true;
   #systemd boot enable and also set latest kernel
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
