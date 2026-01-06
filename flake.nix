@@ -50,9 +50,7 @@
                 niri.nixosModules.niri
                 waveforms.nixosModule
                 ({ users.users.${username}.extraGroups = [ "plugdev" ]; })
-
                 nixos-hardware.nixosModules.common-cpu-amd # sets scheduling things for kernel
-
                 nixos-hardware.nixosModules.common-pc-ssd # ssd trim
               ];
 
@@ -91,8 +89,6 @@
               };
             }
             hwconf
-            # disko-conf
-            #disko will go here soon
           ]
           ++ modules
           ++ defaultconf
@@ -100,7 +96,6 @@
         };
     in
     {
-
       nixosConfigurations = {
         Jester = mkNixosConfiguration {
           hostname = "Jester";
