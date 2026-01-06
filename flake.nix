@@ -42,7 +42,7 @@
           disko-use ? true,
           hostname,
           modules,
-        }@args:
+        }@args-os:
         let
           default-conf =
             if role == "server" then
@@ -56,7 +56,7 @@
                 stylix.nixosModules.stylix
                 niri.nixosModules.niri
                 waveforms.nixosModule
-                ({ users.users.howard.extraGroups = [ "plugdev" ]; })
+                ({ users.users.${username}.extraGroups = [ "plugdev" ]; })
 
                 nixos-hardware.nixosModules.common-cpu-amd # sets scheduling things for kernel
 
@@ -76,9 +76,9 @@
           default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
      
           specialArgs = {
-            inherit hostname inputs username;
+            inherit inputs username;
           }
-          // args;
+          // args //args-os;
         in
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
