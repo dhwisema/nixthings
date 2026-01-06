@@ -27,12 +27,6 @@
     with inputs; # weird syntax thing.... i think its neat apparantly this would work but,,, 2026 01 06 -> i fear i understand that this way causes me pain
     let
       username = "irrelevancy";
-      # configurationDefaults =
-      #   { inputs, username, ... }:
-      #   {
-
-      #   };
-
       mkNixosConfiguration =
         {
           system ? "x86_64-linux",
@@ -82,7 +76,7 @@
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
-            (specialArgs)
+            # (specialArgs)
             home-manager.nixosModules.home-manager
             {
 
