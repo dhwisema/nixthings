@@ -24,14 +24,14 @@
   };
   outputs =
     inputs:
-    with inputs; # weird syntax thing.... i think its neat apparantly this would work but
+    with inputs; # weird syntax thing.... i think its neat apparantly this would work but,,, 2026 01 06 -> i fear i understand that this way causes me pain
     let
       username = "irrelevancy";
-      configurationDefaults = args: {
+      configurationDefaults = { inputs, username, ... }:{
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "hm-backup";
-        home-manager.extraSpecialArgs = args;
+        home-manager.extraSpecialArgs = { inherit inputs username; };
       };
 
       mkNixosConfiguration =
