@@ -2,7 +2,7 @@
   #only dealing with packages to install
   config,
   pkgs,
-  lib,
+  lib,inputs,
   ...
 }:
 {
@@ -28,7 +28,7 @@
     bluetuith
     file-roller
     gnome-keyring
-
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     libheif
     libheif.out
 
