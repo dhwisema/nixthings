@@ -25,9 +25,9 @@
 
   stylix.targets.niri.enable = true;
   programs.niri.settings.spawn-at-startup = [
-     { command = [ "waybar" ]; }
+    { command = [ "waybar" ]; }
     { command = [ "mako" ]; }
-    # { command = [ "swww-daemon" ]; }
+    { command = [ "awww-daemon" ]; }
     # { command = [ "swww img /home/howard/nix_things/modules/stylix/wallpapers/catppuccin/01.png" ]; }
   ];
 
@@ -104,8 +104,8 @@
       "sh"
       "nmtui"
     ];
-    "Mod+T".action.spawn = "ghostty";
-    "Mod+S".action.spawn = "goofcord";
+    "Mod+T".action.spawn = "foot";
+    "Mod+S".action.spawn = "vesktop";
     "Mod+B".action.spawn = "firefox";
     "Mod+E".action.spawn = "Thunar";
     "Mod+D".action.spawn = [
