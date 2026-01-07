@@ -14,8 +14,8 @@
       main = {
         term = "xterm-256color";
 
-        font = "Fira Code:size=16";
-        #dpi-aware = "yes";
+        font = "Fira Code:size=20";
+        dpi-aware = "no";
       };
   };
   programs.firefox = {
