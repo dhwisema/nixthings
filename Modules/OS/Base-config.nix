@@ -10,6 +10,7 @@
     ./nix-config.nix
     ./users.nix
     ./../hardware/nvidia.nix
+    ./../Programs/basepkgs.nix
   ];
 
   networking = {
