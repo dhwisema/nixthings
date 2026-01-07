@@ -28,6 +28,14 @@
   };
   services.printing.enable = true;
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = false;
+      PasswordAuthentication = false;
+    };
+  };
+
   users.users.howard = {
     isNormalUser = true;
     description = "Howard";
