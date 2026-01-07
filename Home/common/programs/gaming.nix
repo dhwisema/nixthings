@@ -9,7 +9,7 @@
   # Conditionally apply gaming packages and services if enabled
 
   programs.steam.enable = true;
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     gamemode
     wine
     steam-run
