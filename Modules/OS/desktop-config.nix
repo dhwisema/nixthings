@@ -23,6 +23,10 @@
   #   nerd-fonts.hack
   #   nerd-fonts.fira-code
   # ];
+
+    programs.nix-ld = {
+    enable = true;
+  };
   users.users.${username}.extraGroups = [
     "video"
     "audio"
