@@ -22,7 +22,6 @@
     xwayland-satellite
     pavucontrol
     waypaper
-    awww
     adwaita-icon-theme-legacy
     adwaita-icon-theme
     bluetuith
