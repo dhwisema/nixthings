@@ -10,6 +10,8 @@
     stylix.enableReleaseChecks = false;
     stylix.targets.firefox.profileNames = ["profile_0"];
 
+    options.xdg.userDirs = true;
+
    programs = {
     foot.settings = {
   main = {
