@@ -21,7 +21,7 @@
       inputs.darwin.follows = "";
     };
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
-     inputs.awww.url = "git+https://codeberg.org/LGFae/awww";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
   outputs =
     inputs:
