@@ -37,7 +37,7 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFmXsOd9g4b2fLApvFsqtUOhlSQCxbBX54Cn+RgiB/Sy howard@laptop"
       ];
   };
-
+  networking.firewall.allowedTCPPorts = [22];
   services.libinput.enable = true;
 
   home-manager.backupFileExtension = "backup";
