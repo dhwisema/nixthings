@@ -99,6 +99,7 @@
       nixosConfigurations = {
         Jester = mkNixosConfiguration {
           hostname = "Jester";
+          role = "Desktop";
           modules = [
             ./Host/Jester/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-z # i fear lenovo did not cook with this one
@@ -106,6 +107,7 @@
         }; # thinkpad z16
         Beau = mkNixosConfiguration {
           hostname = "Beau";
+          role = "Desktop";
           disko-use = false;
           nvidia = true;
           modules = [ ./Host/Beau/configuration.nix ];
