@@ -7,8 +7,7 @@
 {
   # Add an option to enable or disable gaming-related configurations
   # Conditionally apply gaming packages and services if enabled
-
-  programs.steam.enable = true;
+  
   home.packages = with pkgs; [
     gamemode
     wine
@@ -16,7 +15,5 @@
     steam
     protonup-rs
   ];
-  programs.nix-ld = {
-    enable = true;
-  };
+
 }
