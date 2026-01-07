@@ -9,13 +9,13 @@
   ];
   stylix.enableReleaseChecks = false;
   stylix.targets.firefox.profileNames = [ "profile_0" ];
-  xdg.userDirs = true;
+  xdg.userDirs.enable = true;
   programs.foot.settings = {
       main = {
         term = "xterm-256color";
 
         font = "Fira Code:size=16";
-        dpi-aware = "yes";
+        #dpi-aware = "yes";
       };
   };
   programs.firefox = {
