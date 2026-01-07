@@ -25,7 +25,7 @@
     adwaita-icon-theme-legacy
     adwaita-icon-theme
     bluetuith
-    file-roller
+    nautilus
     gnome-keyring
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     libheif
