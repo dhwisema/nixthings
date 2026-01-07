@@ -7,7 +7,8 @@
     ./common/programs/home-pkgs-desktop.nix
     ./common/Desktop/niri.nix
   ];
-
+    stylix.enableReleaseChecks = false;
+    stylix.targets.firefox.profileNames = ["profile_0"];
 
    programs = {
     foot.settings = {
@@ -17,8 +18,6 @@
     font = "Fira Code:size=12";
     dpi-aware = "yes";
   };
-
-
     }; 
     firefox = {
     enable = true;
@@ -58,6 +57,7 @@
         # };
       };
   };  
+  
 };
 };
 }
