@@ -10,7 +10,6 @@
     curl
     wget
     yazi
-    pkill
     btop
     jq
   
