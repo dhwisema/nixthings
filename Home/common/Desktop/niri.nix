@@ -27,8 +27,8 @@
   programs.niri.settings.spawn-at-startup = [
      { command = [ "waybar" ]; }
     { command = [ "mako" ]; }
-    { command = [ "swww-daemon" ]; }
-    { command = [ "swww img /home/howard/nix_things/modules/stylix/wallpapers/catppuccin/01.png" ]; }
+    # { command = [ "swww-daemon" ]; }
+    # { command = [ "swww img /home/howard/nix_things/modules/stylix/wallpapers/catppuccin/01.png" ]; }
   ];
 
   programs.niri.settings.prefer-no-csd = true;
