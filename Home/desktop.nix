@@ -9,9 +9,9 @@
   ];
   stylix.enableReleaseChecks = false;
   stylix.targets.firefox.profileNames = [ "profile_0" ];
-
+config = {
   xdg.userDirs = true;
-
+};
   programs.foot.settings = {
       main = {
         term = "xterm-256color";
