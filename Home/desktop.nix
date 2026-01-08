@@ -10,7 +10,7 @@
   stylix.enableReleaseChecks = false;
   stylix.targets.firefox.profileNames = [ "profile_0" ];
   xdg.userDirs.enable = true;
-  stylix.targets.helix.colors.enable = true;
+  stylix.targets.helix.enable = true;
   programs.ghostty = {
     enableFishIntegration = true;
     settings = {
