@@ -7,7 +7,7 @@
     # distrobox #dont need this currently will reneable if i have to use code composer again.
     vesktop
     zellij
-    foot
+    ghostty
     alejandra
     nil
     nixd

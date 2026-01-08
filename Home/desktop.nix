@@ -10,13 +10,12 @@
   stylix.enableReleaseChecks = false;
   stylix.targets.firefox.profileNames = [ "profile_0" ];
   xdg.userDirs.enable = true;
-  programs.foot.settings = {
-      main = {
-        term = "xterm-256color";
 
-        font = "Fira Code:size=90";
-        dpi-aware = "no";
-      };
+  programs.ghostty = {
+    enableFishIntegration = true;
+    settings = {
+      shell-integration-features = true;
+    };
   };
   programs.firefox = {
       enable = true;
