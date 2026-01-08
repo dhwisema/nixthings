@@ -1,0 +1,38 @@
+{
+  pkgs,
+  lib,
+  config,
+  hostname,
+  username,
+  ...
+}:
+{
+  imports = [
+    ./Base-config.nix
+    ./../Desktop/Desktop.nix
+  ];
+
+  hardware.bluetooth.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    seahorse
+    udisks
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    nerd-fonts.fira-code
+  ];
+
+    programs.nix-ld = {
+    enable = true;
+  };
+  users.users.${username}.extraGroups = [
+    "video"
+    "audio"
+    "render"
+  ];
+  services.fwupd.enable = true;
+  services.libinput.enable = true;
+  zramSwap.enable = true;
+}

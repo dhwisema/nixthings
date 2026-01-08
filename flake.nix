@@ -1,100 +1,131 @@
 {
-  description = "My NixOS Configurations for Desktop and Laptop";
-
+  description = "combined nixos config for servers and dekstops";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #hardware
+    disko = {
+      # declarative disk management
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
-    #flatpak
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    #home-manager till i decide to nuke it again
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     stylix.url = "github:danth/stylix";
-
     niri.url = "github:sodiboo/niri-flake";
-
-    #waveforms
     waveforms.url = "github:liff/waveforms-flake";
-
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.darwin.follows = "";
+    };
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
-
   outputs =
-    {
-      self,
-      nixpkgs,
-      nix-flatpak,
-      nixos-hardware,
-      home-manager,
-      stylix,
-      niri,
-      waveforms,
-      ...
-    #waveforms,
-    }:
-    {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          #niri
-          niri.nixosModules.niri
-          #hardware imports for amd gpu and laptop drivers
-          nixos-hardware.nixosModules.lenovo-thinkpad-z
-          stylix.nixosModules.stylix
+    inputs:
+    with inputs; # weird syntax thing.... i think its neat apparantly this would work but,,, 2026 01 06 -> i fear i understand that this way causes me pain
+    let
+      username = "irrelevancy";
+      mkNixosConfiguration =
+        {
+          system ? "x86_64-linux",
+          role ? "server",
+          nvidia ? false,
+          disko-use ? true,
+          hostname,
+          modules,
+        }@args-os:
+        let
+          defaultconf =
+            if role == "server" then
+              [
+                ./Modules/OS/Base-config.nix
+                quadlet-nix.nixosModules.quadlet
+              ]
+            else
+              [
+                ./Modules/OS/desktop-config.nix
+                stylix.nixosModules.stylix
+                niri.nixosModules.niri
+                waveforms.nixosModule
+                ({ users.users.${username}.extraGroups = [ "plugdev" ]; })
+                nixos-hardware.nixosModules.common-cpu-amd # sets scheduling things for kernel
+                nixos-hardware.nixosModules.common-pc-ssd # ssd trim
+              ];
 
-          nix-flatpak.nixosModules.nix-flatpak
+          diskopath = ./. + "/Host/${hostname}/disk-config.nix";
+          hwconf = ./. + "/Host/${hostname}/hardware-configuration.nix";
+          diskoconf =
+            if disko-use == true then
+              [
+                disko.nixosModules.disko
+                diskopath
+              ]
+            else
+              [ ];
+          default-hm = if role == "server" then [ ./Home/server.nix ] else [ ./Home/desktop.nix ];
 
-          waveforms.nixosModule
-          ({ users.users.howard.extraGroups = [ "plugdev" ]; })
-          ./Hosts/laptop/configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            #home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard =
-              { pkgs, ... }:
-              {
-                imports = [
-                  ./Hosts/laptop/home.nix
-                ];
-              };
+          specialArgs = {
+         
+            inherit inputs username hostname role nvidia;
           }
-        ];
-      };
+          // args-os;
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system specialArgs;
+          modules = [
+            # (specialArgs)
+            home-manager.nixosModules.home-manager
+            {
 
-      nixosConfigurations.deskbox = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          # niri
-          waveforms.nixosModule
-          ({ users.users.howard.extraGroups = [ "plugdev" ]; })
-          niri.nixosModules.niri
-          stylix.nixosModules.stylix
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-backup";
+              home-manager.extraSpecialArgs = { inherit inputs username; };
 
-          #sets scheduling things for kernel
-          nixos-hardware.nixosModules.common-cpu-amd
-          #ssd trim
-          nixos-hardware.nixosModules.common-pc-ssd
-          nix-flatpak.nixosModules.nix-flatpak
-
-          ./Hosts/desktop/configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            #home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.howard =
-              { pkgs, ... }:
-              {
-                imports = [
-                  ./Hosts/desktop/home.nix
-                ];
+              home-manager.users.${username} = {
+                imports = default-hm;
               };
-          }
-        ];
+            }
+            hwconf
+          ]
+          ++ modules
+          ++ defaultconf
+          ++ diskoconf;
+        };
+    in
+    {
+      nixosConfigurations = {
+        Jester = mkNixosConfiguration {
+          hostname = "Jester";
+          role = "Desktop";
+          modules = [
+            ./Host/Jester/configuration.nix
+            nixos-hardware.nixosModules.lenovo-thinkpad-z # i fear lenovo did not cook with this one
+          ];
+        }; # thinkpad z16
+        Beau = mkNixosConfiguration {
+          hostname = "Beau";
+          role = "Desktop";
+          disko-use = false;
+          nvidia = true;
+          modules = [ ./Host/Beau/configuration.nix ];
+        }; # 7800x3d gaming pc
+        Stacy-Fakename = mkNixosConfiguration {
+          hostname = "Stacy-Fakename";
+          system = "aarch64-linux";
+          modules = [ ];
+        }; # oracle cloud box
+        Pumat = mkNixosConfiguration {
+          hostname = "Pumat";
+          modules = [ ];
+        }; # dell optiplex
+        Yasha = mkNixosConfiguration {
+          hostname = "Yasha";
+          modules = [ ];
+        }; # lenovo mq90
       };
     };
 }
