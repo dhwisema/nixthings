@@ -28,8 +28,7 @@
     { command = [ "waybar" ]; }
     { command = [ "mako" ]; }
     { command = [ "awww-daemon" ]; }
-    # { command = [ "swww img /home/howard/nix_things/modules/stylix/wallpapers/catppuccin/01.png" ]; }
-  ];
+];
 
   programs.niri.settings.prefer-no-csd = true;
   programs.niri.settings.environment = {
@@ -104,16 +103,16 @@
       "sh"
       "nmtui"
     ];
-    "Mod+T".action.spawn = "foot";
+    "Mod+T".action.spawn = "ghostty";
     "Mod+S".action.spawn = "vesktop";
     "Mod+B".action.spawn = "firefox";
     "Mod+E".action.spawn = "Thunar";
-    "Mod+D".action.spawn = [
+    "Mod+Space".action.spawn = [
       "rofi"
       "-show"
       "drun"
     ];
-    "Mod+Shift+D".action.spawn = [
+    "Mod+Shift+Space".action.spawn = [
       "rofi"
       "-show"
     ];
