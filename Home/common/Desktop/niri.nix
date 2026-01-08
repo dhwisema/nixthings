@@ -104,9 +104,9 @@
       "nmtui"
     ];
     "Mod+T".action.spawn = "ghostty";
-    "Mod+S".action.spawn = "vesktop";
+    "Mod+D".action.spawn = "vesktop";
     "Mod+B".action.spawn = "firefox";
-    "Mod+E".action.spawn = "Thunar";
+    "Mod+F".action.spawn = "nautilus";
     "Mod+Space".action.spawn = [
       "rofi"
       "-show"
