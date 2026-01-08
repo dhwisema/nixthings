@@ -3,6 +3,7 @@
   lib,
   pkgs,
   username,
+  role,
   ...
 }:
 {
@@ -41,7 +42,7 @@
       commands = [
         {
           command = "ALL";
-          options = [ "NOPASSWD" ];
+          options = if role == "server" then [ "NOPASSWD" ] else [];
         }
       ];
     }
