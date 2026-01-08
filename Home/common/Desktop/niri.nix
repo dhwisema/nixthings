@@ -106,7 +106,7 @@
     "Mod+T".action.spawn = "ghostty";
     "Mod+D".action.spawn = "vesktop";
     "Mod+B".action.spawn = "firefox";
-    "Mod+F".action.spawn = "nautilus";
+    "Mod+E".action.spawn = "nautilus";
     "Mod+Space".action.spawn = [
       "rofi"
       "-show"
