@@ -48,7 +48,7 @@
     }
   ];
   users = {
-    mutableUsers = false;
+    mutableUsers = if role == "server" then false else true;
     users.${"irrelevancy"} = {
       hashedPassword = "$y$j9T$tsD8VLtqLhL5a/OIA7Txb1$bpOz8kmMODZVSPITsRMjhKd59m2Wvvhhh7w/ElmFdn1";
       isNormalUser = true;
