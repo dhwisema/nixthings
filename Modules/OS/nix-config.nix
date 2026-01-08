@@ -12,8 +12,8 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    clean.dates = "weekly";
-    clean.extraArgs = "--keep 2";
+    clean.dates = "daily";
+    clean.extraArgs = "--keep 3";
     flake = "/home/${username}/nix-config";
   };
 
