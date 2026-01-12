@@ -9,6 +9,7 @@
     zellij
     ghostty
     alejandra
+    kicad
     nil
     obsidian
     nixd
