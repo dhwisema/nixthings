@@ -10,6 +10,7 @@
     ghostty
     alejandra
     nil
+    obsidian
     nixd
   ];
 
