@@ -17,6 +17,7 @@
       shell-integration-features = true;
     };
   };
+  services.flatpak.enable = true;
   programs.helix.enable=true;
   programs.firefox = {
       enable = true;
