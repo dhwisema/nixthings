@@ -21,6 +21,10 @@
       inputs.darwin.follows = "";
     };
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+    comin = {
+      url = "github:nlewo/comin";
+      inputs.nixpkgs.follows = "nixpkgs"
+    };
     awww.url = "git+https://codeberg.org/LGFae/awww";
   };
   outputs =
@@ -43,6 +47,18 @@
               [
                 ./Modules/OS/Base-config.nix
                 quadlet-nix.nixosModules.quadlet
+                          comin.nixosModules.comin
+          ({
+            services.comin = {
+              enable = true;
+              remotes = [{
+                name = "origin";
+                url = "https://gitlab.com/your/infra.git";
+                branches.main.name = "main";
+              }];
+            };
+          })
+                
               ]
             else
               [
