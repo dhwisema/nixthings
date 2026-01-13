@@ -11,7 +11,7 @@
     PGID = 1000;
     TZ = "EDT";
     HARDCOVER_TOKEN="";
-    CWA_PORT_OVERRIDE=8083;
+    CWA_PORT_OVERRIDE="8083";
     NETWORK_SHARE_MODE=false;
   };
   volumes = [
