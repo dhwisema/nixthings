@@ -1,5 +1,5 @@
 {nixpkgs,hostname,lib,...}:{
-  virtualisation.oci-containers.Calibre-Web-Automate = {
+  virtualisation.oci-containers.containers.calibre-Web-Automate = {
     pull = "newer";
     image = "crocodilestick/calibre-web-automated:latest";
     
