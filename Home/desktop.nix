@@ -17,7 +17,8 @@
       shell-integration-features = true;
     };
   };
-  programs.helix.enable=true;
+
+  programs.helix.enable = true;
   programs.firefox = {
       enable = true;
 
