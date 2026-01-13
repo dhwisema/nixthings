@@ -7,7 +7,7 @@
   environment = {
     PUID ="1000";
     PGID ="1000";
-    TZ = "EDT";
+    TZ = "America/New_York";
     HARDCOVER_TOKEN="";
     CWA_PORT_OVERRIDE="8083";
     NETWORK_SHARE_MODE="false";
