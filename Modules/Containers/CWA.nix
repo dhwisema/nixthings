@@ -7,12 +7,12 @@
   environment = {
     DATABASE_HOST = "db.example.com";
     DATABASE_PORT = "3306";
-    PUID = 1000;
-    PGID = 1000;
+    PUID ="1000";
+    PGID ="1000";
     TZ = "EDT";
     HARDCOVER_TOKEN="";
     CWA_PORT_OVERRIDE="8083";
-    NETWORK_SHARE_MODE=false;
+    NETWORK_SHARE_MODE="false";
   };
   volumes = [
       "/home/irrelevancy/CWA/config:/config"
