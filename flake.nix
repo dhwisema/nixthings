@@ -136,7 +136,7 @@
         }; # oracle cloud box
         Pumat = mkNixosConfiguration {
           hostname = "Pumat";
-          modules = [ ];
+          modules = [./Modules/Containers/CWA.nix ];
         }; # dell optiplex
         Yasha = mkNixosConfiguration {
           hostname = "Yasha";
