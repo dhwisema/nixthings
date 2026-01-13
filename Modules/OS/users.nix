@@ -57,7 +57,7 @@
         "wheel"
       ];
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOM/XkR4NfhrMX2WcGJ10aYnPGcQHg+Jplw5rHowMOo dhwisema@ncsu.edu"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAyp6N/y9rBeXf+AvK+IirX/pxAEP7eSUPPTdmz3GuV irrelevancy@Beau"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFWcxSaxxRfizmQh2zdrRCt0Ic+eVKOc2w+nsQOVBh+e irrelevancy@Jester"
       ];
     };
