@@ -23,7 +23,7 @@
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     comin = {
       url = "github:nlewo/comin";
-      inputs.nixpkgs.follows = "nixpkgs"
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     awww.url = "git+https://codeberg.org/LGFae/awww";
   };
