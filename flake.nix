@@ -132,7 +132,7 @@
         Stacy-Fakename = mkNixosConfiguration {
           hostname = "Stacy-Fakename";
           system = "aarch64-linux";
-          modules = [./Modules/Containers/CWA.nix ];
+          modules = [ ./Modules/Containers/CWA.nix ];
         }; # oracle cloud box
         Pumat = mkNixosConfiguration {
           hostname = "Pumat";
