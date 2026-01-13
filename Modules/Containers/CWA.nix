@@ -5,8 +5,6 @@
     
     
   environment = {
-    DATABASE_HOST = "db.example.com";
-    DATABASE_PORT = "3306";
     PUID ="1000";
     PGID ="1000";
     TZ = "EDT";
