@@ -53,7 +53,7 @@
               enable = true;
               remotes = [{
                 name = "origin";
-                url = "https://gitlab.com/your/infra.git";
+                url = "https://github.com/dhwisema/nix-config.git";
                 branches.main.name = "main";
               }];
             };

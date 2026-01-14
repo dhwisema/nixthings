@@ -11,6 +11,8 @@
     alejandra
     kicad
     nil
+    signal-desktop
+    element-desktop
     obsidian
     nixd
   ];

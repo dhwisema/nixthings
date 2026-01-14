@@ -13,7 +13,7 @@
   stylix.cursor = {
     name = "BreezeX-RosePine-Linux";
     package = pkgs.rose-pine-cursor;
-    size = 12;
+    size = 18;
   };
 
 }

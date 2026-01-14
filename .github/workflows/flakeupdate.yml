@@ -16,3 +16,4 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@main
         with:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - run: nix flake check
