@@ -1,9 +1,12 @@
 {
   config,
   lib,
+  stylix,
   ...
 }:
 {
+  stylix.targets.waybar.colors.enable = true;
+  
   programs.waybar = {
     enable = true;
     settings = {
@@ -100,10 +103,12 @@
       window#waybar {
         background: transparent;
       }
-         .module { border-radius: 8px;
+      .module {
+         border-radius: 8px;
+         background-color: @base05 
          padding: 0 16px;
          margin: 8px 4px 0;
-         }
+       }
       window#waybar.empty #window {
         background-color: transparent;
         border: none;
