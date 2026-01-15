@@ -3,7 +3,7 @@
   programs.rofi= {
     enable = true;
     extraConfig = {
-      modi = "window,drun,combi";
+      modi = "window,drun,combi,rofi-power-menu";
 
 
     };
