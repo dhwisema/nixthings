@@ -19,13 +19,13 @@
         modules-center = [ "clock" ];
         modules-right = [
           "battery"
-          "custom/spacer"
+          # "custom/spacer"
           "bluetooth"
-          "custom/spacer"
+          # "custom/spacer"
           "network"
           "pulseaudio"
-          "custom/spacer"
-          "custom/spacer"
+          # "custom/spacer"
+          # "custom/spacer"
         ];
         modules-left = [ "niri/workspaces" ];
 
@@ -89,11 +89,11 @@
           };
           on-click = "pavucontrol";
         };
-        "custom/spacer" = {
-          format = " "; # Insert a blank space
-          interval = "once"; # Only render once
-          tooltip = false; # Disable tooltip
-        };
+        # "custom/spacer" = {
+        #   format = " "; # Insert a blank space
+        #   interval = "once"; # Only render once
+        #   tooltip = false; # Disable tooltip
+        # };
       };
     };
     style = ''
