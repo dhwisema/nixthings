@@ -2,83 +2,114 @@
   config,
   lib,
   ...
-}: {
-  programs.waybar.enable = true;
-  programs.waybar.settings = {
-    mainBar = {
-      layer = "top";
-      position = "top";
-      spacing = "5";
+}:
+{
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        spacing = "5";
 
-      modules-center = ["clock"];
-      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "network" "pulseaudio" "custom/spacer" "custom/spacer"];
-      modules-left = ["niri/workspaces"];
-
-      clock = {
-        format = "{:%I:%M %p}";  # AM/PM format
-        format-alt = "{:%Y-%m-%d}";
-        tooltip = "false";
-      };
-
-      battery = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
-        format = "{capacity}% {icon}";
-        format-charging = "{capacity}% 󰂄";
-        format-plugged = "{capacity}% 󱟢";
-        format-alt = "{time} {icon}";
-        # format-icons = [ "" "" "" "" "" ];
-        format-icons = [
-          "󰁺"
-          "󰁻"
-          "󰁼"
-          "󰁽"
-          "󰁾"
-          "󰁿"
-          "󰂀"
-          "󰂁"
-          "󰂂"
-          "󰁹"
+        modules-center = [ "clock" ];
+        modules-right = [
+          "battery"
+          "custom/spacer"
+          "bluetooth"
+          "custom/spacer"
+          "network"
+          "pulseaudio"
+          "custom/spacer"
+          "custom/spacer"
         ];
-      };
+        modules-left = [ "niri/workspaces" ];
 
-      network = {
-        format-wifi = "{essid} ({signalStrength}%)  ";
-        format-ethernet = "{ipaddr}/{cidr} 󰈀";
-        tooltip-format = "{ifname} via {gwaddr} 󰈀";
-        format-linked = "{ifname} (No IP) 󰈀";
-        format-disconnected = "Disconnected ⚠";
-        format-alt = "{ifname}: {ipaddr}/{cidr}";
-      };
-      pulseaudio = {
-        format = "{volume}% {icon} {format_source}";
-        format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source} ";
-        format-source = " {volume}%  ";
-        format-source-muted = "  ";
-        format-icons = {
-          headphone = "";
-          hands-free = "󰋎";
-          headset = "󰋎";
-          phone = "";
-          portable = "";
-          car = "";
-          default = [
-            ""
-            ""
-            ""
+        clock = {
+          format = "{:%I:%M %p}"; # AM/PM format
+          format-alt = "{:%Y-%m-%d}";
+          tooltip = "false";
+        };
+
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-charging = "{capacity}% 󰂄";
+          format-plugged = "{capacity}% 󱟢";
+          format-alt = "{time} {icon}";
+          # format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
           ];
         };
-        on-click = "pavucontrol";
-      };
-      "custom/spacer" = {
-        format = " ";  # Insert a blank space
-        interval = "once";  # Only render once
-        tooltip = false;  # Disable tooltip
+
+        network = {
+          format-wifi = "{essid} ({signalStrength}%)  ";
+          format-ethernet = "{ipaddr}/{cidr} 󰈀";
+          tooltip-format = "{ifname} via {gwaddr} 󰈀";
+          format-linked = "{ifname} (No IP) 󰈀";
+          format-disconnected = "Disconnected ⚠";
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+        };
+        pulseaudio = {
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = " {format_source} ";
+          format-source = " {volume}%  ";
+          format-source-muted = "  ";
+          format-icons = {
+            headphone = "";
+            hands-free = "󰋎";
+            headset = "󰋎";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
+          on-click = "pavucontrol";
+        };
+        "custom/spacer" = {
+          format = " "; # Insert a blank space
+          interval = "once"; # Only render once
+          tooltip = false; # Disable tooltip
+        };
       };
     };
+    style = ''
+   * {
+        font-size: 14px;
+        font-family: monospace;
+      }
+      window#waybar {
+        background: transparent;
+      }
+         .module { border-radius: 8px;
+         padding: 0 16px;
+         margin: 8px 4px 0;
+         }
+      window#waybar.empty #window {
+        background-color: transparent;
+        border: none;
+      }
+
+    '';
+
   };
 }
