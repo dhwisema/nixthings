@@ -19,16 +19,22 @@
         modules-center = [ "clock" ];
         modules-right = [
           "battery"
-          # "custom/spacer"
           "bluetooth"
-          # "custom/spacer"
           "network"
           "pulseaudio"
-          # "custom/spacer"
-          # "custom/spacer"
         ];
         modules-left = [ "niri/workspaces" ];
 
+          bluetooth = {
+            format = " {status}";
+            format-disbaled = "";
+            format-connected =" {num_connections} connected";
+            tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+            tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+            on-click = "rofi-bluetooth";
+          };
+
+        
         clock = {
           format = "{:%I:%M %p}"; # AM/PM format
           format-alt = "{:%Y-%m-%d}";
