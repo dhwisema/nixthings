@@ -15,6 +15,7 @@
     element-desktop
     obsidian
     nixd
+    zoxide
   ];
 
 }
