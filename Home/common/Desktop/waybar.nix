@@ -6,6 +6,7 @@
 }:
 {
   stylix.targets.waybar.colors.enable = true;
+  stylix.targets.waybar.addCss = false;
   
   programs.waybar = {
     enable = true;
