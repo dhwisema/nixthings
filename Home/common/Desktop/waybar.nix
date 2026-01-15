@@ -106,7 +106,7 @@
       }
       .module {
          border-radius: 8px;
-         background-color: @base05;
+         background-color: @base00;
          padding: 0 16px;
          margin: 8px 4px 0;
        }
