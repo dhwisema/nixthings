@@ -3,11 +3,14 @@
   programs.rofi= {
     enable = true;
     plugins = with pkgs;[
-      rofi-bluetooth
-      rofi-power-menu
+       
+    rofi-power-menu
     ];
     extraConfig = {
-      modi = "window,drun,combi,power-menu:${pkgs.rofi-power-menu}/bin/rofi-power-menu,bluetooth:${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
+      modi = "window,drun,combi,power-menu:${pkgs.rofi-power-menu}/bin/rofi-power-menu";
     };
   };
+  home.packages = with pkgs;[
+      rofi-bluetooth  
+  ];
 }
