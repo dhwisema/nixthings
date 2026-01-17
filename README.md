@@ -1,4 +1,4 @@
-#my personal server config.
+# my personal server config.
 ## To deploy to a new box do the following based on [disko](https://github.com/nix-community/disko) and [nixos-anywhere](https://github.com/nix-community/nixos-anywhere)
 
  1. Make sure you are able to access root ssh of host system ie in the
@@ -27,5 +27,7 @@
 |Beau|Desktop|Rtx 4070 super + 7800x3d custom build| x64
 |Jester|Desktop|Lenovo thinkpad z16 gen 1|x64
 
-
-
+## Secure boot?
+I fear im not sure how to deal with more than one disk but this note currently only applies to jester.
+The order is most likely wrong but tpm based disk unlock works with ```sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs="0+2+7+15:sha256=0000000000000000000000000000000000000000000000000000000000000000" /dev/nvme0n1p2``` based on [ElvishJerricco reccomendation about tpm 2 disk unlock](https://discourse.nixos.org/t/a-modern-and-secure-desktop-setup/41154/17).
+Also requires [Lanzaboote](https://nix-community.github.io/lanzaboote/getting-started/prepare-your-system.html)
