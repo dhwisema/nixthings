@@ -16,6 +16,10 @@
     obsidian
     nixd
     zoxide
+    vicinae
   ];
+  programs.vicinae = {
+    enable = true;
+  };
 
 }
