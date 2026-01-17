@@ -122,6 +122,7 @@
           modules = [
             ./Host/Jester/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-z # i fear lenovo did not cook with this one
+            lanzaboote.nixosModules.lanzaboote
             ./Modules/SecureBoot.nix
           ];
         }; # thinkpad z16
