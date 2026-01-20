@@ -114,7 +114,7 @@
       }
       .module {
          border-radius: 8px;
-         border: 4px solid @base0D;
+         border: 2px solid @base0D;
          background-color: @base01;
          /*
          padding: 0 16px;
