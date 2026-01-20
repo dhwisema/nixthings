@@ -9,6 +9,7 @@
   stylix.targets.waybar.addCss = false;
   
   programs.waybar = {
+    systemd.enable = true;
     enable = true;
     settings = {
       mainBar = {
@@ -36,9 +37,8 @@
 
         
         clock = {
-          format = "{:%I:%M %p}"; # AM/PM format
-          format-alt = "{:%Y-%m-%d}";
-          tooltip = "false";
+          format = "{:%r %D}";
+          tooltip = false;
         };
 
         battery = {
@@ -106,6 +106,8 @@
    * {
         font-size: 14px;
         font-family: monospace;
+        border-radius: 12px;
+        border: solid @Based0D
       }
       window#waybar {
         background: transparent;
@@ -121,6 +123,8 @@
         border: none;
       }
 
+
+      
     '';
 
   };
