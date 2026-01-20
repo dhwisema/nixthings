@@ -137,7 +137,9 @@
       #battery.discharging.critical {
         color: @base08;
       } 
-      
+      #workspaces button.active {
+        color: @base03:
+      }
       
     '';
 
