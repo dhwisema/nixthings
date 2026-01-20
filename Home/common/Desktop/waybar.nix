@@ -112,6 +112,9 @@
       }
       window#waybar {
         background: @base00;
+
+         border-radius: 8px;
+         boreder 1px;
       }
       .module {
          border-radius: 8px;
