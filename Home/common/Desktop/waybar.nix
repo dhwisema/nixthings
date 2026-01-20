@@ -103,7 +103,7 @@
       };
     };
     style = ''
-   * {    min-width: 10px;
+   * {  min-width: 10px;
         min-height: 2px;
         font-size: 14px;
         font-family: monospace;
@@ -112,9 +112,8 @@
       }
       window#waybar {
         background: @base00;
-
          border-radius: 8px;
-         border 1px;
+         borderd: 1px;
       }
       .module {
          border-radius: 8px;
