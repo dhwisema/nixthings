@@ -110,12 +110,12 @@
         border: solid @Based0D
       }
       window#waybar {
-        background: transparent;
+        background: solid @base00;
       }
       .module {
          border-radius: 8px;
          border: 4px solid @base0D;
-         background-color: @base00;
+         background-color: @base01;
          padding: 0 16px;
          margin: 8px 4px 0;
        }
