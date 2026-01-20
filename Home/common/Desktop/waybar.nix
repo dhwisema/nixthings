@@ -114,7 +114,7 @@
         background: @base00;
 
          border-radius: 8px;
-         boreder 1px;
+         border 1px;
       }
       .module {
          border-radius: 8px;
