@@ -107,7 +107,7 @@
         min-height: 2px;
         font-size: 14px;
         font-family: monospace;
-        padding: 1 px;
+        padding:  1px;
       }
       window#waybar {
         background: @base00;
