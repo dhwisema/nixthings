@@ -17,7 +17,7 @@
       shell-integration-features = true;
     };
   };
-
+ programs.zoxide.enableFishIntegration = true;
   programs.helix.enable = true;
   programs.firefox = {
       enable = true;
