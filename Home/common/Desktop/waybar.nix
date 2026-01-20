@@ -109,6 +109,7 @@
         font-family: monospace;
         padding:  1px;
         margin: 0px 2px;
+        background-color: transparent;
       }
       window#waybar {
         background: @base00;
