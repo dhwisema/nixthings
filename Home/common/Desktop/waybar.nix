@@ -138,6 +138,9 @@
         color: @base08;
       } 
       #workspaces button.active {
+        color: @base0C;
+      }
+      #workspaces button{
         color: @base03;
       }
       
