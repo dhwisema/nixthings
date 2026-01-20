@@ -14,6 +14,7 @@
     steam-run
     steam
     protonup-rs
+    r2modman
   ];
 
 }
