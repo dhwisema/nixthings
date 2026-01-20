@@ -17,14 +17,14 @@
         position = "top";
         spacing = "5";
 
-        modules-center = [ "clock" ];
-        modules-right = [
+        modules-right = [ "clock" ];
+        modules-left = [
           "battery"
           "bluetooth"
           "network"
           "pulseaudio"
         ];
-        modules-left = [ "niri/workspaces" ];
+        modules-center = [ "niri/workspaces" ];
 
           bluetooth = {
             format = " {status}";
