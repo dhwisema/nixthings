@@ -106,7 +106,6 @@
    * {
         font-size: 14px;
         font-family: monospace;
-        border-radius: 12px;
         border: solid @Based0D
       }
       window#waybar {
