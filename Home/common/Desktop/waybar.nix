@@ -103,11 +103,11 @@
       };
     };
     style = ''
-   * {    min-width: 10 px;
+   * {    min-width: 10px;
         min-height: 2px;
         font-size: 14px;
         font-family: monospace;
-        padding: 1px;
+        padding: 1 px;
       }
       window#waybar {
         background: @base00;
