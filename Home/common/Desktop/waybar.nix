@@ -113,7 +113,7 @@
         background: transparent;
       }
       .module {
-         border-radius: 8px @based0D;
+         border-radius: 8px solid @base0D;
          background-color: @base00;
          padding: 0 16px;
          margin: 8px 4px 0;
