@@ -108,6 +108,7 @@
         font-size: 14px;
         font-family: monospace;
         padding:  1px;
+        margin: 0px 2px;
       }
       window#waybar {
         background: @base00;
