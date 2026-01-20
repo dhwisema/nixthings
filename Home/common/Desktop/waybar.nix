@@ -103,10 +103,11 @@
       };
     };
     style = ''
-   * {
+   * {    min-width: 8px;
+  min-height: 0px;
         font-size: 14px;
         font-family: monospace;
-        border: solid @Based0D
+        padding: 0px;
       }
       window#waybar {
         background: @base00;
@@ -123,8 +124,17 @@
         background-color: transparent;
         border: none;
       }
-
-
+      
+      #battery {
+        color: @base00;
+      }
+      #battery.discharging.warning {
+        color: @base09;
+        }
+      #battery.discharging.critical {
+        color: @base08;
+      } 
+      
       
     '';
 
