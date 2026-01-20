@@ -110,7 +110,7 @@
         border: solid @Based0D
       }
       window#waybar {
-        background: solid @base00;
+        background: @base00;
       }
       .module {
          border-radius: 8px;
