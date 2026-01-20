@@ -37,7 +37,7 @@
 
         
         clock = {
-          format = "{:%r %D}";
+          format = "{:%I:%M%p %D}";
           tooltip = false;
         };
 
