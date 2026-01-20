@@ -138,7 +138,7 @@
         color: @base08;
       } 
       #workspaces button.active {
-        color: @base03:
+        color: @base03;
       }
       
     '';
