@@ -122,8 +122,19 @@
         background: @base00;
         color: @base0D /*maybe base0C */
       }
+      #clock {
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
       #battery {
-        color: @base0A;
+        color: @base0C;
       }
       #battery.discharging.warning:not(.charging) {
         color: @base05;
