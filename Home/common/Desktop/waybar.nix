@@ -15,11 +15,8 @@
       mainBar = {
         layer = "top";
         position = "top";
+        height = 20;
         spacing = "4";
-        margin-top = 6;
-        margin-left = 6;
-        margin-bottom = 0;
-        margin-right = 6;
 
         modules-center = [ "clock" "niri/window" ];
         modules-right = [
