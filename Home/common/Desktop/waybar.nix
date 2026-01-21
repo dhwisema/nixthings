@@ -36,7 +36,9 @@
             on-click = "rofi-bluetooth";
           };
 
-        
+          "niri/window" = {
+      "max-length" = 40;
+  };
         clock = {
           format = "{:%I:%M%p %D}";
           tooltip = false;
