@@ -106,10 +106,15 @@
       };
     };
     style = ''
-   * {
-  font-family: "monospaced";
+   * {  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+
+  font-family: "JetBrains Mono", monospace;
   font-size: 12px;
-            }
+}
             
       window#waybar {
         background: @base00;
