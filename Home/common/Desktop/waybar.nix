@@ -115,9 +115,12 @@
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
 }
-            
+
+
+           
       window#waybar {
-        background: @base00;
+        
+        background: transparent;
         color: @base0D; /*maybe base0C this is text color */
       }
       #window {
