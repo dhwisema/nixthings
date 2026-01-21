@@ -109,14 +109,11 @@
       * {  border: none;
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
-      background: @base00;
-
-      }
+            }
 
 
            
       window#waybar {
-        
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
       }
@@ -126,7 +123,7 @@
       }
 
       #clock {
-        background: @base02;
+        background: @base01;
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -136,10 +133,12 @@
         padding-top: 0px;
         padding-bottom: 0px;
       }
+      #bluetooth {
+        background:base01;
+      }
       #battery {
         color: @base0C;
         background: @base01;
-
       }
       #battery.discharging.warning:not(.charging) {
         color: @base05;
