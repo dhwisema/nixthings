@@ -15,16 +15,20 @@
       mainBar = {
         layer = "top";
         position = "top";
-        spacing = "5";
+        spacing = "4";
+        margin-top = "6";
+        margin-left = "6";
+        margin-bttom = "0";
+        margin-right = "6";
 
-        modules-right = [ "clock" ];
-        modules-left = [
+        modules-center = [ "clock" "niri/window" ];
+        modules-right = [
           "battery"
           "bluetooth"
           "network"
           "pulseaudio"
         ];
-        modules-center = [ "niri/workspaces" ];
+        modules-left = [ "niri/workspaces" ];
 
           bluetooth = {
             format = " {status}";
@@ -131,10 +135,10 @@
       #battery {
         color: @base0A;
       }
-      #battery.discharging.warning {
-        color: @base09;
+      #battery.discharging.warning:not(.charging) {
+        color: @base05;
         }
-      #battery.discharging.critical {
+      #battery.discharging.critical:not(.charging) {
         color: @base08;
       } 
       #workspaces button.active {
