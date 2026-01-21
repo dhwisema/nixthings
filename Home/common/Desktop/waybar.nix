@@ -107,17 +107,10 @@
     };
     style = ''
    * {
- /* padding: 0;
-  margin: 0;
-  min-height: 0;
-  border-radius: 0;
-  border: none;
-  text-shadow: none;
-  transition: none;
-  box-shadow: none;*/
   font-family: "monospaced";
   font-size: 12px;
             }
+            
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
@@ -127,20 +120,20 @@
       }
 
       window#waybar.empty #window {
-    background-color: transparent;
-    border: none;
-}
+        background-color: transparent;
+        border: none;
+      }
 
       #clock {
-  margin-right: 3px;
-  margin-left: 3px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-right: 4px;
-  padding-left: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-right: 4px;
+        padding-left: 4px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
       #battery {
         color: @base0C;
       }
