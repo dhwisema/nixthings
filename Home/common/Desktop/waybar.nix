@@ -129,7 +129,7 @@
       }
       
       #battery {
-        color: @base00;
+        color: @base0A;
       }
       #battery.discharging.warning {
         color: @base09;
