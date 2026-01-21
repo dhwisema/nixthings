@@ -118,6 +118,15 @@
         border-radius: 0px;
 
       }
+      tooltip {
+          background: rgba(36, 36, 35, 0.999);
+          font-size: 10px;
+          border: 1px solid #77767B;
+          border-radius: 10px;
+      }
+      tooltip label {
+          color: #FFFFFF;
+      } 
 
       window#waybar.empty #window {
         background-color: transparent;
