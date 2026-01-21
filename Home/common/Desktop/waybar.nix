@@ -120,7 +120,7 @@
            
       window#waybar {
         
-        background: transparent;
+        background: @base00;
         color: @base0D; /*maybe base0C this is text color */
       }
       #window {
