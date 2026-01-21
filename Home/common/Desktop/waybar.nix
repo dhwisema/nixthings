@@ -109,7 +109,6 @@
    * {
   font-family: "monospaced";
   font-size: 12px;
-  border: 2px solid @base03;
             }
             
       window#waybar {
