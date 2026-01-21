@@ -134,7 +134,7 @@
         padding-bottom: 0px;
       }
       #bluetooth {
-        background:base01;
+        background: @base01;
       }
       #battery {
         color: @base0C;
