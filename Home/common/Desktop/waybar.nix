@@ -109,6 +109,8 @@
       * {  border: none;
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
+      background: @base00;
+
       }
 
 
@@ -120,6 +122,7 @@
       }
       #window {
         color: @base0A;
+        background: @base01
       }
 
       #clock {
@@ -135,7 +138,7 @@
       }
       #battery {
         color: @base0C;
-        background: @base02;
+        background: @base01;
 
       }
       #battery.discharging.warning:not(.charging) {
@@ -146,12 +149,12 @@
       } 
       #workspaces button.active {
         color: @base0C;
-        background: @base02;
+        background: @base01;
 
       }
       #workspaces button{
         color: @base04;
-        background: @base02;
+        background: @base01;
       }
       #pulseaudio {
          background: @base01;
