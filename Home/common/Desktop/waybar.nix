@@ -16,10 +16,10 @@
         layer = "top";
         position = "top";
         spacing = "4";
-        margin-top = "6";
-        margin-left = "6";
-        margin-bttom = "0";
-        margin-right = "6";
+        margin-top = 6;
+        margin-left = 6;
+        margin-bttom = 0;
+        margin-right = 6;
 
         modules-center = [ "clock" "niri/window" ];
         modules-right = [
