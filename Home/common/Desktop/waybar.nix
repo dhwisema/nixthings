@@ -15,7 +15,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 20;
+        height = 30;
         spacing = "4";
 
         modules-center = [ "clock" "niri/window" ];
@@ -106,10 +106,10 @@
       };
     };
     style = ''
-   * {  border: none;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-}
+      * {  border: none;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      }
 
 
            
@@ -121,16 +121,6 @@
       #window {
         color: @base0A;
       }
-
-      tooltip {
-          background: rgba(36, 36, 35, 0.999);
-          font-size: 10px;
-          border: 1px solid #77767B;
-          border-radius: 10px;
-      }
-      tooltip label {
-          color: #FFFFFF;
-      } 
 
       #clock {
         margin-right: 3px;
@@ -153,9 +143,12 @@
       } 
       #workspaces button.active {
         color: @base0C;
+        background: @base02;
+
       }
       #workspaces button{
-        color: @base03;
+        color: @base04;
+        background: @base02;
       }
       
     '';
