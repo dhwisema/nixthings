@@ -120,7 +120,10 @@
             }
       window#waybar {
         background: @base00;
-        color: @base0D /*maybe base0C */
+        color: @base0D /*maybe base0C this is text color */
+        border: 1px solid @base02;
+        border-radius: 0px;
+
       }
       #clock {
   margin-right: 3px;
@@ -132,7 +135,6 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
-
       #battery {
         color: @base0C;
       }
