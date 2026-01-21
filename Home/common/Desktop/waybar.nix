@@ -18,7 +18,7 @@
         spacing = "4";
         margin-top = 6;
         margin-left = 6;
-        margin-bttom = 0;
+        margin-bottom = 0;
         margin-right = 6;
 
         modules-center = [ "clock" "niri/window" ];
@@ -107,31 +107,22 @@
       };
     };
     style = ''
-   * {  min-width: 10px;
-        min-height: 2px;
-        font-size: 14px;
-        font-family: monospace;
-        padding:  1px;
-        margin: 0px 0px;
-      }
+   * {
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  border-radius: 0;
+  border: none;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+  font-family: "monospaced";
+  font-size: 12px;
+            }
       window#waybar {
         background: @base00;
-         border-radius: 8px;
-         border: 1px;
+        color: @base0D /*maybe base0C */
       }
-      .module {
-         border-radius: 8px;
-         border: 2px solid @base0D;
-         background-color: @base01;
-         /*
-         padding: 0 16px;
-         margin: 8px 4px 0; */
-       }
-      window#waybar.empty #window {
-        background-color: transparent;
-        border: none;
-      }
-      
       #battery {
         color: @base0A;
       }
