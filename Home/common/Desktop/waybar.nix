@@ -123,6 +123,7 @@
       }
 
       #clock {
+        background: @base02;
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -134,6 +135,8 @@
       }
       #battery {
         color: @base0C;
+        background: @base02;
+
       }
       #battery.discharging.warning:not(.charging) {
         color: @base05;
@@ -149,6 +152,9 @@
       #workspaces button{
         color: @base04;
         background: @base02;
+      }
+      #pulseaudio {
+         background: @base02;
       }
       
     '';
