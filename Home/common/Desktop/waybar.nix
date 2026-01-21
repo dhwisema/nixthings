@@ -125,6 +125,12 @@
         border-radius: 0px;
 
       }
+
+      window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
       #clock {
   margin-right: 3px;
   margin-left: 3px;
