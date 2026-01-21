@@ -107,7 +107,7 @@
     };
     style = ''
    * {
- */ padding: 0;
+ /* padding: 0;
   margin: 0;
   min-height: 0;
   border-radius: 0;
