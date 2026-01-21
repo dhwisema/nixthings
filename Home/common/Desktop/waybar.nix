@@ -116,8 +116,11 @@
         color: @base0D; /*maybe base0C this is text color */
         border: 1px solid @base00;
         border-radius: 0px;
-
       }
+      #window {
+        color: #d3869b;
+      }
+
       tooltip {
           background: rgba(36, 36, 35, 0.999);
           font-size: 10px;
