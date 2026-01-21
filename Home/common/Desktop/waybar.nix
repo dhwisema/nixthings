@@ -109,6 +109,7 @@
    * {
   font-family: "monospaced";
   font-size: 12px;
+  border: 2px solid @base03;
             }
             
       window#waybar {
@@ -118,7 +119,7 @@
         border-radius: 0px;
       }
       #window {
-        color: #d3869b;
+        color: @base0A;
       }
 
       tooltip {
