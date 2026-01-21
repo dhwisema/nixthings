@@ -135,8 +135,18 @@
       }
       #bluetooth {
         background: @base01;
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
       }
       #battery {
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
         color: @base0C;
         background: @base01;
       }
@@ -156,6 +166,11 @@
         background: @base01;
       }
       #pulseaudio {
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
          background: @base01;
       }
       #network {
