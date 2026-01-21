@@ -142,6 +142,7 @@
 
       }
       #battery {
+        padding: 3px
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
