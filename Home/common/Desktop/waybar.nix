@@ -107,14 +107,14 @@
     };
     style = ''
    * {
-  padding: 0;
+ */ padding: 0;
   margin: 0;
   min-height: 0;
   border-radius: 0;
   border: none;
   text-shadow: none;
   transition: none;
-  box-shadow: none;
+  box-shadow: none;*/
   font-family: "monospaced";
   font-size: 12px;
             }
