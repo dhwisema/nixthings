@@ -121,7 +121,7 @@
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
-        border: 1px solid @base02;
+        border: 1px solid @base0A;
         border-radius: 0px;
 
       }
