@@ -154,7 +154,10 @@
         background: @base02;
       }
       #pulseaudio {
-         background: @base02;
+         background: @base01;
+      }
+      #network {
+         background: @base01;
       }
       
     '';
