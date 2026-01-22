@@ -165,7 +165,7 @@
         border-radius: 4px;
         border: @base01; 
         padding: 2px 0px;
-        margin: 2px 0em;
+        margin: 4px 0em;
         color: @base04;
         background: @base01;
       }
