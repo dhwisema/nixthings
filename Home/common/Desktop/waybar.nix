@@ -117,8 +117,7 @@
       #window {
         color: @base0A;
         background: @base01;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: .5em 0em;
 
       }
 
