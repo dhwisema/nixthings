@@ -123,9 +123,9 @@
       }
 
       #clock {
-        border-radius: 4px;
-        border: @base01;   
-        background: @base01;
+        border-radius: 1em;
+        border: @base02;   
+        background: @base02;
         margin-right: 3px;
         margin-left: 3px;
         padding-right: 4px;
@@ -134,7 +134,7 @@
         padding-bottom: 0px;
       }
       #bluetooth {
-        background: @base01;
+        background: @base02;
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -164,8 +164,8 @@
       #workspaces button {
         border-radius: 4px;
         border: @base01; 
-        padding: 0px 5px;
-        margin: 0px 2px;
+        padding: 0px 0px;
+        margin: 1px 0px;
         color: @base04;
         background: @base01;
       }
