@@ -107,9 +107,9 @@
     };
     style = ''
       * {  border: none;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      margin: 0em;
+           font-family: "JetBrains Mono", monospace;
+           font-size: 12px;
+           margin: .5em 0em;
                 }
       window#waybar {
         background: @base00;
@@ -135,8 +135,6 @@
       #battery {
         border-radius: .25em;
         padding: 0px 3px;
-        margin-right: 3px;
-        margin-left: 3px;
         color: @base0C;
         background: @base01;
       }
