@@ -20,7 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.darwin.follows = "";
     };
-    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     comin = {
       url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,8 +49,7 @@
             if role == "server" then
               [
                 ./Modules/OS/Base-config.nix
-                quadlet-nix.nixosModules.quadlet
-                          comin.nixosModules.comin
+                comin.nixosModules.comin
           ({
             services.comin = {
               enable = true;
@@ -120,6 +122,8 @@
           modules = [
             ./Host/Jester/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-z # i fear lenovo did not cook with this one
+            lanzaboote.nixosModules.lanzaboote
+            ./Modules/SecureBoot.nix
           ];
         }; # thinkpad z16
         Beau = mkNixosConfiguration {

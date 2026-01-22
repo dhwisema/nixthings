@@ -1,84 +1,186 @@
 {
   config,
   lib,
+  stylix,
   ...
-}: {
-  programs.waybar.enable = true;
-  programs.waybar.settings = {
-    mainBar = {
-      layer = "top";
-      position = "top";
-      spacing = "5";
+}:
+{
+  stylix.targets.waybar.colors.enable = true;
+  stylix.targets.waybar.addCss = false;
+  
+  programs.waybar = {
+    systemd.enable = true;
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 30;
+        spacing = "4";
 
-      modules-center = ["clock"];
-      modules-right = ["battery" "custom/spacer" "bluetooth" "custom/spacer" "network" "pulseaudio" "custom/spacer" "custom/spacer"];
-      modules-left = ["niri/workspaces"];
-
-      clock = {
-        format = "{:%I:%M %p}";  # AM/PM format
-        format-alt = "{:%Y-%m-%d}";
-        tooltip = "false";
-      };
-
-      battery = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
-        format = "{capacity}% {icon}";
-        format-charging = "{capacity}% 󰂄";
-        format-plugged = "{capacity}% 󱟢";
-        format-alt = "{time} {icon}";
-        # format-icons = [ "" "" "" "" "" ];
-        format-icons = [
-          "󰁺"
-          "󰁻"
-          "󰁼"
-          "󰁽"
-          "󰁾"
-          "󰁿"
-          "󰂀"
-          "󰂁"
-          "󰂂"
-          "󰁹"
+        modules-center = [ "clock" "niri/window" ];
+        modules-right = [
+          "battery"
+          "bluetooth"
+          "network"
+          "pulseaudio"
         ];
-      };
+        modules-left = [ "niri/workspaces" ];
 
-      network = {
-        format-wifi = "{essid} ({signalStrength}%)  ";
-        format-ethernet = "{ipaddr}/{cidr} 󰈀";
-        tooltip-format = "{ifname} via {gwaddr} 󰈀";
-        format-linked = "{ifname} (No IP) 󰈀";
-        format-disconnected = "Disconnected ⚠";
-        format-alt = "{ifname}: {ipaddr}/{cidr}";
-      };
-      pulseaudio = {
-        format = "{volume}% {icon} {format_source}";
-        format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source} ";
-        format-source = " {volume}%  ";
-        format-source-muted = "  ";
-        format-icons = {
-          headphone = "";
-          hands-free = "󰋎";
-          headset = "󰋎";
-          phone = "";
-          portable = "";
-          car = "";
-          default = [
-            ""
-            ""
-            ""
+          bluetooth = {
+            format = " {status}";
+            format-disbaled = "";
+            format-connected =" {num_connections} connected";
+            tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+            tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+            on-click = "rofi-bluetooth";
+          };
+
+          "niri/window" = {
+      "max-length" = 40;
+  };
+        clock = {
+          format = "{:%I:%M%p %D}";
+          tooltip = false;
+        };
+
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-charging = "{capacity}% 󰂄";
+          format-plugged = "{capacity}% 󱟢";
+          format-alt = "{time} {icon}";
+          # format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
           ];
         };
-        on-click = "pavucontrol";
-      };
-      "custom/spacer" = {
-        format = " ";  # Insert a blank space
-        interval = "once";  # Only render once
-        tooltip = false;  # Disable tooltip
+
+        network = {
+          format-wifi = "{essid} ({signalStrength}%)  ";
+          format-ethernet = "{ipaddr}/{cidr} 󰈀";
+          tooltip-format = "{ifname} via {gwaddr} 󰈀";
+          format-linked = "{ifname} (No IP) 󰈀";
+          format-disconnected = "Disconnected ⚠";
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+        };
+        pulseaudio = {
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = " {format_source} ";
+          format-source = " {volume}%  ";
+          format-source-muted = "  ";
+          format-icons = {
+            headphone = "";
+            hands-free = "󰋎";
+            headset = "󰋎";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
+          on-click = "pavucontrol";
+        };
+        # "custom/spacer" = {
+        #   format = " "; # Insert a blank space
+        #   interval = "once"; # Only render once
+        #   tooltip = false; # Disable tooltip
+        # };
       };
     };
+    style = ''
+      * {  border: none;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+            }
+
+
+           
+      window#waybar {
+        background: @base00;
+        color: @base0D; /*maybe base0C this is text color */
+      }
+      #window {
+        color: @base0A;
+        background: @base01
+      }
+
+      #clock {
+        border-radius: 2px;
+        
+        background: @base01;
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-right: 4px;
+        padding-left: 4px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      #bluetooth {
+        background: @base01;
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+      }
+      #battery {
+        padding: 3px;
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        color: @base0C;
+        background: @base01;
+      }
+      #battery.discharging.warning:not(.charging) {
+        color: @base05;
+        }
+      #battery.discharging.critical:not(.charging) {
+        color: @base08;
+      } 
+      #workspaces button.active {
+        color: @base0C;
+        background: @base01;
+      }        
+      #workspaces button {
+        padding: 0 5px;
+        color: @base04;
+        background: @base01;
+      }
+      #pulseaudio {
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+         background: @base01;
+      }
+      #network {
+         background: @base01;
+      }
+      
+    '';
+
   };
 }

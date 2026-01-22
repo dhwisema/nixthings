@@ -25,7 +25,7 @@
 
   stylix.targets.niri.enable = true;
   programs.niri.settings.spawn-at-startup = [
-    { command = [ "waybar" ]; }
+  #  { command = [ "waybar" ]; }
     { command = [ "mako" ]; }
     { command = [ "awww-daemon" ]; }
 ];
@@ -59,7 +59,7 @@
   programs.niri.settings.cursor = {
     hide-after-inactive-ms = 1000;
     hide-when-typing = true;
-    size = 12;
+    size = 20;
     theme = "BreezeX-RosePine-Linux";
 
   };
