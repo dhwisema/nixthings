@@ -115,12 +115,12 @@
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
         border: none;
-        margin: 0em 0em;
+        margin: 0em .25em;
       }
 
       #clock {
         padding: .25em .25em;
-             border-radius: .25em;
+        border-radius: .25em;
 
       }
       #bluetooth {
@@ -166,7 +166,7 @@
         margin-top: 0px;
         margin-bottom: 0px;
         background: @base01;
-             border-radius: .25em;
+        border-radius: .25em;
 
       }
       #network {
