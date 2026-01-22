@@ -21,7 +21,7 @@
     # sway-contrib.grimshot
     xwayland-satellite
     pavucontrol
-    waypaper
+    waybar
     adwaita-icon-theme-legacy
     adwaita-icon-theme
     bluetuith
