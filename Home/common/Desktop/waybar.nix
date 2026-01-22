@@ -120,7 +120,7 @@
       }
 
       #clock {
-        border-radius: 2px;
+        border-radius: 12px;
         border: @base01;   
         background: @base01;
         margin-right: 3px;
