@@ -15,7 +15,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 45;
         spacing = "4";
 
         modules-center = [ "clock" "niri/window" ];
@@ -173,8 +173,7 @@
         margin-left: 3px;
         margin-top: 0px;
         margin-bottom: 0px;
-
-         background: @base01;
+        background: @base01;
       }
       #network {
          background: @base01;
