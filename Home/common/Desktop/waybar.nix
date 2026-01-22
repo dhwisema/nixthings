@@ -152,12 +152,10 @@
         background: @base01;
       }
       #pulseaudio {
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
         background: @base01;
         border-radius: .25em;
+          margin: .5em .25em;
+
 
       }
       #network {
