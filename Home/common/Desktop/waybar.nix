@@ -117,6 +117,9 @@
       #window {
         color: @base0A;
         background: @base01
+        margin-top: 2px;
+        margin-bottom: 2px;
+
       }
 
       #clock {
@@ -125,8 +128,6 @@
         background: @base01;
         margin-right: 3px;
         margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
         padding-right: 4px;
         padding-left: 4px;
         padding-top: 0px;
