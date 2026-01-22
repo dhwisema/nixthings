@@ -119,8 +119,9 @@
       }
       #clock {
         padding: .25em .25em;
+        margin: .5 em 0em;
         border-radius: .25em;
-
+        background: base01;
       }
       #bluetooth {
         background: @base02;
