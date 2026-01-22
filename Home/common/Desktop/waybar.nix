@@ -125,8 +125,6 @@
         border-radius: 1em;
         border: @base02;   
         background: @base02;
-        margin-right: 3px;
-        margin-left: 3px;
         padding-right: 4px;
         padding-left: 4px;
         padding-top: 0px;
@@ -161,10 +159,10 @@
         background: @base01;
       }        
       #workspaces button {
-        border-radius: 4px;
+        border-radius: .5em;
         border: @base01; 
-        padding: .25em 0px;
-        margin: .5em 0em;
+        padding: .25em 0em;
+        margin: .5em .25em;
         color: @base04;
         background: @base01;
       }
