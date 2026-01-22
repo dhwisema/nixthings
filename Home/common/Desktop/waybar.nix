@@ -115,7 +115,7 @@
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
         border: none;
-        margin: 0em .25em;
+        margin: .5em .25em;
       }
 
       #clock {
