@@ -113,10 +113,12 @@
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
+        border: none;
+        margin: 0em 0em; 
       }
       #window {
         color: @base0A;
-        background: @base01;
+        background: @base02;
         margin: .5em 0em;
 
       }
