@@ -116,14 +116,12 @@
         border: none;
         margin: 0em 0em; 
       }
-      #window {
+      window {
         color: @base0A;
         background: @base01;
         margin: .5em 0em;
         border-radius: .25em;
-
-
-      }
+     }
 
       #clock {
         padding: .25em .25em;
