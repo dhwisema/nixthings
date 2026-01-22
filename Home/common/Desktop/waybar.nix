@@ -118,15 +118,14 @@
       }
       #window {
         color: @base0A;
-        background: @base02;
+        background: @base01;
         margin: .5em 0em;
+        border-radius: .25em;
+
 
       }
 
       #clock {
-        border-radius: 1em;
-        border: @base02;   
-        background: @base02;
         padding: .25em 1em;
       }
       #bluetooth {
