@@ -162,10 +162,7 @@
       #workspaces button.active {
         color: @base0C;
         background: @base01;
-
-      }
-      #workspaces button{
-    
+      }        
       #workspaces button {
         padding: 0 5px;
         color: @base04;
