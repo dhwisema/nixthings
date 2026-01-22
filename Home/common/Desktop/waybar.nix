@@ -118,7 +118,9 @@
         border: none;
         margin: .5em .25em;
       }
-
+      window {
+        background: @base01
+      }
       #clock {
         padding: .25em .25em;
         border-radius: .25em;
