@@ -114,20 +114,18 @@
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
         border: none;
-        margin: 0em 0em; 
+        margin: 0em 0em;
       }
-      window {
-        color: @base0A;
-        background: @base01;
-        margin: .5em 0em;
-        border-radius: .25em;
-     }
 
       #clock {
         padding: .25em .25em;
+             border-radius: .25em;
+
       }
       #bluetooth {
         background: @base02;
+             border-radius: .25em;
+
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -135,6 +133,8 @@
 
       }
       #battery {
+           border-radius: .25em;
+
         padding: 3px;
         margin-right: 3px;
         margin-left: 3px;
@@ -168,9 +168,13 @@
         margin-top: 0px;
         margin-bottom: 0px;
         background: @base01;
+             border-radius: .25em;
+
       }
       #network {
          background: @base01;
+         border-radius: .25em;
+
       }
       
     '';
