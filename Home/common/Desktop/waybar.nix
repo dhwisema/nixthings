@@ -110,6 +110,7 @@
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
       margin: 0em
+      background: @base01;
             }
       window#waybar {
         background: @base00;
@@ -125,8 +126,7 @@
       }
       #bluetooth {
         background: @base02;
-             border-radius: .25em;
-
+        border-radius: .25em;
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -134,11 +134,10 @@
 
       }
       #battery {
-           border-radius: .25em;
+        border-radius: .25em;
         padding: 0px 3px;
         margin-right: 3px;
         margin-left: 3px;
- 
         color: @base0C;
         background: @base01;
       }
