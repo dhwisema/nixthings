@@ -15,7 +15,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 45;
+        height = 35;
         spacing = "4";
 
         modules-center = [ "clock" "niri/window" ];
@@ -37,7 +37,7 @@
           };
 
           "niri/window" = {
-      "max-length" = 40;
+      "max-length" = 30;
   };
         clock = {
           format = "{:%I:%M%p %D}";
