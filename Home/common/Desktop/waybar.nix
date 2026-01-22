@@ -126,7 +126,7 @@
       }
 
       #clock {
-        padding: .25em 1em;
+        padding: .25em .25em;
       }
       #bluetooth {
         background: @base02;
