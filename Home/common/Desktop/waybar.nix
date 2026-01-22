@@ -110,9 +110,6 @@
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
             }
-
-
-           
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
@@ -164,7 +161,7 @@
         background: @base01;
       }        
       #workspaces button {
-        padding: 0 5px;
+        padding: 0px 5px;
         margin: 0px 2px;
         color: @base04;
         background: @base01;

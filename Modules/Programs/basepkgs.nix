@@ -12,6 +12,7 @@
     yazi
     btop
     jq
-  
+    zoxide
+    fzf
   ];
 }
