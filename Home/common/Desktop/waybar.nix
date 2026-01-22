@@ -109,7 +109,7 @@
       * {  border: none;
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
-      margin: 0em
+      margin: 0em;
       background: @base01;
             }
       window#waybar {
