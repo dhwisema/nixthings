@@ -135,7 +135,6 @@
       }
       #battery {
            border-radius: .25em;
-
         padding: 0px 3px;
         margin-right: 3px;
         margin-left: 3px;
