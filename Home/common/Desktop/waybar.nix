@@ -127,10 +127,7 @@
         border-radius: 1em;
         border: @base02;   
         background: @base02;
-        padding-right: 4px;
-        padding-left: 4px;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding: .25em 1e;
       }
       #bluetooth {
         background: @base02;
