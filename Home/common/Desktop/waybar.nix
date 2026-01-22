@@ -119,15 +119,17 @@
       }
       #clock {
         padding: .25em .25em;
-        margin: .5em 0em;
+       margin: .5em .25em;
         border-radius: .25em;
         background: @base01;
       }
       #bluetooth {
+        margin: .5em .25em;
         background: @base02;
         border-radius: .25em;
              }
       #battery {
+        margin: .5em .25em;
         border-radius: .25em;
         padding: 0px 3px;
         color: @base0C;
@@ -154,7 +156,7 @@
       #pulseaudio {
         background: @base01;
         border-radius: .25em;
-          margin: .5em .25em;
+        margin: .5em .25em;
 
 
       }
