@@ -116,7 +116,7 @@
       }
       #window {
         color: @base0A;
-        background: @base01
+        background: @base01;
         margin-top: 2px;
         margin-bottom: 2px;
 
