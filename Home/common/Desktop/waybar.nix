@@ -135,12 +135,10 @@
       #battery {
            border-radius: .25em;
 
-        padding: 3px;
+        padding: 0px 3px;
         margin-right: 3px;
         margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-
+ 
         color: @base0C;
         background: @base01;
       }
