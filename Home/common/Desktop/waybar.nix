@@ -120,7 +120,7 @@
       }
 
       #clock {
-        border-radius: 12px;
+        border-radius: 4px;
         border: @base01;   
         background: @base01;
         margin-right: 3px;
@@ -161,7 +161,7 @@
         background: @base01;
       }        
       #workspaces button {
-        border-radius: 12px;
+        border-radius: 4px;
         border: @base01; 
         padding: 0px 5px;
         margin: 0px 2px;
