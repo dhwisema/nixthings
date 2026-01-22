@@ -161,6 +161,8 @@
         background: @base01;
       }        
       #workspaces button {
+        border-radius: 12px;
+        border: @base01; 
         padding: 0px 5px;
         margin: 0px 2px;
         color: @base04;
