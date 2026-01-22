@@ -126,12 +126,7 @@
       #bluetooth {
         background: @base02;
         border-radius: .25em;
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-
-      }
+             }
       #battery {
         border-radius: .25em;
         padding: 0px 3px;
