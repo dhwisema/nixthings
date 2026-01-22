@@ -159,7 +159,7 @@
         background: @base01;
       }        
       #workspaces button {
-        border-radius: .5em;
+        border-radius: .25em;
         border: @base01; 
         padding: .25em 0em;
         margin: .5em .25em;
