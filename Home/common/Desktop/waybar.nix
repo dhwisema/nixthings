@@ -125,7 +125,7 @@
       }
       #bluetooth {
         margin: .5em .25em;
-        background: @base02;
+        background: @base01;
         border-radius: .25em;
              }
       #battery {
@@ -157,13 +157,11 @@
         background: @base01;
         border-radius: .25em;
         margin: .5em .25em;
-
-
       }
       #network {
          background: @base01;
          border-radius: .25em;
-
+         margin: .5em .25em;
       }
       
     '';
