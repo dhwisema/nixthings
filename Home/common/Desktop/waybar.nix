@@ -119,7 +119,7 @@
       }
       #clock {
         padding: .25em .25em;
-       margin: .5em .25em;
+        margin: .5em .25em;
         border-radius: .25em;
         background: @base01;
       }
