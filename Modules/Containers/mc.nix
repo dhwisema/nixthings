@@ -23,7 +23,6 @@
           ferrite-core
           carpet
           clumps
-          hurricane
           shulker-drops-two
           phantom-spawning
           view-distance-fix
