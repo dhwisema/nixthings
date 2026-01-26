@@ -36,6 +36,11 @@
           datapack:incendium
           datapack:structory-towers
                           '';
+       OPS = ''        Huntingdog5 '';
+      EXISTING_OPS_FILE = "SYNCHRONIZE";
+      ENABLE_WHITELIST = "true";
+      WHITELIST = ''
+        Huntingdog5  '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
         TZ = "America/New_York";
