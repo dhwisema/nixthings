@@ -36,7 +36,7 @@
         VERSION = "1.21.11";
         MEMORY = "16384M";
         TZ = "America/New_York";
-        MODRINTH_DOWNLOAD_DEPENDENCIES = "optional";
+        MODRINTH_DOWNLOAD_DEPENDENCIES = "required";
         MODRINTH_ALLOWED_VERSION_TYPE =  "alpha";
       };
        extraOptions = [
