@@ -28,13 +28,13 @@
           towns-and-towers
           noisiumforked
           floodgate
-                     https://modrinth.com/plugin/lmd
-                   https://modrinth.com/plugin/geyser
-          https://modrinth.com/datapack/terralith
-               https://modrinth.com/datapack/structory
-        https://modrinth.com/datapack/incendium
-        https://modrinth.com/datapack/structory-towers
-        https://modrinth.com/datapack/remove-terralith-intro-message
+          plugin:lmd
+          plugin:geyser
+          datapack:terralith
+          datapack:structory
+           datapack:incendium
+           datapack:structory-towers
+           datapack:remove-terralith-intro-message
                  '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
