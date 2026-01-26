@@ -26,7 +26,7 @@
           view-distance-fix
           towns-and-towers
           noisiumforked
-          fabric-api
+          fabric-apii
           https://modrinth.com/plugin/geyser
           https://modrinth.com/datapack/terralith
           https://modrinth.com/datapack/structory
@@ -34,7 +34,7 @@
           https://modrinth.com/datapack/structory-towers
           https://modrinth.com/datapack/remove-terralith-intro-message
           https://modrinth.com/plugin/lmd
-          https://modrinth.com/datapack/dungeons-and-taverns
+           https://modrinth.com/datapack/dungeons-and-taverns
           '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
@@ -53,4 +53,3 @@
     };
   };
 }
-    
