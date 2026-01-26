@@ -15,7 +15,6 @@
     steam
     protonup-rs
     r2modman
-    modrinth-app-unwrapped
   ];
 
 }
