@@ -28,8 +28,7 @@
           towns-and-towers
           noisiumforked
           floodgate
-          hurricane
-                 https://modrinth.com/plugin/lmd
+                     https://modrinth.com/plugin/lmd
                    https://modrinth.com/plugin/geyser
           https://modrinth.com/datapack/terralith
                https://modrinth.com/datapack/structory
