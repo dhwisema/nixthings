@@ -18,17 +18,9 @@
         TYPE = "FABRIC";
         MODRINTH_PROJECTS = ''
           lithium
-          ferrite-core
           carpet
-          clumps
-          shulker-drops-two
-          phantom-spawning
-          view-distance-fix
-          towns-and-towers
-          noisiumforked
           fabric-api
-          geyser
-          '';
+                 '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
         USE_MEOWICE_FLAGS = "true";
