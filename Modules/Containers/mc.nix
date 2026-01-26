@@ -18,7 +18,7 @@
 
       environment = {
         RCON_CMDS_STARTUP = ''
-        chunky radius 5000 
+        chunky radius 7000 
         chunky start '';
       RCON_CMDS_ON_CONNECT =  ''
         chunky stop '';
@@ -42,7 +42,15 @@
           noisiumforked
           floodgate
           chunky
-          datapack:nullscape
+          structurify
+          mes-moogs-end-structures
+          moogs-voyager-structuresi
+          mns-moogs-nether-structures
+          mss-moogs-soaring-structures
+          mtr-moogs-temples-reimagined
+          datapack:dungeons-and-taverns
+          datapack:dnt-enchant-disabler
+          datapack:explorify
           datapack:terralith
           datapack:structory
           datapack:incendium
