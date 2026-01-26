@@ -8,7 +8,7 @@
     containers.mc = {
       image = "itzg/minecraft-server:latest";
 
-      tty = true;
+      # tty = true;
       # stdinOpen = true;
 
       ports = [
