@@ -38,7 +38,7 @@
       };
 
       volumes = [
-        "/absolute/path/to/data:/data"
+        "/home/irrelevancy/mc/data:/data"
       ];
     };
   };
