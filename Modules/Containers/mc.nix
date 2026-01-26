@@ -27,12 +27,12 @@
           view-distance-fix
           towns-and-towers
           noisiumforked
+          floodgate
           datapack:terralith
           datapack:structory
           datapack:incendium
           datapack:structory-towers
-          datapack:remove-terralith-intro-message
-                 '';
+                          '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
         TZ = "America/New_York";
