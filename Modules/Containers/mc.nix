@@ -57,6 +57,7 @@
         Huntingdog5  
         DancingCat524
         ThinkingWithTime
+				manaexons
 '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
