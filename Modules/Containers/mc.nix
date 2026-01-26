@@ -24,7 +24,7 @@
           clumps
           shulker-drops-two
           phantom-spawning
-          view-distance-fox
+          view-distance-fix
           towns-and-towers
           noisiumforked
           datapack:terralith
