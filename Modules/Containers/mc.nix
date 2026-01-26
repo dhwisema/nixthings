@@ -37,7 +37,7 @@
         MEMORY = "16384M";
         TZ = "America/New_York";
         MODRINTH_DOWNLOAD_DEPENDENCIES = "optional";
-        MODRINTH_ALLOWED_VERSION_TYPE =  "beta";
+        MODRINTH_ALLOWED_VERSION_TYPE =  "alpha";
       };
        extraOptions = [
         "--interactive"
