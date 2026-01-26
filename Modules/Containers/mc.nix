@@ -23,7 +23,6 @@
                  '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
-        USE_MEOWICE_FLAGS = "true";
         TZ = "America/New_York";
         MODRINTH_DOWNLOAD_DEPENDENCIES = "optional";
         MODRINTH_ALLOWED_VERSION_TYPE =  "beta";
