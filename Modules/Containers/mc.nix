@@ -20,6 +20,15 @@
           lithium
           carpet
           fabric-api
+          ferrite-core
+          clumps
+          shulker-drops-two
+          phantom-spawning
+          view-distance-fox
+          towns-and-towers
+          noisiumforked
+          geyser
+          floodgate
                  '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
