@@ -9,7 +9,7 @@
       image = "itzg/minecraft-server:latest";
 
       tty = true;
-      stdinOpen = true;
+      # stdinOpen = true;
 
       ports = [
         "25565:25565"
