@@ -35,6 +35,10 @@
           https://modrinth.com/datapack/remove-terralith-intro-message
           noisiumforked
         '';
+        VERSION = "1.21.11";
+        MEMORY = "16384M";
+        USE_MEOWICE_FLAGS = "true";
+        TZ = "America/New_York";
       };
 
       volumes = [
