@@ -27,14 +27,14 @@
           towns-and-towers
           noisiumforked
           fabric-api
-          https://modrinth.com/plugin/geyser
-          https://modrinth.com/datapack/terralith
-          https://modrinth.com/datapack/structory
-          https://modrinth.com/datapack/incendium
-          https://modrinth.com/datapack/structory-towers
-          https://modrinth.com/datapack/remove-terralith-intro-message
-          https://modrinth.com/plugin/lmd
-          https://modrinth.com/datapack/dungeons-and-taverns
+          geyser
+          terralith
+          structory
+         incendium
+         structory-towers
+         remove-terralith-intro-message
+         lmd
+         dungeons-and-taverns
           '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
