@@ -66,6 +66,8 @@
         DancingCat524
         ThinkingWithTime
 				manaexons
+				hamburgerchicken
+				schooner42
 		'';
         VERSION = "1.21.11";
         MEMORY = "16384M";
