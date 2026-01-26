@@ -16,6 +16,9 @@
       environment = {
         EULA = "TRUE";
         TYPE = "FABRIC";
+        PLUGINS = ''
+            https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/fabric
+          '';
         MODRINTH_PROJECTS = ''
           lithium
           carpet
