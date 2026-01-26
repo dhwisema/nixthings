@@ -28,6 +28,7 @@
           view-distance-fix
           towns-and-towers
           noisiumforked
+          fabric-api
         '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
