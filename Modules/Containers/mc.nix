@@ -28,9 +28,7 @@
           towns-and-towers
           noisiumforked
           floodgate
-          plugin:lmd
-          plugin:geyser
-          datapack:terralith
+                  datapack:terralith
           datapack:structory
            datapack:incendium
            datapack:structory-towers
