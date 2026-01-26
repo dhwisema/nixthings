@@ -15,7 +15,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 35;
         spacing = "4";
 
         modules-center = [ "clock" "niri/window" ];
@@ -37,7 +37,7 @@
           };
 
           "niri/window" = {
-      "max-length" = 40;
+      "max-length" = 30;
   };
         clock = {
           format = "{:%I:%M%p %D}";
@@ -110,33 +110,26 @@
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
             }
-
-
-           
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
+        border: none;
+        margin: 0em 0em; 
       }
       #window {
         color: @base0A;
-        background: @base01
+        background: @base01;
+        margin: .5em 0em;
+        border-radius: .25em;
+
+
       }
 
       #clock {
-        border-radius: 2px;
-        
-        background: @base01;
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-right: 4px;
-        padding-left: 4px;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding: .25em .25em;
       }
       #bluetooth {
-        background: @base01;
+        background: @base02;
         margin-right: 3px;
         margin-left: 3px;
         margin-top: 0px;
@@ -164,7 +157,10 @@
         background: @base01;
       }        
       #workspaces button {
-        padding: 0 5px;
+        border-radius: .25em;
+        border: @base01; 
+        padding: .25em 0em;
+        margin: .5em .25em;
         color: @base04;
         background: @base01;
       }
@@ -173,8 +169,7 @@
         margin-left: 3px;
         margin-top: 0px;
         margin-bottom: 0px;
-
-         background: @base01;
+        background: @base01;
       }
       #network {
          background: @base01;
