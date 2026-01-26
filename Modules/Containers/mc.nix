@@ -56,6 +56,7 @@
       WHITELIST = ''
         Huntingdog5  
         DancingCat524
+        ThinkingWithTime
 '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
