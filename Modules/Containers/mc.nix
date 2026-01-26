@@ -8,8 +8,8 @@
     containers.mc = {
       image = "itzg/minecraft-server:latest";
 
-      tty = true;
-      stdinOpen = true;
+      # tty = true;
+      # stdinOpen = true;
 
       ports = [
         "25565:25565"
