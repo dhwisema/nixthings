@@ -39,6 +39,8 @@
           datapack:incendium
           datapack:structory-towers
                           '';
+
+                   VIEW_DISTANCE = "18";
        OPS = ''        Huntingdog5 '';
       EXISTING_OPS_FILE = "SYNCHRONIZE";
       ENABLE_WHITELIST = "true";
