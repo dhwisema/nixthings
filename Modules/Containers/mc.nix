@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+  networking.firewall.allowedUDPPorts = [25565];
+  networking.firewall.allowedTCPPorts = [25565];
   virtualisation.oci-containers = {
     backend = "podman"; # or "docker" if you prefer
 
