@@ -44,7 +44,7 @@
           chunky
           structurify
           mes-moogs-end-structures
-          moogs-voyager-structuresi
+          moogs-voyager-structures
           mns-moogs-nether-structures
           mss-moogs-soaring-structures
           mtr-moogs-temples-reimagined
