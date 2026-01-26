@@ -27,8 +27,15 @@
           view-distance-fox
           towns-and-towers
           noisiumforked
-          geyser
           floodgate
+          hurricane
+                 https://modrinth.com/plugin/lmd
+                   https://modrinth.com/plugin/geyser
+          https://modrinth.com/datapack/terralith
+               https://modrinth.com/datapack/structory
+        https://modrinth.com/datapack/incendium
+        https://modrinth.com/datapack/structory-towers
+        https://modrinth.com/datapack/remove-terralith-intro-message
                  '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
