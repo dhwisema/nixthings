@@ -28,13 +28,6 @@
           noisiumforked
           fabric-api
           geyser
-          terralith
-          structory
-         incendium
-         structory-towers
-         remove-terralith-intro-message
-         lmd
-         dungeons-and-taverns
           '';
         VERSION = "1.21.11";
         MEMORY = "16384M";
