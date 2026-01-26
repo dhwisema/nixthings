@@ -26,12 +26,7 @@
           shulker-drops-two
           phantom-spawning
           view-distance-fix
-          https://modrinth.com/datapack/terralith
           towns-and-towers
-          https://modrinth.com/datapack/structory
-          https://modrinth.com/datapack/incendium
-          https://modrinth.com/datapack/structory-towers
-          https://modrinth.com/datapack/remove-terralith-intro-message
           noisiumforked
         '';
         VERSION = "1.21.11";
