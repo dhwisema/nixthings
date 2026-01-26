@@ -17,6 +17,13 @@
       ];
 
       environment = {
+        RCON_CMDS_STARTUP = ''
+        chunky radius 5000 
+        chunky start '';
+      RCON_CMDS_ON_CONNECT =  ''
+        chunky stop '';
+      RCON_CMDS_LAST_DISCONNECT = ''
+        chunky start '';
         EULA = "TRUE";
         TYPE = "FABRIC";
         PLUGINS = ''
@@ -34,6 +41,8 @@
           towns-and-towers
           noisiumforked
           floodgate
+          chunky
+          datapack:nullscape
           datapack:terralith
           datapack:structory
           datapack:incendium
