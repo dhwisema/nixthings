@@ -1,6 +1,4 @@
-
 { config, pkgs, ... }:
-
 {
   virtualisation.oci-containers = {
     backend = "podman"; # or "docker" if you prefer
@@ -35,7 +33,10 @@
         USE_MEOWICE_FLAGS = "true";
         TZ = "America/New_York";
       };
-
+       extraOptions = [
+        "--interactive"
+        "--tty"
+      ];
       volumes = [
         "/home/irrelevancy/mc/data:/data"
       ];
