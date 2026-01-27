@@ -107,42 +107,31 @@
     };
     style = ''
       * {  border: none;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-            }
+           font-family: "JetBrains Mono", monospace;
+           font-size: 12px;
+           margin: 0em 0em;
+                }
       window#waybar {
         background: @base00;
         color: @base0D; /*maybe base0C this is text color */
         border: none;
-        margin: 0em 0em; 
+        margin: 0em 0em;
       }
-      #window {
-        color: @base0A;
-        background: @base01;
-        margin: .5em 0em;
-        border-radius: .25em;
-
-
-      }
-
       #clock {
         padding: .25em .25em;
+        margin: .5em .25em;
+        border-radius: .25em;
+        background: @base01;
       }
       #bluetooth {
-        background: @base02;
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-
-      }
+        margin: .5em .25em;
+        background: @base01;
+        border-radius: .25em;
+             }
       #battery {
-        padding: 3px;
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-
+        margin: .5em .25em;
+        border-radius: .25em;
+        padding: 0px 3px;
         color: @base0C;
         background: @base01;
       }
@@ -165,14 +154,14 @@
         background: @base01;
       }
       #pulseaudio {
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 0px;
-        margin-bottom: 0px;
         background: @base01;
+        border-radius: .25em;
+        margin: .5em .25em;
       }
       #network {
          background: @base01;
+         border-radius: .25em;
+         margin: .5em .25em;
       }
       
     '';
