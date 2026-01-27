@@ -44,6 +44,7 @@
           chunky
           modernfix
           structurify
+          scalablelux
           mes-moogs-end-structures
           moogs-voyager-structures
           mns-moogs-nether-structures
