@@ -23,6 +23,7 @@ services.avahi = {
   environment.systemPackages = with pkgs; [
     seahorse
     udisks
+    gnome-software
   ];
 
   fonts.packages = with pkgs; [
