@@ -18,7 +18,7 @@
 
       environment = {
         RCON_CMDS_STARTUP = ''
-        chunky radius 7000 
+        chunky radius 2000 
         chunky start '';
       RCON_CMDS_ON_CONNECT =  ''
         chunky stop '';
@@ -38,7 +38,6 @@
           shulker-drops-two
           phantom-spawning
           view-distance-fix
-          towns-and-towers
           noisiumforked
           floodgate
           chunky
@@ -52,9 +51,7 @@
           datapack:dnt-enchant-disabler
           datapack:explorify
           datapack:terralith
-          datapack:structory
           datapack:incendium
-          datapack:structory-towers
                           '';
 
                    VIEW_DISTANCE = "18";
