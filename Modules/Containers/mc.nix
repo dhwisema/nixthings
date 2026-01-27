@@ -1,7 +1,8 @@
-
 { config, pkgs, ... }:
-
 {
+  networking.firewall.allowedUDPPorts = [25565 19132];
+  networking.firewall.allowedTCPPorts = [25565 19132]; #PORTS FOR java and bedrock
+  #change default security list in oci management to allow above ports
   virtualisation.oci-containers = {
     backend = "podman"; # or "docker" if you prefer
 
@@ -16,34 +17,70 @@
       ];
 
       environment = {
+        RCON_CMDS_STARTUP = ''
+        chunky radius 2000 
+        chunky start '';
+      RCON_CMDS_ON_CONNECT =  ''
+        chunky pause '';
+      RCON_CMDS_LAST_DISCONNECT = ''
+        chunky continue '';
         EULA = "TRUE";
         TYPE = "FABRIC";
+        PLUGINS = ''
+            https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/fabric
+          '';
         MODRINTH_PROJECTS = ''
           lithium
-          ferrite-core
           carpet
+          fabric-api
+          ferrite-core
           clumps
-          hurricane
           shulker-drops-two
           phantom-spawning
           view-distance-fix
-          https://modrinth.com/datapack/terralith
-          towns-and-towers
-          https://modrinth.com/datapack/structory
-          https://modrinth.com/datapack/incendium
-          https://modrinth.com/datapack/structory-towers
-          https://modrinth.com/datapack/remove-terralith-intro-message
           noisiumforked
-        '';
+          floodgate
+          chunky
+          structurify
+          scalablelux
+          mes-moogs-end-structures
+          moogs-voyager-structures
+          mns-moogs-nether-structures
+          mss-moogs-soaring-structures
+          mtr-moogs-temples-reimagined
+          datapack:dungeons-and-taverns
+          datapack:dnt-enchant-disabler
+          datapack:explorify
+          datapack:terralith
+          datapack:incendium
+                          '';
+
+                   VIEW_DISTANCE = "18";
+       OPS = ''        Huntingdog5 '';
+      EXISTING_OPS_FILE = "SYNCHRONIZE";
+      ENABLE_WHITELIST = "true";
+      WHITELIST = ''
+        Huntingdog5  
+        DancingCat524
+        ThinkingWithTime
+				manaexons
+				hamburgerchicken
+				schooner42
+		'';
         VERSION = "1.21.11";
         MEMORY = "16384M";
-        USE_MEOWICE_FLAGS = "true";
         TZ = "America/New_York";
+        MODRINTH_DOWNLOAD_DEPENDENCIES = "required";
+        MODRINTH_ALLOWED_VERSION_TYPE =  "alpha";
       };
-
+       extraOptions = [
+        "--interactive"
+        "--tty"
+      ];
       volumes = [
         "/home/irrelevancy/mc/data:/data"
       ];
     };
   };
 }
+    
