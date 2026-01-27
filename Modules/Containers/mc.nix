@@ -42,7 +42,6 @@
           noisiumforked
           floodgate
           chunky
-          modernfix
           structurify
           mes-moogs-end-structures
           moogs-voyager-structures
