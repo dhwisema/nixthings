@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
-  networking.firewall.allowedUDPPorts = [25565];
-  networking.firewall.allowedTCPPorts = [25565];
+  networking.firewall.allowedUDPPorts = [25565 19132];
+  networking.firewall.allowedTCPPorts = [25565 19132]; #PORTS FOR java and bedrock
   #change default security list in oci management to allow above ports
   virtualisation.oci-containers = {
     backend = "podman"; # or "docker" if you prefer
@@ -21,9 +21,9 @@
         chunky radius 2000 
         chunky start '';
       RCON_CMDS_ON_CONNECT =  ''
-        chunky stop '';
+        chunky pause '';
       RCON_CMDS_LAST_DISCONNECT = ''
-        chunky start '';
+        chunky continue '';
         EULA = "TRUE";
         TYPE = "FABRIC";
         PLUGINS = ''
@@ -42,6 +42,7 @@
           floodgate
           chunky
           structurify
+          scalablelux
           mes-moogs-end-structures
           moogs-voyager-structures
           mns-moogs-nether-structures

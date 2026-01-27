@@ -12,6 +12,11 @@
     ./../Desktop/Desktop.nix
   ];
 
+services.avahi = {
+  enable = true;
+  nssmdns4 = true;
+  openFirewall = true;
+};
   hardware.bluetooth.enable = true;
 
   environment.systemPackages = with pkgs; [
