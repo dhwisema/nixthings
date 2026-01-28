@@ -10,6 +10,7 @@
   imports = [
     ./Base-config.nix
     ./../Desktop/Desktop.nix
+    ./../Programs/wireshark.nix
   ];
 
 services.avahi = {
