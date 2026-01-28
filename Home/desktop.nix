@@ -17,7 +17,13 @@
       shell-integration-features = true;
     };
   };
- programs.zoxide.enableFishIntegration = true;
+  programs.vicinae = {
+    enable = true;
+    systemd.enable = true;
+    systemd.autostart = true;
+  };
+  programs.zoxide.enable = true;
+  programs.zoxide.enableFishIntegration = true;
   programs.helix.enable = true;
   programs.firefox = {
       enable = true;
