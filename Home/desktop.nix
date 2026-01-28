@@ -20,7 +20,7 @@
   programs.vicinae = {
     enable = true;
     systemd.enable = true;
-    systemd.autostart = true;
+    systemd.autoStart = true;
   };
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
