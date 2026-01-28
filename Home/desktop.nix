@@ -22,6 +22,7 @@
     systemd.enable = true;
     systemd.autoStart = true;
   };
+  programs.fish.enable = true;
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
   programs.helix.enable = true;
