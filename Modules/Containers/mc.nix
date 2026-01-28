@@ -18,12 +18,11 @@
 
       environment = {
         RCON_CMDS_STARTUP = ''
-        chunky radius 2000 
-        chunky start '';
+'';
       RCON_CMDS_ON_CONNECT =  ''
-        chunky pause '';
+     '';
       RCON_CMDS_LAST_DISCONNECT = ''
-        chunky continue '';
+     '';
         EULA = "TRUE";
         TYPE = "FABRIC";
         PLUGINS = ''

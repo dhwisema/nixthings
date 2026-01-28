@@ -29,6 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
   outputs =
     inputs:
@@ -65,6 +66,7 @@
             else
               [
                 ./Modules/OS/desktop-config.nix
+                nix-flatpak.nixosModules.nix-flatpak
                 stylix.nixosModules.stylix
                 niri.nixosModules.niri
                 waveforms.nixosModule
