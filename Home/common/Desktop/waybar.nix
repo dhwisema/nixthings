@@ -114,7 +114,7 @@
       window#niri {
         background: @base01;
         color: @base0D;
-        border-radius .25em;
+        border-radius: .25em;
         
       }
       window#waybar {
