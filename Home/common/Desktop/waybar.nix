@@ -115,6 +115,7 @@
         background: @base01;
         color: @base0D;
         border-radius: .25em;
+        margin: .5em .25em;
         
       }
       window#waybar {
