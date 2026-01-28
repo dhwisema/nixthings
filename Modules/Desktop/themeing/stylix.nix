@@ -6,7 +6,7 @@
   ...
 }: {
   stylix.targets.vicinae.enable = true;
-  stylix.targets.viciae.opacity.enable = false;
+  stylix.targets.vicinae.opacity.enable = false;
   stylix.enableReleaseChecks = false;
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
