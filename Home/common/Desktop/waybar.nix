@@ -111,7 +111,7 @@
            font-size: 12px;
            margin: 0em 0em;
                 }
-      window#niri {
+      #niri {
         background: @base01;
         color: @base0D;
         border-radius: .25em;
