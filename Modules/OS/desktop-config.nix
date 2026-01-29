@@ -18,7 +18,7 @@ services.avahi = {
   openFirewall = true;
 };
   hardware.bluetooth.enable = true;
-
+  services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     seahorse
     udisks
